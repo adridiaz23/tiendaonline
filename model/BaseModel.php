@@ -9,5 +9,4 @@ class Modelo{
         $this->db = new PDO('mysql:host=localhost;dbname=tiendandavirtual',"root",""); //conexion a la bdd
     }
 
-    
 }
