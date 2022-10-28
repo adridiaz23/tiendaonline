@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2022 a las 10:02:00
+-- Tiempo de generación: 28-10-2022 a las 09:32:22
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `nombre` varchar(10) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`nombre`, `password`) VALUES
+('admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -71,7 +78,7 @@ CREATE TABLE `cliente` (
 --
 
 CREATE TABLE `lineapedido` (
-  `idProducto` int(11) NOT NULL,
+  `ISBN` int(11) NOT NULL,
   `correoUsuario` varchar(30) NOT NULL,
   `unidades` int(11) NOT NULL,
   `idPedido` int(11) NOT NULL
@@ -97,7 +104,7 @@ CREATE TABLE `pedido` (
 --
 
 CREATE TABLE `producto` (
-  `idProducto` int(11) NOT NULL,
+  `ISBN` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `descripcion` text NOT NULL,
   `imagen` varchar(50) NOT NULL,
@@ -129,7 +136,7 @@ ALTER TABLE `cliente`
 -- Indices de la tabla `lineapedido`
 --
 ALTER TABLE `lineapedido`
-  ADD PRIMARY KEY (`idProducto`,`correoUsuario`,`idPedido`),
+  ADD PRIMARY KEY (`ISBN`,`correoUsuario`,`idPedido`),
   ADD KEY `correoUsuario` (`correoUsuario`),
   ADD KEY `idPedido` (`idPedido`);
 
@@ -143,18 +150,8 @@ ALTER TABLE `pedido`
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`idProducto`),
+  ADD PRIMARY KEY (`ISBN`),
   ADD KEY `categoria` (`categoria`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `producto`
---
-ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -164,7 +161,7 @@ ALTER TABLE `producto`
 -- Filtros para la tabla `lineapedido`
 --
 ALTER TABLE `lineapedido`
-  ADD CONSTRAINT `lineapedido_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`idProducto`),
+  ADD CONSTRAINT `lineapedido_ibfk_1` FOREIGN KEY (`ISBN`) REFERENCES `producto` (`ISBN`),
   ADD CONSTRAINT `lineapedido_ibfk_2` FOREIGN KEY (`correoUsuario`) REFERENCES `cliente` (`correoUsuario`),
   ADD CONSTRAINT `lineapedido_ibfk_3` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`);
 

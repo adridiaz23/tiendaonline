@@ -11,6 +11,7 @@
         {
             return $this->nombre;
         }
+
         public function getPassword()
         {
             return $this->password;
@@ -21,6 +22,7 @@
             $this->nombre = $nombre;
             return $this;
         }
+
         public function setPassword($password)
         {
             $this->password = $password;
@@ -28,12 +30,7 @@
         }
 
         // Creamos la función que tendrá que recoger el nombre y la contraseña del formulario.
-        function validar($nombre, $password){
-            // Validación de error
-            if ($this->db == "ERROR") {
-                header("controllers/SalirController.php");
-            }
-
+        function validar($nombre, $password){   
             // Consulta
             $sql = "SELECT * FROM admin where Nombre='$nombre' and Password= '$password'";
             $rows = $this->db->query($sql);

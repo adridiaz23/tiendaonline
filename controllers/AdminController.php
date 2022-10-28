@@ -6,7 +6,7 @@
             // Mientras no se pasen los datos del formulario mostraremos el else
             if (isset($_POST["nombre"]) && isset($_POST["password"])) {
 
-                require_once("models/admin.php");
+                require_once("models/admin.php"); 
                 $validar = new Admin();
                 if ($validar->validar($_POST["nombre"], $_POST["password"])==1){
                     $_SESSION["Administrador"]= $_POST["nombre"];
@@ -23,4 +23,3 @@
         }
 
     }
-?>
