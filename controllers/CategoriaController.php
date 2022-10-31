@@ -11,7 +11,17 @@ class CategoriaController{
        $categoria->crearCategoria();
     } 
 
-
+    public function mostrarCategorias(){
+        // Mientras no se pasen los datos del formulario mostraremos el else
+        if(isset($_SESSION["Administrador"])){
+            require_once("models/categoria.php"); 
+            $categoria = new Categoria();
+            $todosLosPedidos = $pedido->mostrarCategorias();
+            require_once "views/categorias/mostrarCategorias.php";
+        } else {
+            header("index.php");
+        }
+}
 
 
 }
