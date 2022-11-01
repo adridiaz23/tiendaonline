@@ -1,13 +1,13 @@
 <h1>Registro Producto</h1>
-<form action="index.php?controller=Producto&action=registrar" method="post">
+<form action="index.php?controller=Producto&action=registrar" method="post" enctype="multipart/form-data">
     ISBN:
-    <input type="text" name = "isbn"><br>
+    <input type="number" name = "isbn"><br>
     Nombre:
     <input type="text" name = "nombre"><br>
     Descripcion:
     <input type="text" name = "descripcion"><br>
     Imagen:
-    <input type="text" name = "imagen"><br>
+    <input type="file" name = "imagen"><br>
     Precio:
     <input type="number" name = "precio"><br>
     Stock:

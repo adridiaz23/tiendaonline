@@ -110,9 +110,14 @@
         //Funcion para saber si ya tenemos creado un producto con este ISBN
         public function validar($isbn){
             // Consulta
-            $sql = "SELECT * FROM admin where ISBN = '$isbn'";
+            $sql = "SELECT * FROM producto where ISBN = '".$isbn."'";
             $rows = $this->db->query($sql);
-            return  $rows->rowCount();
+            //return $rows->rowCount();
+            if($rows->rowCount() == 0){
+                return true;
+            }else{
+                return false;
+            }
         }
 
         //Funcion para insertar producto en la base de datos
@@ -120,8 +125,42 @@
         {
             $sql = "INSERT INTO producto (ISBN,nombre, descripcion, imagen, precio, stock, categoria, autor) VALUES ('".$this->isbn."','".$this->nombre."', '".$this->descripcion."', '".$this->imagen."', '".$this->precio."', '".$this->stock."', '".$this->categoria."','".$this->autor."')";
             $this->db->query($sql);
-            return $this;   
+            //return $this;   
+            return $sql;
         }
 
+        //Funcion para eliminar producto
+        public function eliminar()
+        {
+            $sql = "DELETE FROM producto WHERE ISBN = '".$this->isbn."'";
+            $this->db->query($sql);
+            //return $this;
+            return $sql;
+        }
+
+        //Funcion para obtener un array de todos lo productos
+        public function listadoProductos(){
+            $sql = "SELECT * FROM producto";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
+
+        //Funcion para obtener arrat del producto
+        public function listadoProducto(){
+            $sql = "SELECT * FROM producto WHERE ISBN = '".$this->isbn."'";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
+
+        //Funcion para editar un producto
+        public function editar(){
+            $sql = "UPDATE producto SET ISBN = '".$this->isbn."', nombre = '".$this->nombre."', descripcion = '".$this->descripcion."', imagen = '".$this->imagen."', precio = '".$this->precio."', stock =
+            '".$this->stock."', categoria = '".$this->categoria."', autor =
+            '".$this->autor."' WHERE ISBN = '".$this->isbn."'";
+            $this->db->query($sql);
+            //return $this;
+        }
+        
+        
 }
 ?>

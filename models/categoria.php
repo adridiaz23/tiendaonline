@@ -42,12 +42,4 @@
                 
 
         }
-        function mostrarCategorias(){   
-                // Consulta
-                $sql = "SELECT * FROM categoria";
-                $rows = $this->db->query($sql);
-                return  $rows;
-            }
-
-        
 }
