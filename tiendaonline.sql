@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2022 a las 09:32:22
+-- Tiempo de generación: 28-10-2022 a las 10:27:48
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -31,15 +31,9 @@ USE `tiendaonline`;
 
 CREATE TABLE `admin` (
   `nombre` varchar(10) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY(`nombre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `admin`
---
-
-INSERT INTO `admin` (`nombre`, `password`) VALUES
-('admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -48,10 +42,9 @@ INSERT INTO `admin` (`nombre`, `password`) VALUES
 --
 
 CREATE TABLE `categoria` (
-  `idCategoria` int(11) NOT NULL,
+  `idCategoria` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
-  `descripcion` text NOT NULL,
-  `imagen` varchar(50) NOT NULL
+  PRIMARY KEY(`idCategoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -63,40 +56,16 @@ CREATE TABLE `categoria` (
 CREATE TABLE `cliente` (
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
-  `correoUsuario` varchar(30) NOT NULL,
+  `correoCliente` varchar(30) NOT NULL,
   `calle` varchar(50) NOT NULL,
   `numero` int(10) NOT NULL,
-  `dni` varchar(9) NOT NULL,
+  `dni` varchar(9) NOT NULL UNIQUE,
   `password` varchar(50) NOT NULL,
-  `codigoPostal` varchar(5) NOT NULL
+  `codigoPostal` varchar(5) NOT NULL,
+  PRIMARY KEY(`correoCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `lineapedido`
---
-
-CREATE TABLE `lineapedido` (
-  `ISBN` int(11) NOT NULL,
-  `correoUsuario` varchar(30) NOT NULL,
-  `unidades` int(11) NOT NULL,
-  `idPedido` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pedido`
---
-
-CREATE TABLE `pedido` (
-  `idPedido` int(11) NOT NULL,
-  `fechaPeticion` date NOT NULL,
-  `estado` tinyint(1) NOT NULL DEFAULT 0,
-  `importeTotal` float(6,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 -- --------------------------------------------------------
 
 --
@@ -112,66 +81,38 @@ CREATE TABLE `producto` (
   `stock` int(11) NOT NULL,
   `categoria` int(11) NOT NULL,
   `autor` varchar(30) NOT NULL,
-  `destacado` tinyint(1) NOT NULL DEFAULT 0
+  `destacado` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY(`ISBN`),
+  FOREIGN KEY (`categoria`) REFERENCES `categoria`(`idCategoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Índices para tablas volcadas
---
+-- --------------------------------------------------------
 
 --
--- Indices de la tabla `categoria`
---
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`idCategoria`);
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`correoUsuario`),
-  ADD UNIQUE KEY `dni` (`dni`);
-
---
--- Indices de la tabla `lineapedido`
---
-ALTER TABLE `lineapedido`
-  ADD PRIMARY KEY (`ISBN`,`correoUsuario`,`idPedido`),
-  ADD KEY `correoUsuario` (`correoUsuario`),
-  ADD KEY `idPedido` (`idPedido`);
-
---
--- Indices de la tabla `pedido`
---
-ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`idPedido`);
-
---
--- Indices de la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`ISBN`),
-  ADD KEY `categoria` (`categoria`);
-
---
--- Restricciones para tablas volcadas
+-- Estructura de tabla para la tabla `pedido`
 --
 
---
--- Filtros para la tabla `lineapedido`
---
-ALTER TABLE `lineapedido`
-  ADD CONSTRAINT `lineapedido_ibfk_1` FOREIGN KEY (`ISBN`) REFERENCES `producto` (`ISBN`),
-  ADD CONSTRAINT `lineapedido_ibfk_2` FOREIGN KEY (`correoUsuario`) REFERENCES `cliente` (`correoUsuario`),
-  ADD CONSTRAINT `lineapedido_ibfk_3` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`);
+CREATE TABLE `pedido` (
+  `idPedido` int(11) NOT NULL AUTO_INCREMENT,
+  `correoCliente` varchar(30) NOT NULL,
+  `fechaPeticion` date NOT NULL,
+  `estado` tinyint(1) NOT NULL DEFAULT 0,
+  `importeTotal` float(6,2) NOT NULL DEFAULT 0,
+  PRIMARY KEY(`idPedido`),
+  FOREIGN KEY (`correoCliente`) REFERENCES `cliente`(`correoCliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 --
--- Filtros para la tabla `producto`
+-- Estructura de tabla para la tabla `detallepedido`
 --
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`idCategoria`);
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+CREATE TABLE `detallepedido` (
+  `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT,
+  `ISBN` int(11) NOT NULL,
+  `unidades` int(11) NOT NULL,
+  `idPedido` int(11) NOT NULL,
+  PRIMARY KEY(`idDetallePedido`),
+  FOREIGN KEY (`idPedido`) REFERENCES `pedido`(`idPedido`),
+  FOREIGN KEY (`ISBN`) REFERENCES `producto`(`ISBN`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

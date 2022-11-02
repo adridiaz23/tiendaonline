@@ -49,23 +49,21 @@
                 return $this;
         }
         function mostrarPedidos(){   
-            // Consulta
-            $sql = "SELECT * FROM pedido";
-            $rows = $this->db->query($sql);
-            return  $rows;
+                // Consulta
+                $sql = "SELECT * FROM pedido";
+                $rows = $this->db->query($sql);
+                return $rows->fetchAll(PDO::FETCH_CLASS);
         }
 
         function mostrarPedido($idPedido){
-            // Consulta
-            $sql = "SELECT * FROM pedido WHERE idPedido = $idPedido";
-            $rows = $this->db->query($sql);
+                // Consulta
+                $sql = "SELECT * FROM pedido WHERE idPedido = $idPedido";
+                $rows = $this->db->query($sql);
 
         }
         function editarEstado(){
                 // Consulta
-                $sql = "UPDATE pedido SET estado = 1 WHERE idPedido = $idPedido";
-                $this->db->query($sql);
-                $sql = "UPDATE pedido SET estado = '".$this->destacado."' WHERE ISBN = '".$this->isbn."'";
+                $sql = "UPDATE pedido SET estado = '".$this->estado."' WHERE idPedido = '".$this->idPedido."'";
                 $this->db->query($sql);
                 //return $this;
         }
