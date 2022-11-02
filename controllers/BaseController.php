@@ -1,12 +1,11 @@
 <?php 
 
-    class Salir{
+    class BaseController{
 
         public static function salir(){
-            require_once("models/salir.php"); 
-            $validar = new Sesion();
-            $validar->salir();
-            require_once "index.php";
+            session_unset();
+            session_destroy();
+            require_once('views/admin/login.php');
         }
     }
 ?>

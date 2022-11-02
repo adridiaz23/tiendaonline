@@ -15,7 +15,11 @@ session_start();
         <?php 
         require_once "autoload.php";
         require_once "views/general/cabecera.html";
-        require_once "views/general/menu.php";
+        if(isset($_SESSION["Administrador"])){
+            require_once "views/general/menu.php";
+            var_dump($_SESSION['Administrador']);
+            echo "SOY UN PUTO ADMIN";
+        }
 
         if (isset($_GET['controller'])){
             $nombreController = $_GET['controller']."Controller";
