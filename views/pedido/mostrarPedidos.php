@@ -1,5 +1,18 @@
+
+<form action="index.php?controller=Pedido&action=mostrarPedidos" method="POST">
+    <input type="text" id="txtbusca" placeholder="txtbusca" name="txtbusca" id="txtbusca" >
+    <select id="estado" name="estado">
+        <option value="" selected></option> 
+        <option value="0">Falta Pagar</option>
+        <option value="1">Pagado</option>
+    </select>
+    <input type="submit" value="Buscar">
+</form>
+
+
 <?php 
-    if(count($todosLosPedidos) > 0){
+
+    if(isset($todosLosPedidos) && count($todosLosPedidos) > 0){
         echo "<table border=1>";
         echo "<tr>";
         //foreach($lista as $clave => $valor){
