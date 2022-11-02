@@ -54,6 +54,22 @@
             $rows = $this->db->query($sql);
             return  $rows;
         }
+
+        function mostrarPedido($idPedido){
+            // Consulta
+            $sql = "SELECT * FROM pedido WHERE idPedido = $idPedido";
+            $rows = $this->db->query($sql);
+
+        }
+        function editarEstado(){
+                // Consulta
+                $sql = "UPDATE pedido SET estado = 1 WHERE idPedido = $idPedido";
+                $this->db->query($sql);
+                $sql = "UPDATE pedido SET estado = '".$this->destacado."' WHERE ISBN = '".$this->isbn."'";
+                $this->db->query($sql);
+                //return $this;
+        }
+
     }
 
 ?>

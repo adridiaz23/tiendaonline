@@ -5,7 +5,7 @@
         public static function salir(){
             session_unset();
             session_destroy();
-            require_once('views/admin/login.php');
+            header("Location:index.php");
         }
     }
 ?>

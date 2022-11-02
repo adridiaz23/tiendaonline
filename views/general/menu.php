@@ -5,7 +5,5 @@
         echo "<li> <a href= 'index.php?controller=Producto&action=registrar' >Crear Producto </a></li>";
         echo "<li> <a href= 'index.php?controller=Producto&action=listado' >Listar Producto </a></li>";
         echo "<li> <a href= 'index.php?controller=Base&action=salir' >Salir </a></li>";
-   
     ?>
-    
 </ul>
