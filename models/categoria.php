@@ -10,7 +10,6 @@
         public function __construct($nombre){
                 parent::__construct(); //llamar contructor padre para no sobreescribir y conectarme a la base de datos db
                 $this->nombre = $nombre;
-
         }
         public function getIdCategoria(){
                 return $this->idCategoria;
@@ -35,9 +34,10 @@
 
         public function crearCategoria(){
           
-            $sql = "INSERT INTO categoria (IdCategoria,nombre) VALUES (NULL,'".$this->nombre."')";
-            print($sql);
-            $this->db->prepare($sql)->execute($this->nombre);
+            $sql = "INSERT INTO categoria (idCategoria,nombre) VALUES (NULL,'".$this->nombre."')";
+            //print($sql);
+            $this->db->query($sql);
+            return $sql;
 
                 
 

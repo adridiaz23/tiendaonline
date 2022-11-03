@@ -7,7 +7,7 @@ class Database{
         $servername = "localhost";
         $dbname= "tiendaonline";
         $username = "root";
-        $password = "root";
+        $password = "";
 
         //creem una nova connexió instancinat l'objecte PDO
 		$this->db = new PDO("mysql:host=$servername;dbname=$dbname",$username, $password);

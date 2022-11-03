@@ -3,7 +3,7 @@
     <div class="inner-header flex">
          <div class="fromAdmin">
             <!-- Creamos el formulario donde su action será pasar los datos al model/loginAdmin y su función validar -->
-            <form action="index.php?controller=admin&action=validar" method="POST">
+            <form action="index.php?controller=Admin&action=validar" method="POST">
                     
                 <label for="nombre">Usuario:</label>
                 <input type="text"  placeholder="Usuario" name="nombre" id="nombre" autofocus>
