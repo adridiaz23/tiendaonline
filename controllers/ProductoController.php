@@ -179,7 +179,7 @@
                     $producto -> setIsbn($_GET['isbn']);
                     $producto -> setDestacado($_GET['destacado']);
                     $producto->editarDestacado();
-                    $lista = $producto->listadoProducto();
+                    $lista = $producto->listadoProductos();
                     require_once "views/producto/lista.php";
                 }else{
                     echo "No hay ISBN para editar";
