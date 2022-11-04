@@ -11,7 +11,18 @@
     Stock:
     <input type="number" name = "stock" value=<?php echo $lista[0]->stock; ?>><br>
     Categoria:
-    <input type="text" name = "categoria" value=<?php echo $lista[0]->categoria; ?>><br>
+    <select name="categoria" id="categoria">
+    <?php
+    foreach($listaCategorias as $clave => $valor){
+        if($valor['idCategoria'] == $lista[0]->categoria){
+            echo "<option value='".$valor['idCategoria']."' selected>".$valor['nombre']."</option>";
+        }else{
+            echo "<option value='".$valor['idCategoria']."'>".$valor['nombre']."</option>";
+        } 
+    }
+    ?>
+    </select>
+    <br>
     Autor:
     <input type="text" name = "autor" value=<?php echo $lista[0]->autor; ?>><br>
     <input type = "submit" value="Editar">

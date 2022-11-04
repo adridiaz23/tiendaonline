@@ -46,6 +46,9 @@
                         require_once "views/producto/registro.php";
                     }
                 }else{
+                    require_once "models/categoria.php";
+                    $categoria = New Categoria();
+                    $listaCategorias = $categoria->mostrarCategorias();
                     require_once "views/producto/registro.php";
                 }
             }else{
@@ -89,10 +92,12 @@
             if(isset($_SESSION['Administrador'])){
                 if(isset($_GET['isbn'])){
                     require_once "models/producto.php";
+                    require_once "models/categoria.php";
+                    $categoria = New Categoria();
+                    $listaCategorias = $categoria->mostrarCategorias();
                     $producto = new Producto();
                     $producto->setIsbn($_GET['isbn']);
                     $lista = $producto->listadoProducto();
-                    $listaCategorias = $categoria->mostrarCategorias();
                     require_once "views/producto/editar.php";
                 }elseif(isset($_POST['isbn'])){
                     require_once "models/producto.php";
@@ -120,7 +125,6 @@
                 if(isset($_POST['isbn'])){//Validaos que tengamos un formulario rellenado
                     require_once "models/producto.php";
                     $producto = new Producto();
-
                     //Recogemos el archivo enviado por el formulario
                     $archivo = $_FILES['imagen']['name'];
                     //Si el archivo contiene algo y es diferente de vacio

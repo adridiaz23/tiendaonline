@@ -13,7 +13,15 @@
     Stock:
     <input type="number" name = "stock"><br>
     Categoria:
-    <input type="text" name = "categoria"><br>
+    <select name="categoria" id="categoria">
+    <?php
+    
+    foreach($listaCategorias as $clave => $valor){
+        echo "<option value='".$valor['idCategoria']."'>".$valor['nombre']."</option>";
+    }
+    ?>
+    </select>
+    <br>
     Autor:
     <input type="text" name = "autor"><br>
     <input type = "submit" value="Registrar">
