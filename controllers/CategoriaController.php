@@ -15,8 +15,8 @@ class CategoriaController{
         // Mientras no se pasen los datos del formulario mostraremos el else
         if(isset($_SESSION["Administrador"])){
             require_once("models/categoria.php"); 
-            $categoria = new Categoria();
-            $todosLosPedidos = $pedido->mostrarCategorias();
+            $categoria = new Categoria("");
+            $categorias =  $categoria->mostrarCategorias();
             require_once "views/categorias/mostrarCategorias.php";
         } else {
             header("index.php");
