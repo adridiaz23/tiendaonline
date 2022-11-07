@@ -1,10 +1,29 @@
-<ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
     <?php
-        echo "<li> <a href= 'index.php?controller=Pedido&action=mostrarPedidos' >Pedidos </a></li>";
+        
+        echo "<div class='menuAdmin'>";
+            echo "<div class='menu1'>HOLA MENU</div>";
+            echo "<div class='menu2'><a href= 'index.php?controller=Pedido&action=mostrarPedidos' class='enlaceMenuAdmin'>Pedidos</a></div>";
+            echo "<div class='menu3'><a href= 'index.php?controller=Producto&action=listado' class='enlaceMenuAdmin'>Productos</a></div>";
+            echo "<div class='menu4'><a href= 'index.php?controller=Categoria&action=mostrarCategorias' class='enlaceMenuAdmin'>Categorias</a></div>";
+            echo "<div class='menu5'><a href= 'index.php?controller=Base&action=salir' class='enlaceMenuAdmin'>Salir</a></div>";
+        echo "</div>";
+        echo "<div class='spacerAdmin'></div>";
+        /*echo "<li> <a href= 'index.php?controller=Pedido&action=mostrarPedidos' >Pedidos </a></li>";
         echo "<li> <a href= 'index.php?controller=Categoria&action=crearForm' >Crear catgoria </a></li>";
         echo "<li> <a href= 'index.php?controller=Categoria&action=mostrarCategorias' >Mostrar catgoria </a></li>";
         echo "<li> <a href= 'index.php?controller=Producto&action=registrar' >Crear Producto </a></li>";
         echo "<li> <a href= 'index.php?controller=Producto&action=listado' >Listar Producto </a></li>";
-        echo "<li> <a href= 'index.php?controller=Base&action=salir' >Salir </a></li>";
+        echo "<li> <a href= 'index.php?controller=Base&action=salir' >Salir </a></li>";*/
     ?>
-</ul>
+</body>
+</html>

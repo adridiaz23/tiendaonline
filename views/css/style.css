@@ -1,18 +1,40 @@
 /*
 *
+    Body CSS
+*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin:0;
+    padding: 0;
+}
+h1{
+    font-size: 40px;
+    letter-spacing: 1px;
+    color:black;
+}
+h2{
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+h3{
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+p{
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+a{
+    font-size: 16px;
+    letter-spacing: 1px;
+    font:blod;
+}
+
+/*
+*
 ! CSS Pagina de loggin
 *
-*/
-    body {
-    margin:0;
-    }
-
-    p {
-    letter-spacing: 1px;
-    font-size:14px;
-    color: #333333;
-    }
-
+*/  
     .header {
     position:relative;
     text-align:center;
@@ -34,7 +56,7 @@
     text-align: center;
     }
 
-    .waves {
+    .Olas {
     position:relative;
     width: 100%;
     height:15vh;
@@ -52,22 +74,22 @@
 
     /* Animation */
 
-    .parallax > use {
+    .OlasLoginAdmin > use {
     animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
     }
-    .parallax > use:nth-child(1) {
+    .OlasLoginAdmin > use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
     }
-    .parallax > use:nth-child(2) {
+    .OlasLoginAdmin > use:nth-child(2) {
     animation-delay: -3s;
     animation-duration: 10s;
     }
-    .parallax > use:nth-child(3) {
+    .OlasLoginAdmin > use:nth-child(3) {
     animation-delay: -4s;
     animation-duration: 13s;
     }
-    .parallax > use:nth-child(4) {
+    .OlasLoginAdmin > use:nth-child(4) {
     animation-delay: -5s;
     animation-duration: 20s;
     }
@@ -80,7 +102,7 @@
     }
     }
 
-    .fromAdmin form{
+    .fromLoginAdmin form{
         height: 320px;
         width: 400px;
         background-color: rgba(255,255,255,0.13);
@@ -93,20 +115,20 @@
         box-shadow: 0 0 40px rgba(8,7,16,0.6);
         padding: 50px 35px;
     }
-    .fromAdmin form *{
+    .fromLoginAdmin form *{
         color: #ffffff;
         letter-spacing: 0.5px;
         outline: none;
         border: none;
     }
 
-    .fromAdmin label{
+    .fromLoginAdmin label{
         display: block;
         margin-top: 30px;
         font-size: 16px;
         font-weight: 500;
     }
-    .fromAdmin input{
+    .fromLoginAdmin input{
         display: block;
         height: 50px;
         width: 100%;
@@ -117,10 +139,10 @@
         font-size: 14px;
         font-weight: 300;
     }
-    .fromAdmin ::placeholder{
+    .fromLoginAdmin ::placeholder{
         color: #e5e5e5;
     }
-    .fromAdmin button{
+    .fromLoginAdmin button{
         margin-top: 50px;
         width: 100%;
         background-color: #ffffff;
@@ -132,3 +154,156 @@
         cursor: pointer;
     }
 /* Final de CSS Pagina de loggin */
+
+/*
+*
+!Comienzo CSS del Menu
+*/
+    div.spacerAdmin{
+        display: block;
+        height: 100px;
+    }
+
+    .menuAdmin {
+    max-width: 100%;
+    width: 100%;
+    background-color: #4D4D4D;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    align-content: center;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    }
+    
+    .menuAdmin > .menu1 { 
+        grid-area: 1 / 1 / 2 / 2; 
+    }
+    .menuAdmin > .menu2 { 
+        grid-area: 1 / 2 / 2 / 3; 
+    }
+    .menuAdmin > .menu3 { 
+        grid-area: 1 / 3 / 2 / 4;
+    }
+    .menuAdmin > .menu4 { 
+        grid-area: 1 / 4 / 2 / 5;
+    }
+    .menuAdmin > .menu5 { 
+        grid-area: 1 / 5 / 2 / 6; 
+    }
+
+    .menuAdmin > div{
+        text-align: center;
+        text-decoration: none;
+        color: white;
+    }
+
+    a.enlaceMenuAdmin{
+        text-decoration: none;
+        color: white;
+    }
+
+
+/*Final del CSS del Menu*/
+
+/*
+*
+! CSS Pagina de pedido Admin
+*
+*/
+.search-box input[type="text"] {
+    border: none;
+    background: none;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+    transition: all 0.25s ease-in 0.25s;
+    color: transparent;
+    font-size: 0.75rem;
+    line-height: 25px;
+  }
+  .search-box input[type="text"]:hover {
+    cursor: pointer;
+  }
+  .search-box input[type="text"]:hover:focus {
+    cursor: text;
+  }
+  .search-box input[type="text"]:hover + span {
+    background: rgb(255, 255, 255);
+  }
+  .search-box input[type="text"]:focus {
+    width: 200px;
+    padding: 0 10px;
+    outline: none;
+    color: black;
+    background: none;
+    color: rgb(0, 0, 0);
+  }
+  .search-box input[type="text"]:focus + span {
+    width: 200px;
+  }
+  .search-box input[type="text"]:focus + span::before {
+    width: 2px;
+    opacity: 0;
+    transition: all 0.25s ease-in;
+  }
+  .search-box input[type="text"] + span {
+    z-index: -1;
+    position: absolute;
+    border: 2px solid rgb(0, 0, 0);
+    top: 0;
+    width: 25px;
+    height: 25px;
+    transition: all 0.25s ease-in 0.25s;
+    border-radius: 25px;
+    left: 0;
+  }
+  .search-box input[type="text"] + span::before {
+    transition: all 0.25s ease-in 0.5s;
+    transform-origin: left top;
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    border-radius: 5px;
+    background: white;
+    transform: rotate(45deg) translate(26px, -2px);
+  }
+  
+ 
+
+/*Final del CSS del pedido Admin*/
+
+/*
+*
+!Comienzo CSS de la pagina de Productos Admin
+*/
+.tablaProductosAdmin{
+    margin: auto auto; 
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.thProductosAdmin{
+    background-color: #263239;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    text-align: center;
+}
+
+.imagenProductosAdmin{
+    width: 20%;
+    text-align: center;
+}
+
+.tdProductosAdmin{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/*Final del CSS PAgina de Productos Admin*/
