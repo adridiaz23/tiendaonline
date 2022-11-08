@@ -27,9 +27,9 @@
                             echo "<meta http-equiv=REFRESH content=2,URL=registro_cursos.php>";
                         }else{
                             //Si la imagen es correcta en tamaño y tipo
-                            //Se intenta subir al servidor C:\xampp\htdocs\tiendaonline\views\css\fotos
-                            if (move_uploaded_file($temp, "views/css/fotos/foto_".$_POST['isbn'].".jpg")) {
-                                $producto->setImagen("views/css/fotos/foto_".$_POST['isbn'].".jpg");
+                            //Se intenta subir al servidor C:\xampp\htdocs\tiendaonline\views\css\assets\fotos
+                            if (move_uploaded_file($temp, "views/css/assets/fotos/foto_".$_POST['isbn'].".jpg")) {
+                                $producto->setImagen("views/css/assets/fotos/foto_".$_POST['isbn'].".jpg");
                                 $producto->insertar();
                                 $lista = $producto->listadoProductos();
                                 require_once "views/producto/lista.php";
@@ -140,9 +140,9 @@
                             
                         }else{
                             //Si la imagen es correcta en tamaño y tipo
-                            //Se intenta subir al servidor C:\xampp\htdocs\tiendaonline\views\css\fotos
-                            if (move_uploaded_file($temp, "views/css/fotos/foto_".$_POST['isbn'].".jpg")) {
-                                $producto->setImagen("views/css/fotos/foto_".$_POST['isbn'].".jpg");
+                            //Se intenta subir al servidor C:\xampp\htdocs\tiendaonline\views\css\assets\fotos
+                            if (move_uploaded_file($temp, "views/css/assets/fotos/foto_".$_POST['isbn'].".jpg")) {
+                                $producto->setImagen("views/css/assets/fotos/foto_".$_POST['isbn'].".jpg");
                                 $producto->setIsbn($_POST['isbn']);
                                 $producto->editarImagen();
                                 $lista = $producto->listadoProductos();
