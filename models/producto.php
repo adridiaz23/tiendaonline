@@ -12,6 +12,7 @@
         private $categoria;
         private $autor;
         private $destacado;
+        private $estado;
 
         //GETTERS
         public function getIsbn()
@@ -105,6 +106,20 @@
             $this->destacado = $destacado;
         }
 
+        public function getEstado()
+        {
+                return $this->estado;
+        }
+
+        
+        public function setEstado($estado)
+        {
+                $this->estado = $estado;
+
+                return $this;
+        }
+
+        
         //FUNCIONES
 
         //Funcion para saber si ya tenemos creado un producto con este ISBN
@@ -174,5 +189,21 @@
             $this->db->query($sql);
             //return $this;
         }
+
+        //Funcion para saber si el producto esta activado o descativado
+        public function obtenerEstado(){
+            $sql = "SELECT estado FROM producto WHERE ISBN = '".$this->isbn."'";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
+
+        //Funcion para Activar/desactivar producto
+        public  function activar(){
+            $sql = "UPDATE producto SET estado = '".$this->estado."' WHERE ISBN = '".$this->isbn."'";
+            $this->db->query($sql);
+        }
+
+         
+        
 }
 ?>

@@ -295,7 +295,7 @@ a{
 }
 
 .imagenAdmin{
-    width: 20%;
+    width: 100%;
     text-align: center;
 }
 
@@ -303,6 +303,7 @@ a{
     border: 1px solid black;
     text-align: center;
     padding: 10px;
+    width: 50px;
 }
 
 div.botonAdmin > a.enlaceAdmin{
@@ -326,5 +327,20 @@ div.botonAdmin > a.enlaceAdmin:hover{
     text-align: center;
     
 }
+
+img.destacado{
+    width: 50px;
+    border-radius: 75%;
+}
+
+a.enlaceDestacado{
+    width: 200px;
+}
+
+td.tdAdmin > a > img{
+    width: 100%;
+}
+
+
 
 /*Final del CSS PAgina de Productos Admin*/
