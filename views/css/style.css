@@ -280,13 +280,13 @@ a{
 *
 !Comienzo CSS de la pagina de Productos Admin
 */
-.tablaProductosAdmin{
+.tablaAdmin{
     margin: auto auto; 
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-.thProductosAdmin{
+.thAdmin{
     background-color: #263239;
     color: white;
     font-size: 12px;
@@ -294,12 +294,12 @@ a{
     text-align: center;
 }
 
-.imagenProductosAdmin{
+.imagenAdmin{
     width: 20%;
     text-align: center;
 }
 
-.tdProductosAdmin{
+.tdAdmin{
     border: 1px solid black;
     text-align: center;
     padding: 10px;
