@@ -1,3 +1,6 @@
+<div class="botonAdmin">
+        <a class="enlaceAdmin" href="index.php?controller=Categoria&action=crearForm">Nueva Categoria</a>
+</div>
 <?php
     echo "<table class='tablaAdmin'>";
     echo "<tr>";
