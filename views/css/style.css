@@ -213,72 +213,106 @@ a{
 ! CSS Pagina de pedido Admin
 *
 */
-.search-box input[type="text"] {
-    border: none;
-    background: none;
-    z-index: 1;
-    width: 25px;
-    height: 25px;
-    transition: all 0.25s ease-in 0.25s;
-    color: transparent;
-    font-size: 0.75rem;
-    line-height: 25px;
-  }
-  .search-box input[type="text"]:hover {
-    cursor: pointer;
-  }
-  .search-box input[type="text"]:hover:focus {
-    cursor: text;
-  }
-  .search-box input[type="text"]:hover + span {
-    background: rgb(255, 255, 255);
-  }
-  .search-box input[type="text"]:focus {
-    width: 200px;
-    padding: 0 10px;
-    outline: none;
-    color: black;
-    background: none;
-    color: rgb(0, 0, 0);
-  }
-  .search-box input[type="text"]:focus + span {
-    width: 200px;
-  }
-  .search-box input[type="text"]:focus + span::before {
-    width: 2px;
-    opacity: 0;
-    transition: all 0.25s ease-in;
-  }
-  .search-box input[type="text"] + span {
-    z-index: -1;
-    position: absolute;
-    border: 2px solid rgb(0, 0, 0);
-    top: 0;
-    width: 25px;
-    height: 25px;
-    transition: all 0.25s ease-in 0.25s;
-    border-radius: 25px;
-    left: 0;
-  }
-  .search-box input[type="text"] + span::before {
-    transition: all 0.25s ease-in 0.5s;
-    transform-origin: left top;
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 5px;
-    border-radius: 5px;
-    background: white;
-    transform: rotate(45deg) translate(26px, -2px);
-  }
-  
- 
+/*Lupa*/
+    .lupaPedido {
+        margin-left: 600px;
+        margin-bottom: 50px;
+    }
+    
+    .lupaPedido > div {
+        display: inline-block;
+        position: relative;
+        filter: drop-shadow(0 1px #2099FF);
+    }
+    
+    .lupaPedido> div:after {
+        content: "";
+        background: #2099FF;
+        width: 4px;
+        height: 20px;
+        position: absolute;
+        top: 35px;
+        right: 2px;
+        transform: rotate(135deg);
+    }
+    
+    .lupaPedido> div > input {
+        color: #000000;
+        font-size: 16px;
+        background: transparent;
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+        border: solid 3px #2099FF;
+        outline: none;
+        border-radius: 35px;
+        transition: width 0.5s;
+    }
+    
+    .lupaPedido> div > input::placeholder {
+        color: #0a0a0a;
+        opacity: 0;
+        transition: opacity 150ms ease-out;
+    }
+    
+    .lupaPedido> div > input:focus::placeholder {
+        opacity: 1;
+    }
+    
+    .lupaPedido  > div > input:focus,
+    .lupaPedido  > div > input:not(:placeholder-shown) {
+        width: 250px;
+    }
+/* Fin css Lupa*/
 
+/* Select estado*/
+    .selectEstado {
+        margin-left: 20px;
+    }
+    
+    .selectEstado select {
+        background-color: #0563af;
+        color: white;
+        padding: 12px;
+        width: 250px;
+        border: none;
+        font-size: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+    }
+    
+    .selectEstado::before {
+        content: "\f13a";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        font-size: 28px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+    }
+    
+    .selectEstado:hover::before {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .selectEstado select option {
+        padding: 30px;
+    }
+/* Fin css Estado*/
 /*Final del CSS del pedido Admin*/
 
 /*
 *
 !Comienzo CSS de la pagina de Productos Admin
+*
 */
 .tablaAdmin{
     margin: auto auto; 

@@ -1,17 +1,19 @@
 <div class="fromBusquedaPedido">
-    <div class="search-box">
         <form action="index.php?controller=Pedido&action=mostrarPedidos" method="POST">
-            <input type="text" id="txtbusca"  name="txtbusca" id="txtbusca" >
-            <span></span>
-            <select id="estado" name="estado"> 
-                <option value="" selected></option> 
-                <option value="0">Falta Pagar</option>
-                <option value="1">Pagado</option>
-            </select>
-            <span class="icon"><i class="fa fa-search"></i></span>
+            <div class="lupaPedido">
+                <div>
+                    <input type="text"   placeholder="Buscar por correo. . ." required id="txtbusca"  name="txtbusca">
+                </div>
+            </div>
+            <div class="selectEstado">
+                <select id="estado" name="estado"> 
+                    <option value="" selected></option> 
+                    <option value="0">Falta Pagar</option>
+                    <option value="1">Pagado</option>
+                </select>
+            </div>
             <input type="submit" value="Buscar">
         </form>
-    </div>
 </div>
 
 <div class="tablaListadoPedidos">
