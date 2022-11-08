@@ -56,5 +56,25 @@
                 header("index.php");
             }
         }
+        //Funcion para editar el estado del pedido
+        public function mostrarDetallePedido(){
+            if(isset($_SESSION["Administrador"])){
+                if(isset($_GET['idPedido'])){
+                    require_once("models/pedido.php"); 
+                    $pedido = new Pedido();
+                    $pedido-> setIdPedido($_GET['idPedido']);
+                    $todosLosPedidos = $pedido->mostrarDetallePedido();
+                    require_once "views/pedido/mostrarDetallePedido.php";
+                }else{
+                    echo "Faltan datos";
+                    require_once("models/pedido.php"); 
+                    $pedido = new Pedido();
+                    $todosLosPedidos = $pedido->mostrarPedidos();
+                    require_once "views/pedido/mostrarPedidos.php";
+                }
+            }else{
+                header("index.php");
+            }
+        }
     }
         

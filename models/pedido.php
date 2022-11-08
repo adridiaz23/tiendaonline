@@ -81,6 +81,13 @@
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
+
+        function mostrarDetallePedido(){
+                $sql = "SELECT * FROM detallepedido WHERE idPedido = '".$this->idPedido."'";
+                $rows = $this->db->query($sql);
+                return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
     }
 
 ?>
