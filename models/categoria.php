@@ -7,10 +7,10 @@
         private $nombre;
 
 
-        /*public function __construct($nombre){
+        public function __construct($nombre){
                 parent::__construct(); //llamar contructor padre para no sobreescribir y conectarme a la base de datos db
                 $this->nombre = $nombre;
-        }*/
+        }
         public function getIdCategoria(){
                 return $this->idCategoria;
         }

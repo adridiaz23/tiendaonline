@@ -15,6 +15,7 @@
                 foreach($lista[0] as $clave1 => $valor1){
                     echo "<th class='thAdmin'>".$clave1."</th>";
                 }
+            //}
             echo "<th class='thAdmin'>Editar</th>";
             echo "<th class='thAdmin'>Editar Imagen</th>";
             echo "<th class='thAdmin'>Eliminar</th>";
@@ -26,9 +27,9 @@
                         echo "<td class='tdAdmin'><img class='imagenAdmin' src='".$valor1."' ></td>";
                     }elseif($clave1 == 'destacado'){
                         if($valor1 == 0){
-                            echo "<td class='tdAdmin'><a href='index.php?controller=Producto&action=editarDestacado&isbn=".$valor->ISBN."&destacado=1'><img src='views/css/assets/imagenes/destacadoNo.png' /></a></td>";
+                            echo "<td class='tdAdmin'><a href='index.php?controller=Producto&action=editarDestacado&isbn=".$valor->ISBN."&destacado=1'><img src='views/producto/imagenes/destacadoNo.png' /></a></td>";
                         }else{
-                            echo "<td class='tdAdmin'><a href='index.php?controller=Producto&action=editarDestacado&isbn=".$valor->ISBN."&destacado=0'><img src='views/css/assets/imagenes/destacadoSi.png' /></a></td>";
+                            echo "<td class='tdAdmin'><a href='index.php?controller=Producto&action=editarDestacado&isbn=".$valor->ISBN."&destacado=0'><img src='views/producto/imagenes/destacadoSi.png' /></a></td>";
                         }
                     }
                     else{
