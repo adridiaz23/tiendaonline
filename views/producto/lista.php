@@ -41,11 +41,11 @@
                 }
                 echo "<td class='tdAdmin'><a href='index.php?controller=Producto&action=editar&isbn=".$valor->ISBN."'><img src='views/css/assets/imagenes/editarproducto.png' /></a></td>";
                 echo "<td class='tdAdmin'><a href='index.php?controller=Producto&action=editarImagen&isbn=".$valor->ISBN."'><img src='views/css/assets/imagenes/editarimagen.png' /></a></td>";
-                echo "<td class='tdAdmin'><a href='index.php?controller=Producto&action=activar&isbn=".$valor->ISBN."'>";
+                echo "<td class='tdAdmin'><a class='enlaceActivado' href='index.php?controller=Producto&action=activar&isbn=".$valor->ISBN."'>";
                 if($valor->estado == 0){
-                    echo "<img src='views/css/assets/imagenes/desactivado.png' />";
+                    echo "<img class='activado' src='views/css/assets/imagenes/desactivado.png' />";
                 }else{
-                    echo "<img src='views/css/assets/imagenes/activado.png' />";
+                    echo "<img class='activado' src='views/css/assets/imagenes/activado.png' />";
                 }
                 echo "</a></td>";
                 echo "</tr>";
