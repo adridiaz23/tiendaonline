@@ -4,15 +4,15 @@
                 <div>
                     <input type="text"   placeholder="Buscar por correo. . ." required id="txtbusca"  name="txtbusca">
                 </div>
-            </div>
-            <div class="selectEstado">
+          
                 <select id="estado" name="estado"> 
                     <option value="" selected></option> 
                     <option value="0">Falta Pagar</option>
                     <option value="1">Pagado</option>
                 </select>
+                
+                <input type="submit" value="Buscar"  >
             </div>
-            <input type="submit" value="Buscar">
         </form>
 </div>
 
