@@ -47,7 +47,7 @@
                     }
                 }else{
                     require_once "models/categoria.php";
-                    $categoria = New Categoria();
+                    $categoria = New Categoria("");
                     $listaCategorias = $categoria->mostrarCategorias();
                     require_once "views/producto/registro.php";
                 }
