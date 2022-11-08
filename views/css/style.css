@@ -305,24 +305,24 @@ a{
     padding: 10px;
 }
 
-div.botonRegistro > a.enlaceRegistro{
+div.botonAdmin > a.enlaceAdmin{
     text-decoration: none;
-    color: blue;
+    color: #2099FF;
     text-align: center;
     font-weight: 600;
 }
 
-div.botonRegistro{
+div.botonAdmin{
     margin: 10px;
     margin-left: 200px;
     text-align: center;
     width: 200px;
 }
 
-div.botonRegistro > a.enlaceRegistro:hover{
+div.botonAdmin > a.enlaceAdmin:hover{
     text-decoration: underline;
     color: black;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-align: center;
     
 }
