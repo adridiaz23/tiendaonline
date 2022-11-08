@@ -10,8 +10,9 @@
 
                 <label for="password">Contraseña:</label>
                 <input type="password" placeholder="Password" name="password" id="password">
-
-                <input type="submit" value="Iniciar sesión">
+                <div class="buttonSubmit">
+                    <input type="submit" value="Iniciar sesión" class="rainbowButton" >
+                </div>
             </form>
         </div>
     </div>
