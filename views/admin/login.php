@@ -38,6 +38,12 @@
 
 <!--Content starts-->
 <div class="content flex">
-  <h1>Libros L++</h1>
+    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+    <lord-icon
+        src="https://cdn.lordicon.com/wxnxiano.json"
+        trigger="morph"
+        colors="primary:#242424,secondary:#1663c7"
+        style="width:250px;height:150px">
+    </lord-icon>
 </div>
 <!--Content ends-->

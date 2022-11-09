@@ -144,7 +144,7 @@ a{
     }
   
     .rainbowButton:hover {
-        background-image: linear-gradient(60deg, rgb(110, 91, 187) 0%, rgba(0,172,193,1) 100%);
+        background: linear-gradient(80deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
 
     }
    

@@ -11,7 +11,16 @@
     <?php
         
         echo "<div class='menuAdmin'>";
-            echo "<div class='menu1'>HOLA MENU</div>";
+            echo "<div class='menu1'>
+                        <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
+                        <lord-icon
+                            src='https://cdn.lordicon.com/wxnxiano.json'
+                            trigger='morph'
+                            colors='primary:#ffffff,secondary:#1663c7'
+                            style='width:250px;height:50px'>
+                        </lord-icon>
+                  </div>";
+
             echo "<div class='menu2'><a href= 'index.php?controller=Pedido&action=mostrarPedidos' class='enlaceMenuAdmin'>Pedidos</a></div>";
             echo "<div class='menu3'><a href= 'index.php?controller=Producto&action=listado' class='enlaceMenuAdmin'>Productos</a></div>";
             echo "<div class='menu4'><a href= 'index.php?controller=Categoria&action=mostrarCategorias' class='enlaceMenuAdmin'>Categorias</a></div>";

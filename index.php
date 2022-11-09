@@ -45,5 +45,17 @@ session_start();
         }
         require_once "views/general/pie.html";
         ?>
+        <div class="icon">
+            <lord-icon trigger="loop" class="editor-preview"></lord-icon>
+            
+                <img id="icon-image" alt="" src="views/css/assets/imagenes/activado.png">
+            
+            <lord-icon-switch id="preview-theme" class="theme small"></lord-icon-switch>
+            <div class="controls">
+                <lord-icon-pictogram id="play" icon="pause"></lord-icon-pictogram>
+                <lord-icon-slider id="progress" fill="" class="slim"></lord-icon-slider>
+            </div>
+        </div>
+        <p>goka</p>
     </body>
 </html>
