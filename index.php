@@ -20,15 +20,19 @@ session_start();
         //require_once "views/general/cabecera.html";
         
         if(isset($_SESSION["Administrador"])){
+            require_once "views/general/menuAdmin.php";
+        }/*else if(isset($_GET['controller']) && isset($_GET['action']) && $_GET['action'] != "validarCliente" && $_GET['action'] != "login"){
+            $categoria = new Categoria("");
+            $catagoriasMenun = $categoria->
             require_once "views/general/menu.php";
-        }
+        }*/
 
         if (isset($_GET['controller'])){
             $nombreController = $_GET['controller']."Controller";
         }
         else{
             //Controlador per dedecte
-            $nombreController = "AdminController";
+            $nombreController = "ClienteController";
         }
         if (class_exists($nombreController)){
             $controlador = new $nombreController(); 
@@ -45,17 +49,6 @@ session_start();
         }
         require_once "views/general/pie.html";
         ?>
-        <div class="icon">
-            <lord-icon trigger="loop" class="editor-preview"></lord-icon>
-            
-                <img id="icon-image" alt="" src="views/css/assets/imagenes/activado.png">
-            
-            <lord-icon-switch id="preview-theme" class="theme small"></lord-icon-switch>
-            <div class="controls">
-                <lord-icon-pictogram id="play" icon="pause"></lord-icon-pictogram>
-                <lord-icon-slider id="progress" fill="" class="slim"></lord-icon-slider>
-            </div>
-        </div>
-        <p>goka</p>
+       
     </body>
 </html>

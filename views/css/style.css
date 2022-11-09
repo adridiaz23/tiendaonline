@@ -63,6 +63,7 @@ a{
     margin-bottom:-7px; /*Fix for safari gap*/
     min-height:100px;
     max-height:150px;
+    margin-top: 20px;
     }
 
     .content {
@@ -115,7 +116,7 @@ a{
         box-shadow: 0 0 40px rgba(8,7,16,0.6);
         padding: 50px 35px;
     }
-    .fromLoginAdmin form *{
+    .fromLoginAdmin, .fromRegistroCliente form *{
         color: #ffffff;
         letter-spacing: 0.5px;
         outline: none;
@@ -149,7 +150,7 @@ a{
     }
    
     .buttonSubmit{
-        height: 160px;
+        height: 100px;
         width: 100%;
         max-width: 200px;
         margin: 0 auto;
@@ -158,7 +159,42 @@ a{
         justify-content: center;
         align-items: center;
     }
-      
+    
+
+    .fromRegistroCliente form{
+        height: 55%;
+        width: 400px;
+        background-color: rgba(255,255,255,0.13);
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 34%;
+        left: 50%;
+        border-radius: 10px;
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        padding-top: 15px;
+        padding: 50px 35px;
+        
+    }
+    .fromRegistroCliente label{
+        display: block;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .fromRegistroCliente input{
+        display: block;
+        height: 35px;
+        width: 100%;
+        background-color: rgba(255,255,255,0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 3px;
+        font-size: 14px;
+        font-weight: 300;
+    }
+    
+
 /* Final de CSS Pagina de loggin */
 
 /*

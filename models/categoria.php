@@ -30,24 +30,27 @@
         }
 
        
-     
-
         public function crearCategoria(){
           
             $sql = "INSERT INTO categoria (idCategoria,nombre) VALUES (NULL,'".$this->nombre."')";
             //print($sql);
             $this->db->query($sql);
-            return $sql;
-
-                
-
+            return $sql;  
         }
-        function  mostrarCategorias(){   
-                // Consulta
-                $sql = "SELECT * FROM categoria";
+
+        public function mostrarCategorias(){   
+            // Consulta
+            $sql = "SELECT * FROM categoria";
+            $rows = $this->db->query($sql);
+            return  $rows;
+        }
+
+        //FUNCION PARA PARA LISTAR 5 CATEGORIAS CON MAS LIBROS PARA EL MENU
+        /*public function  categoriasMenu(){
+                $sql = "SELECT categoria.nombre,COUNT(*) FROM `producto` INNER JOIN `categoria` ON categoria.idCategoria = producto.categoria GROUP by producto.categoria ORDER BY `COUNT(*)` DESC limit 5 ";
                 $rows = $this->db->query($sql);
-                return  $rows;
-            }
+                return $rows->fetchAll(PDO::FETCH_CLASS);
+        }*/
 
         
 }

@@ -85,4 +85,17 @@
                 $this->codigoPostal = $codigoPostal;
                 return $this;
         }
+
+        function validarCliente($nombre, $password){   
+                // Consulta
+                $sql = "SELECT * FROM cliente where nombre='$nombre' and password= '$password'";
+                $rows = $this->db->query($sql);
+                return  $rows->rowCount();
+            }
+        function registrarCliente(){
+                $sql = "SELECT * FROM cliente where correoCliente='' and dni= ''";
+                $rows = $this->db->query($sql);
+                return  $rows->rowCount();
+        }
+        
     }

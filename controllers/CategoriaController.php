@@ -21,7 +21,11 @@ class CategoriaController{
         } else {
             header("index.php");
         }
-}
+    }
+    
+    /*public function categoriasMenu(){
+
+    }*/
 
 
 }
