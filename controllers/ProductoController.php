@@ -70,13 +70,19 @@
         }
 
         //Funcion para eliminar el producto
-        public function eliminar(){
+        public function activar(){
             if(isset($_SESSION['Administrador'])){
                 if(isset($_GET['isbn'])){
                     require_once "models/producto.php";
                     $producto = new Producto();
                     $producto->setIsbn($_GET['isbn']);
-                    $producto->eliminar();
+                    $estado = $producto->obtenerEstado();
+                    if($estado[0]->estado == 0){
+                        $producto->setEstado('1');
+                    }else{
+                        $producto->setEstado('0');
+                    }
+                    $producto->activar();
                     $lista = $producto->listadoProductos();
                     require_once "views/producto/lista.php";
                 }else{
@@ -93,7 +99,7 @@
                 if(isset($_GET['isbn'])){
                     require_once "models/producto.php";
                     require_once "models/categoria.php";
-                    $categoria = New Categoria();
+                    $categoria = New Categoria("");
                     $listaCategorias = $categoria->mostrarCategorias();
                     $producto = new Producto();
                     $producto->setIsbn($_GET['isbn']);
