@@ -380,6 +380,53 @@ td.tdAdmin > a > img{
 }
 
 
-
-
 /*Final del CSS PAgina de Productos Admin*/
+
+/*
+*
+*
+! CSS Pagina de Menu 
+*/
+    .menu {
+        background-color:#4D4D4D;
+        color:#ffffff;
+        display: grid;
+        grid-template-columns: repeat(9, 2fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 30px;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    
+    .menu1 { 
+        grid-area: 1 / 1 / 2 / 2;
+     }
+    .menu2 { 
+        grid-area: 1 / 2 / 2 / 3;
+     }
+    .menu3 { 
+        grid-area: 1 / 3 / 2 / 4;
+     }
+    .menu4 { 
+        grid-area: 1 / 4 / 2 / 5;
+     }
+    .menu5 { 
+        grid-area: 1 / 5 / 2 / 6;
+     }
+    .menu6 { 
+        grid-area: 1 / 6 / 2 / 7;
+     }
+    .menu7 { 
+        grid-area: 1 / 7 / 2 / 8;
+     }
+    .menu8 { 
+        grid-area: 1 / 8 / 2 / 9;
+     }
+     .menu9 { 
+        grid-area: 1 / 9 / 2 / 10;
+     }
+
+/* Final del CSS Pagina del menu*/
