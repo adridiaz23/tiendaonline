@@ -21,11 +21,12 @@ session_start();
         
         if(isset($_SESSION["Administrador"])){
             require_once "views/general/menuAdmin.php";
-        }/*else if(isset($_GET['controller']) && isset($_GET['action']) && $_GET['action'] != "validarCliente" && $_GET['action'] != "login"){
+        }else if(isset($_GET['controller']) && isset($_GET['action']) && $_GET['action'] != "validarCliente" && $_GET['action'] != "login"){
+            require_once("models/categoria.php"); 
             $categoria = new Categoria("");
-            $catagoriasMenun = $categoria->
+            $categorias =  $categoria->categoriasMenu();
             require_once "views/general/menu.php";
-        }*/
+        }
 
         if (isset($_GET['controller'])){
             $nombreController = $_GET['controller']."Controller";

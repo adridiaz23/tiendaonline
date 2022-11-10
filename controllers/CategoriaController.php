@@ -23,9 +23,13 @@ class CategoriaController{
         }
     }
     
-    /*public function categoriasMenu(){
-
-    }*/
+    //Funcion para coger las 5 categorias con mas productos para ponerla en el menu
+    public function categoriasMenu(){
+        require_once("models/categoria.php"); 
+        $categoria = new Categoria("");
+        $categorias =  $categoria->categoriasMenu();
+        require_once "views/categorias/mostrarCategorias.php";
+    }
 
 
 }
