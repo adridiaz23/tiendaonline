@@ -63,7 +63,7 @@ a{
     margin-bottom:-7px; /*Fix for safari gap*/
     min-height:100px;
     max-height:150px;
-    margin-top: 20px;
+    margin-top: 100px;
     }
 
     .content {
@@ -75,22 +75,22 @@ a{
 
     /* Animation */
 
-    .OlasLoginAdmin > use {
+    .OlasLogin > use {
     animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
     }
-    .OlasLoginAdmin > use:nth-child(1) {
+    .OlasLogin > use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
     }
-    .OlasLoginAdmin > use:nth-child(2) {
+    .OlasLogin > use:nth-child(2) {
     animation-delay: -3s;
     animation-duration: 10s;
     }
-    .OlasLoginAdmin > use:nth-child(3) {
+    .OlasLogin > use:nth-child(3) {
     animation-delay: -4s;
     animation-duration: 13s;
     }
-    .OlasLoginAdmin > use:nth-child(4) {
+    .OlasLogin > use:nth-child(4) {
     animation-delay: -5s;
     animation-duration: 20s;
     }
@@ -103,52 +103,18 @@ a{
     }
     }
 
-    .fromLoginAdmin form{
-        height: 320px;
-        width: 400px;
-        background-color: rgba(255,255,255,0.13);
-        position: absolute;
-        transform: translate(-50%,-50%);
-        top: 35%;
-        left: 50%;
-        border-radius: 10px;
-        border: 2px solid rgba(255,255,255,0.1);
-        box-shadow: 0 0 40px rgba(8,7,16,0.6);
-        padding: 50px 35px;
-    }
-    .fromLoginAdmin, .fromRegistroCliente form *{
-        color: #ffffff;
-        letter-spacing: 0.5px;
-        outline: none;
-        border: none;
-    }
-
-    .fromLoginAdmin label{
-        display: block;
-        margin-top: 30px;
-        font-size: 16px;
-        font-weight: 500;
-    }
-    .fromLoginAdmin input{
-        display: block;
-        height: 50px;
-        width: 100%;
-        background-color: rgba(255,255,255,0.07);
-        border-radius: 3px;
-        padding: 0 10px;
-        margin-top: 8px;
-        font-size: 14px;
-        font-weight: 300;
-    }
-    .fromLoginAdmin ::placeholder{
+    .fromGenerico ::placeholder{
         color: #e5e5e5;
     }
-  
-    .rainbowButton:hover {
-        background: linear-gradient(80deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
 
+    input.submit{
+        background-color: rgba(84,58,183,1);
     }
-   
+    
+    .rainbowButton:hover {
+        background-color:  rgba(0,172,193,1);
+    }
+
     .buttonSubmit{
         height: 100px;
         width: 100%;
@@ -160,9 +126,15 @@ a{
         align-items: center;
     }
     
+    .fromGenerico form *{
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+    }
 
-    .fromRegistroCliente form{
-        height: 55%;
+    .fromGenerico form{
+       
         width: 400px;
         background-color: rgba(255,255,255,0.13);
         position: absolute;
@@ -176,13 +148,13 @@ a{
         padding: 50px 35px;
         
     }
-    .fromRegistroCliente label{
+    .fromGenerico label{
         display: block;
         margin-top: 10px;
         font-size: 16px;
         font-weight: 500;
     }
-    .fromRegistroCliente input{
+    .fromGenerico input{
         display: block;
         height: 35px;
         width: 100%;
