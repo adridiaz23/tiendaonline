@@ -17,14 +17,18 @@
                 style='width:250px;height:50px'>
             </lord-icon>
         </div>
-        <div class="menu2"><?php echo $categorias[0]->nombre; ?></div>
-        <div class="menu3"><?php echo $categorias[1]->nombre; ?></div>
-        <div class="menu4"><?php echo $categorias[2]->nombre; ?></div>
-        <div class="menu5"><?php echo $categorias[3]->nombre; ?></div>
-        <div class="menu6"><?php echo $categorias[4]->nombre; ?></div>
-        <div class="menu7">Buscador</div>
-        <div class="menu8">Carrito</div>
-        <div class="menu9">Usuario / Inicia Sesion</div>
+        <div class="menu2">Buscador</div>
+        <div class="menu3">favoritos</div>
+        <div class="menu4">Carrito</div>
+        <div class="menu5">Usuario / Inicia Sesion</div>
+        <div class="menu12"><hr></div>
+        <div class="menu6"><?php echo $categorias[0]->nombre; ?></div>
+        <div class="menu7"><?php echo $categorias[1]->nombre; ?></div>
+        <div class="menu8"><?php echo $categorias[2]->nombre; ?></div>
+        <div class="menu9"><?php echo $categorias[3]->nombre; ?></div>
+        <div class="menu10"><?php echo $categorias[4]->nombre; ?></div>
+        <div class="menu11">Todos</div>
+        
     </div>
 </body>
 </html>

@@ -17,17 +17,20 @@
                 <label for="calle">Calle:</label>
                 <input type="text" placeholder="Calle" name="calle" id="calle" require>
 
-                <label for="calle">Numero calle:</label>
-                <input type="text" placeholder="Calle" name="NumeroCalle" id="NumeroCalle" require>
+                <label for="numeroCalle">Numero calle:</label>
+                <input type="text" placeholder="Numero Calle" name="numeroCalle" id="numeroCalle" require>
 
-                <label for="calle">Dni:</label>
+                <label for="dni">Dni:</label>
                 <input type="text" placeholder="Dni" name="dni" id="dni" require>
 
                 <label for="password">Contraseña:</label>
                 <input type="password" placeholder="Password" name="password" id="password" require>
 
+                <label for="codigo">Codigo Postal:</label>
+                <input type="text" placeholder="Codigo Postal" name="codigo" id="codigo" require>
+
                 <div class="buttonSubmit">
-                    <input type="submit" value="Iniciar sesión" class="rainbowButton" >
+                    <input type="submit" value="Registrarse" class="rainbowButton" >
                     <br>
                     <a href= 'index.php?controller=Cliente&action=login' class='enlaceMenuAdmin'>Login Usuario</a>
                 </div>

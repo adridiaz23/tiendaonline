@@ -21,11 +21,9 @@ session_start();
         
         if(isset($_SESSION["Administrador"])){
             require_once "views/general/menuAdmin.php";
-        }else if(isset($_GET['controller']) && isset($_GET['action']) && $_GET['action'] != "validarCliente" && $_GET['action'] != "login"){
-            require_once("models/categoria.php"); 
-            $categoria = new Categoria("");
-            $categorias =  $categoria->categoriasMenu();
-            require_once "views/general/menu.php";
+        }else if(isset($_GET['controller']) && isset($_GET['action']) && $_GET['action'] != "validarCliente" && $_GET['action'] != "login" && $_GET['action'] != "registrar"){
+            $categorias = new CategoriaController("");
+            $categorias->categoriasMenu();
         }
 
         if (isset($_GET['controller'])){

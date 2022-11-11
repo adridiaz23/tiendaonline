@@ -28,7 +28,7 @@ class CategoriaController{
         require_once("models/categoria.php"); 
         $categoria = new Categoria("");
         $categorias =  $categoria->categoriasMenu();
-        require_once "views/categorias/mostrarCategorias.php";
+        require_once "views/general/header.php";
     }
 
 
