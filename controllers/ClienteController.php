@@ -8,7 +8,7 @@
                 require_once("models/cliente.php"); 
                 $validar = new Cliente();
                 $validar->setCorreoCliente($_POST["correo"]);
-                $validar->setPassword($_POST["password"]);
+                $validar->setPassword(md5($_POST["password"]));
                 $validarRow = $validar->validarCliente();
 
                 if (isset($validarRow[0]->nombre)){
@@ -37,7 +37,7 @@
                 $validar->setCalle($_POST["calle"]);
                 $validar->setNumero($_POST["numeroCalle"]);
                 $validar->setDni($_POST["dni"]);
-                $validar->setPassword($_POST["password"]);
+                $validar->setPassword(md5($_POST["password"]));
                 $validar->setCodigoPostal($_POST["codigo"]);
             
             

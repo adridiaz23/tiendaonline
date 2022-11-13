@@ -488,7 +488,33 @@ td.tdAdmin > a > img{
 *
 */
 
-.container
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.producto1 { 
+    grid-area: 1 / 1 / 2 / 6; 
+}
+.producto2 { 
+    grid-area: 2 / 1 / 3 / 6;
+    background-color: #000000;
+}
+.producto3 {
+    grid-area: 3 / 1 / 4 / 6; 
+}
+.producto4 { 
+    grid-area: 4 / 1 / 6 / 3; 
+    background-color: #000000;
+}
+.producto5 {
+    grid-area: 4 / 3 / 6 / 5; 
+} 
+
+.contenedorProducto
 {
   display: flex;
   justify-content: center;
@@ -497,7 +523,7 @@ td.tdAdmin > a > img{
   padding: 40px 0;
 }
 
-.container .box
+.contenedorProducto .cajaProducto
 {
   position: relative;
   width: 320px;
@@ -509,7 +535,7 @@ td.tdAdmin > a > img{
   transition: 0.5s;
 }
 
-.container .box::before
+.contenedorProducto .cajaProducto::before
 {
   content:' ';
   position: absolute;
@@ -524,7 +550,7 @@ td.tdAdmin > a > img{
   transition: 0.5s;
 }
 
-.container .box::after
+.contenedorProducto .cajaProducto::after
 {
   content:'';
   position: absolute;
@@ -539,8 +565,8 @@ td.tdAdmin > a > img{
   filter: blur(30px);
 }
 
-.container .box:hover:before,
-.container .box:hover:after
+.contenedorProducto .cajaProducto:hover:before,
+.contenedorProducto .cajaProducto:hover:after
 {
   transform: skewX(0deg);
   left: 20px;
@@ -548,25 +574,13 @@ td.tdAdmin > a > img{
   
 }
 
-.container .box:nth-child(1):before,
-.container .box:nth-child(1):after
+.contenedorProducto .cajaProducto:before,
+.contenedorProducto .cajaProducto:after
 {
-  background: linear-gradient(315deg, #ffbc00, #ff0058)
+    background: linear-gradient(315deg, #03a9f4, #ff0058)
 }
 
-.container .box:nth-child(2):before,
-.container .box:nth-child(2):after
-{
-  background: linear-gradient(315deg, #03a9f4, #ff0058)
-}
-
-.container .box:nth-child(3):before,
-.container .box:nth-child(3):after
-{
-  background: linear-gradient(315deg, #4dff03, #00d0ff)
-}
-
-.container .box span
+.contenedorProducto .cajaProducto span
 {
   display: block;
   position: absolute;
@@ -578,7 +592,7 @@ td.tdAdmin > a > img{
   pointer-events: none;
 }
 
-.container .box span::before
+.contenedorProducto .cajaProducto span::before
 {
   content:'';
   position: absolute;
@@ -595,7 +609,7 @@ td.tdAdmin > a > img{
   box-shadow: 0 5px 15px rgba(0,0,0,0.08)
 }
 
-.container .box:hover span::before
+.contenedorProducto .cajaProducto:hover span::before
 {
   top: -50px;
   left: 50px;
@@ -604,7 +618,7 @@ td.tdAdmin > a > img{
   opacity: 1;
 }
 
-.container .box span::after
+.contenedorProducto .cajaProducto span::after
 {
   content:'';
   position: absolute;
@@ -622,7 +636,7 @@ td.tdAdmin > a > img{
   animation-delay: -1s;
 }
 
-.container .box:hover span:after
+.contenedorProducto .cajaProducto:hover span:after
 {
   bottom: -50px;
   right: 50px;
@@ -644,7 +658,7 @@ td.tdAdmin > a > img{
   }
 }
 
-.container .box .content
+.contenedorProducto .cajaProducto .contenidoProducto
 {
   position: relative;
   left: 0;
@@ -658,27 +672,28 @@ td.tdAdmin > a > img{
   color: #fff;
 }
 
-.container .box:hover .content
+.contenedorProducto .cajaProducto:hover .contenidoProducto
 {
   left: -25px;
   padding: 60px 40px;
 }
 
-.container .box .content h2
+/*Pendiente modificar los enlaces y textos para ser similares en todas las páginas.*/
+.contenedorProducto .cajaProducto .contenidoProducto h2
 {
   font-size: 2em;
   color: #fff;
   margin-bottom: 10px;
 }
 
-.container .box .content p
+.contenedorProducto .cajaProducto .contenidoProducto p
 {
   font-size: 1.1em;
   margin-bottom: 10px;
   line-height: 1.4em;
 }
 
-.container .box .content a
+.contenedorProducto .cajaProducto .contenidoProducto a
 {
   display: inline-block;
   font-size: 1.1em;
@@ -691,9 +706,9 @@ td.tdAdmin > a > img{
   margin-top: 5px;
 }
 
-.container .box .content a:hover
+.contenedorProducto .cajaProducto .contenidoProducto a:hover
 {
-  background: #ffcf4d;
+  background: #2099FF;
   border: 1px solid rgba(255, 0, 88, 0.4);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
