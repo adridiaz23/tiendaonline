@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2022 a las 14:08:37
+-- Tiempo de generación: 14-11-2022 a las 14:16:08
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`nombre`, `password`) VALUES
-('admin', 'admin');
+('admin', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -49,19 +49,20 @@ INSERT INTO `admin` (`nombre`, `password`) VALUES
 
 CREATE TABLE `categoria` (
   `idCategoria` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL
+  `nombre` varchar(30) NOT NULL,
+  `estado` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `categoria` (`idCategoria`, `nombre`) VALUES
-(1, 'JavaScript'),
-(2, 'C'),
-(3, 'C++'),
-(4, 'PHP'),
-(6, 'CSS');
+INSERT INTO `categoria` (`idCategoria`, `nombre`, `estado`) VALUES
+(1, 'JavaScript', 0),
+(2, 'C', 0),
+(3, 'C++', 0),
+(4, 'PHP', 0),
+(6, 'CSS', 0);
 
 -- --------------------------------------------------------
 
@@ -77,21 +78,22 @@ CREATE TABLE `cliente` (
   `numero` int(10) NOT NULL,
   `dni` varchar(9) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `codigoPostal` varchar(5) NOT NULL
+  `codigoPostal` varchar(5) NOT NULL,
+  `estado` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`nombre`, `apellido`, `correoCliente`, `calle`, `numero`, `dni`, `password`, `codigoPostal`) VALUES
-('adri', 'diaz', 'adri@gmail.com', '1', 1, '222222222', 'c4ca4238a0b923820dcc509a6f75849b', '1'),
-('albert', 'diaz', 'albert@gmail.com', '1', 1, '666666666', 'c4ca4238a0b923820dcc509a6f75849b', '1'),
-('alejandro', 'moreno', 'alejandro@gmail.com', '1', 1, '555555555', 'c4ca4238a0b923820dcc509a6f75849b', '1'),
-('david', 'raigoza', 'david@gmail.com', '1', 1, '333333333', 'c4ca4238a0b923820dcc509a6f75849b', '1'),
-('guille', 'navarro', 'guille@gmail.com', '1', 1, '777777777', 'c4ca4238a0b923820dcc509a6f75849b', '1'),
-('pau', 'raigoza', 'pau@gmail.com', '1', 1, '444444444', 'c4ca4238a0b923820dcc509a6f75849b', '1'),
-('victor', 'lopez', 'victor@gmail.com', '1', 1, '111111111', 'c4ca4238a0b923820dcc509a6f75849b', '1');
+INSERT INTO `cliente` (`nombre`, `apellido`, `correoCliente`, `calle`, `numero`, `dni`, `password`, `codigoPostal`, `estado`) VALUES
+('adri', 'diaz', 'adri@gmail.com', '1', 1, '222222222', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
+('albert', 'diaz', 'albert@gmail.com', '1', 1, '666666666', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
+('alejandro', 'moreno', 'alejandro@gmail.com', '1', 1, '555555555', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
+('david', 'raigoza', 'david@gmail.com', '1', 1, '333333333', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
+('guille', 'navarro', 'guille@gmail.com', '1', 1, '777777777', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
+('pau', 'raigoza', 'pau@gmail.com', '1', 1, '444444444', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
+('victor', 'lopez', 'victor@gmail.com', '1', 1, '111111111', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0);
 
 -- --------------------------------------------------------
 
