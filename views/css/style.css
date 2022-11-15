@@ -577,7 +577,7 @@ td.tdAdmin > a > img{
 .contenedorProducto .cajaProducto:before,
 .contenedorProducto .cajaProducto:after
 {
-    background: linear-gradient(315deg, #03a9f4, #ff0058)
+    background: linear-gradient(315deg, rgba(84,58,183,1), rgba(0,172,193,1))
 }
 
 .contenedorProducto .cajaProducto span
@@ -672,6 +672,8 @@ td.tdAdmin > a > img{
   color: #fff;
 }
 
+
+
 .contenedorProducto .cajaProducto:hover .contenidoProducto
 {
   left: -25px;
@@ -681,10 +683,12 @@ td.tdAdmin > a > img{
 /*Pendiente modificar los enlaces y textos para ser similares en todas las páginas.*/
 .contenedorProducto .cajaProducto .contenidoProducto h2
 {
+  text-align: center;
   font-size: 2em;
   color: #fff;
   margin-bottom: 10px;
 }
+
 
 .contenedorProducto .cajaProducto .contenidoProducto p
 {
@@ -712,3 +716,11 @@ td.tdAdmin > a > img{
   border: 1px solid rgba(255, 0, 88, 0.4);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
+
+.imagenHome{
+    width: 280px;
+    margin-right: 100px;
+    border-radius: 5%;
+    
+}
+

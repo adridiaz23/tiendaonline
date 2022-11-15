@@ -65,7 +65,11 @@
         }
 
         public function home(){
+            require_once "models/producto.php";
+            $producto =  new Producto();
+            $lista = $producto->listadoProductosDestacados();
             require_once "views/cliente/home.php";
+           
         }
 
     }

@@ -92,6 +92,7 @@
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
             }
+
         function registrarCliente(){
                 $sql = "SELECT * FROM cliente where correoCliente='".$this->correoCliente."' and dni= '".$this->dni."'";
                 $rows = $this->db->query($sql);
@@ -105,7 +106,9 @@
                 else{
                         return  $rows->rowCount();
                 }
-               
         }
+
+      
+
         
     }

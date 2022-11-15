@@ -21,7 +21,7 @@ session_start();
         
         if(isset($_SESSION["Administrador"])){
             require_once "views/general/menuAdmin.php";
-        }else if(isset($_GET['controller']) && isset($_GET['action']) && $_GET['action'] != "validarCliente" && $_GET['action'] != "login" && $_GET['action'] != "registrar"){
+        }else if(/*isset($_GET['controller']) && isset($_GET['action']) && */$_GET['action'] != "validarCliente" && $_GET['action'] != "login" && $_GET['action'] != "registrar"){
             $categorias = new CategoriaController("");
             $categorias->categoriasMenu();
         }
@@ -39,7 +39,7 @@ session_start();
                 $action = $_GET['action'];
             }
             else{
-                $action ="login";
+                $action ="home";
             }
             $controlador->$action();   
         }else{

@@ -203,7 +203,20 @@
             $this->db->query($sql);
         }
 
-         
-        
+        //Funcion para enlistar los productos destacados
+        function listadoProductosDestacados(){
+                
+            $sql = "SELECT producto.*,COUNT(*) FROM `producto` INNER JOIN `detallepedido` on `detallepedido`.`ISBN`=`producto`.`ISBN` GROUP BY `producto`.`ISBN` ORDER BY COUNT(*) DESC LIMIT 5";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+
+        }
+
+        //Funcion para enlistar los productos de un carrito
+        public function listadoCarrito($listaIsbn){
+            $sql = "SELECT * FROM producto WHERE ISBN in (".implode(",",$listaIsbn).")";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
 }
 ?>
