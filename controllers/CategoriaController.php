@@ -22,6 +22,14 @@ class CategoriaController{
             header("index.php");
         }
     }
+
+    public function productosDeCate(){
+        $categoria = new Categoria("");
+        $categoria->setIdCategoria($_GET['idCategoria']);
+        $productosDeCate = $categoria->productosDeCate();
+        require_once("views/categorias/productosDeCate.php");    
+
+     } 
     
     /*public function categoriasMenu(){
 

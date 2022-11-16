@@ -15,8 +15,8 @@
                 return $this->idCategoria;
         }
        
-        public function setIdCategoria($idCategoria){
-                $this->idCategoria = $idCategoria;
+        public function setIdCategoria($IdCategoria){
+                $this->IdCategoria = $IdCategoria;
                 return $this;
         }
 
@@ -45,7 +45,14 @@
             return  $rows;
         }
 
-        //FUNCION PARA PARA LISTAR 5 CATEGORIAS CON MAS LIBROS PARA EL MENU
+        public function productosDeCate(){
+             // Consulta
+            $sql = "SELECT * FROM producto WHERE categoria = '".$this->IdCategoria."'";
+            $rows = $this->db->query($sql);
+            return  $rows->fetchAll(PDO::FETCH_CLASS);
+
+        }
+        //FUNCION PARA PARA LISTAR 5 CATEGORIAS CON MAS LIBROS PARA EL sMENU
         /*public function  categoriasMenu(){
                 $sql = "SELECT categoria.nombre,COUNT(*) FROM `producto` INNER JOIN `categoria` ON categoria.idCategoria = producto.categoria GROUP by producto.categoria ORDER BY `COUNT(*)` DESC limit 5 ";
                 $rows = $this->db->query($sql);
