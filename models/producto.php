@@ -214,9 +214,14 @@
 
         //Funcion para enlistar los productos de un carrito
         public function listadoCarrito($listaIsbn){
-            $sql = "SELECT * FROM producto WHERE ISBN in (".implode(",",$listaIsbn).")";
+            if(count($listaIsbn) == 1){
+                $sql = "SELECT * FROM producto WHERE ISBN = $listaIsbn[0]";
+            }else{
+                $sql = "SELECT * FROM producto WHERE ISBN in (".implode(",",$listaIsbn).")";
+            }
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
+            //return $sql;
         }
 }
 ?>

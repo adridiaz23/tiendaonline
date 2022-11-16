@@ -45,11 +45,13 @@
 
         public static function listarCarrito(){
             require_once "models/producto.php";
-            foreach($_SESSION['carrito'] as $clave => $valor){
-                $listaIsbn[] = $clave;
+            if(isset($_SESSION['carrito'])){
+                foreach($_SESSION['carrito'] as $clave => $valor){
+                    $listaIsbn[] = $clave;
+                }
+                $producto = new Producto();
+                $listadoCarrito = $producto->listadoCarrito($listaIsbn);
             }
-            $producto = new Producto();
-            $listadoCarrito = $producto->listadoCarrito($listaIsbn);
             require_once "views/producto/carrito.php";
         }
 
