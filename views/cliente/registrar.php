@@ -26,6 +26,7 @@
 
                     <label for="password">Contraseña:</label>
                     <input type="password" placeholder="Password" name="password" id="password" require>
+                    
 
                     <label for="codigo">Codigo Postal:</label>
                     <input type="text" placeholder="Codigo Postal" name="codigo" id="codigo" require>

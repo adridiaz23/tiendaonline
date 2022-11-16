@@ -10,6 +10,16 @@
 
                 <label for="password">Contraseña:</label>
                 <input type="password" placeholder="Password" name="password" id="password">
+               
+                <button class="botonMostrar " type="button" onclick="mostrarContrasena()"> 
+                    <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/tyounuzx.json"
+                        trigger="hover"
+                        colors="primary:#121331,secondary:#1663c7"
+                        style="width:50px;height:50px">
+                    </lord-icon>
+                </button>
                 
                 <div class="buttonSubmit">
                     <input type="submit" value="Iniciar sesión" class="rainbowButton" >
