@@ -9,10 +9,14 @@
                 require_once("models/admin.php"); 
                 $validar = new Admin();
                
-                if ($validar->validar($_POST["nombre"], $_POST["password"])==1){
+                if ($validar->validar($_POST["nombre"], md5($_POST["password"]))==1){
+
                     $_SESSION["Administrador"] = $_POST["nombre"];
                     header('Location:index.php?controller=Admin&action=home'); 
+
+
                 }else{
+
                     echo "<h1> Nombre o contraseña incorrectos </h1>";
                     require_once ("views/admin/login.php");
                 }

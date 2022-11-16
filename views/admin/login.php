@@ -1,7 +1,7 @@
 <div class="header">
 <!--Contenido antes de las olas-->
     <div class="inner-header flex">
-         <div class="fromLoginAdmin">
+         <div class="fromGenerico">
             <!-- Creamos el formulario donde su action será pasar los datos al model/loginAdmin y su función validar -->
             <form action="index.php?controller=Admin&action=validar" method="POST">
                     
@@ -10,6 +10,7 @@
 
                 <label for="password">Contraseña:</label>
                 <input type="password" placeholder="Password" name="password" id="password">
+                
                 <div class="buttonSubmit">
                     <input type="submit" value="Iniciar sesión" class="rainbowButton" >
                 </div>
@@ -24,7 +25,7 @@
 
         <defs> <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /> </defs>
 
-        <g class="OlasLoginAdmin">
+        <g class="OlasLogin">
             <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
             <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
             <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />

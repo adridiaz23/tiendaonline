@@ -86,16 +86,29 @@
                 return $this;
         }
 
-        function validarCliente($nombre, $password){   
+        function validarCliente(){   
                 // Consulta
-                $sql = "SELECT * FROM cliente where nombre='$nombre' and password= '$password'";
+                $sql = "SELECT * FROM cliente where correoCliente='".$this->correoCliente."' and password= '".$this->password."'";
                 $rows = $this->db->query($sql);
-                return  $rows->rowCount();
+                return $rows->fetchAll(PDO::FETCH_CLASS);
             }
+
         function registrarCliente(){
-                $sql = "SELECT * FROM cliente where correoCliente='' and dni= ''";
+                $sql = "SELECT * FROM cliente where correoCliente='".$this->correoCliente."' and dni= '".$this->dni."'";
                 $rows = $this->db->query($sql);
-                return  $rows->rowCount();
+                //contar las filas.
+                
+                if ($rows->rowCount() == 0){
+                        $sql1= "INSERT INTO cliente (nombre, apellido, correoCliente, calle, numero, dni, password, codigoPostal) VALUES ('".$this->nombre."','".$this->apellido."','".$this->correoCliente."','".$this->calle."','".$this->numero."','".$this->dni."','".$this->password."','".$this->codigoPostal."')";
+                        $rows1 = $this->db->query($sql1);
+                        return  $rows1->rowCount();
+                }
+                else{
+                        return  $rows->rowCount();
+                }
         }
+
+      
+
         
     }

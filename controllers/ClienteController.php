@@ -4,15 +4,18 @@
         
         public function validarCliente(){
             // Mientras no se pasen los datos del formulario mostraremos el else
-            if (isset($_POST["nombre"]) && isset($_POST["password"])) {
-
+            if (isset($_POST["correo"]) && isset($_POST["password"])) {
                 require_once("models/cliente.php"); 
                 $validar = new Cliente();
-               
-                if ($validar->validarCliente($_POST["nombre"], $_POST["password"])==1){
+                $validar->setCorreoCliente($_POST["correo"]);
+                $validar->setPassword(md5($_POST["password"]));
+                $validarRow = $validar->validarCliente();
+
+                if (isset($validarRow[0]->nombre)){
                     $_SESSION["Cliente"] = $_POST["nombre"];
                     header('Location:index.php?controller=Cliente&action=home'); 
                 }else{
+                    
                     echo "<h1> Nombre o contraseña incorrectos </h1>";
                     require_once ("views/cliente/login.php");
                 }
@@ -24,16 +27,27 @@
 
         public function registrarCliente(){
             // Mientras no se pasen los datos del formulario mostraremos el else
-            if (isset($_POST["nombre"]) && isset($_POST["password"])) {
-
+            if (isset($_POST["correo"]) && isset($_POST["password"])) {
                 require_once("models/cliente.php"); 
                 $validar = new Cliente();
-               
-                if ($validar->registrarCliente($_POST["nombre"], $_POST["password"])==1){
-                    $_SESSION["Cliente"] = $_POST["nombre"];
+
+                $validar->setNombre($_POST["nombre"]);
+                $validar->setApellido($_POST["apellido"]);
+                $validar->setCorreoCliente($_POST["correo"]);
+                $validar->setCalle($_POST["calle"]);
+                $validar->setNumero($_POST["numeroCalle"]);
+                $validar->setDni($_POST["dni"]);
+                $validar->setPassword(md5($_POST["password"]));
+                $validar->setCodigoPostal($_POST["codigo"]);
+            
+            
+                if ( $validar->registrarCliente()==1){
+
+                    $_SESSION["Cliente"] = $_POST["Correo"];
                     header('Location:index.php?controller=Cliente&action=home'); 
+
                 }else{
-                    echo "<h1> Nombre o contraseña incorrectos </h1>";
+                    echo "<h1>Correo ya registrado</h1>";
                     require_once ("views/cliente/registrar.php");
                 }
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
@@ -51,7 +65,11 @@
         }
 
         public function home(){
+            require_once "models/producto.php";
+            $producto =  new Producto();
+            $lista = $producto->listadoProductosDestacados();
             require_once "views/cliente/home.php";
+           
         }
 
     }
