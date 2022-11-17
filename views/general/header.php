@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
     <div class="menu">
         <div class="menu1"><a href='index.php'>
@@ -20,7 +12,17 @@
         <div class="menu2">Buscador</div>
         <div class="menu3">favoritos</div>
         <div class="menu4"><a href='index.php?controller=Base&action=listarCarrito'>Carrito</a></div>
-        <div class="menu5">Usuario / Inicia Sesion</div>
+        <?php
+        if(isset($_SESSION["Cliente"])){
+            ?>
+            <div class="menu5"> <?php echo $_SESSION["Cliente"]; ?> / <a href='index.php?controller=Base&action=salir'>Salir</a> </div>
+            <?php
+        }else{
+            ?>
+            <div class="menu5"><a href='index.php?controller=Cliente&action=login'> Inicia Sesion</a> </div>
+            <?php
+        }
+        ?>
         <div class="menu12"><hr></div>
         <div class="menu6"><?php echo $categorias[0]->nombre; ?></div>
         <div class="menu7"><?php echo $categorias[1]->nombre; ?></div>
@@ -31,4 +33,3 @@
         
     </div>
 </body>
-</html>

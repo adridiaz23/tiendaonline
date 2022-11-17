@@ -688,11 +688,14 @@ td.tdAdmin > a > img{
 }
 
 /*Pendiente modificar los enlaces y textos para ser similares en todas las páginas.*/
+
+
+
+
 .contenedorProducto .cajaProducto .contenidoProducto h2
 {
   text-align: center;
   font-size: 2em;
-  color: #fff;
   margin-bottom: 10px;
 }
 
@@ -730,7 +733,9 @@ td.tdAdmin > a > img{
     border-radius: 5%;
     
 }
-
+.contenidoImpares{
+    color:black;
+}
 
 /*
 *
@@ -738,25 +743,110 @@ td.tdAdmin > a > img{
 !CSS Pagina del Carrito
 */
 
+.containerCarrito{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.containerProductos{
+    width: 50%;
+}
+
 .productoCarrito {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    margin: 25px auto 0px auto;
+    padding-bottom: 25px;
+    border-bottom: #2099FF solid 1px;
+}
+
+.productoCarrito > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+img.imagenCarrito{
+    width: 50%;
 }
     
 .div1Carrito { 
-    grid-area: 1 / 1 / 4 / 2;
+    /*grid-area: 1 / 1 / 4 / 2;*/
+    grid-column: 1;
+    grid-row: 1;
  }
 .div2Carrito { 
-   grid-area: 1 / 2 / 2 / 3;
+   /*grid-area: 1 / 2 / 2 / 3;*/
+   grid-column: 2;
+    grid-row: 1;
 }
 .div3Carrito { 
-   grid-area: 1 / 3 / 4 / 4;
+   /*grid-area: 1 / 3 / 4 / 4;*/
+    grid-column: 3;
+    grid-row: 1;
 }
 .div4Carrito { 
-   grid-area: 1 / 4 / 4 / 5;
+   /*grid-area: 1 / 4 / 4 / 5;*/
+    grid-column: 4;
+    grid-row: 1;
+}
+.div5Carrito {
+     grid-column: 5;
+     grid-row: 1;
+ }
+ .div6Carrito {
+     grid-column: 6;
+     grid-row: 1;
+ }
+
+div.cantidadCarrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100px;
+    border-radius: 25px;
 }
 
+div.cantidadCarrito > *{
+    margin: 5%;
+}
+
+div.eliminarCarrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 25px;
+    border-radius: 50%;
+}
+
+div.eliminarCarrito > *{
+    margin: 5%;
+}
+
+.formCarrito > .button{
+    font-size: large;
+    background-color: transparent;
+    border: none;
+}
+
+.formCarrito > .button:hover{
+    cursor: pointer;
+}
+
+
+
 /*Final del CSS Pagina del carrito*/
+
+/*Estilos pie de pagina*/
+
+
+/*Fin estilos pie de pagina*/

@@ -13,7 +13,7 @@
 
                 if (isset($validarRow[0]->nombre)){
                     //Una vez validado se genera la session del cliente
-                    $_SESSION["Cliente"] = $_POST["nombre"];
+                    $_SESSION["Cliente"] =$validarRow[0]->nombre;
                     header('Location:index.php?controller=Cliente&action=home'); 
                 }else{
                     echo "<h1> Nombre o contraseña incorrectos </h1>";
@@ -43,7 +43,7 @@
             
                 if ( $validar->registrarCliente()==1){
 
-                    $_SESSION["Cliente"] = $_POST["Correo"];
+                    $_SESSION["Cliente"] = $_POST["nombre"];
                     header('Location:index.php?controller=Cliente&action=home'); 
 
                 }else{

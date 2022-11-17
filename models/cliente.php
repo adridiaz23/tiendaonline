@@ -85,7 +85,7 @@
                 $this->codigoPostal = $codigoPostal;
                 return $this;
         }
-
+        //Validar el inicio de sesion del cliente.
         function validarCliente(){   
                 // Consulta
                 $sql = "SELECT * FROM cliente where correoCliente='".$this->correoCliente."' and password= '".$this->password."'";
@@ -93,11 +93,12 @@
                 return $rows->fetchAll(PDO::FETCH_CLASS);
             }
 
+        //Registro de clientes.
         function registrarCliente(){
+                 //Controlar que el cliente no este repetido
                 $sql = "SELECT * FROM cliente where correoCliente='".$this->correoCliente."' and dni= '".$this->dni."'";
                 $rows = $this->db->query($sql);
-                //contar las filas.
-                
+                //Si no lo esta ejecutamos esta parte
                 if ($rows->rowCount() == 0){
                         $sql1= "INSERT INTO cliente (nombre, apellido, correoCliente, calle, numero, dni, password, codigoPostal) VALUES ('".$this->nombre."','".$this->apellido."','".$this->correoCliente."','".$this->calle."','".$this->numero."','".$this->dni."','".$this->password."','".$this->codigoPostal."')";
                         $rows1 = $this->db->query($sql1);

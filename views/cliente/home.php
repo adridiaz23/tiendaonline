@@ -13,8 +13,17 @@
         <span></span>
         <div class="contenidoProducto">
           <?php
-            echo "<h2>$valor->nombre</h2>";
-            echo "<p>$valor->descripcion</p>";
+          //Recotar el string 
+          $descripcionCorta = substr($valor->descripcion, 0, 40)." ...";
+          //Cambiar la clase dependiendo si es par o impar el div.
+          if($i%2==0){
+            echo "<h2 class= 'contenidoPares'>$valor->nombre</h2>";
+            echo "<p>$descripcionCorta</p>";
+          }else{
+            echo "<h2  class= 'contenidoImpares'>$valor->nombre</h2>";
+            echo "<p class= 'contenidoImpares'>$descripcionCorta</p>";
+            
+          }
             echo "<a href='#'>Más información</a>";
             echo "<a href='index.php?controller=Base&action=añadirCarrito&isbn=".$valor->ISBN."&cantidad=1'>Añadir al carrito</a>";
           ?>
