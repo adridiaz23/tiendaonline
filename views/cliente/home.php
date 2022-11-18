@@ -24,7 +24,7 @@
             echo "<p class= 'contenidoImpares'>$descripcionCorta</p>";
             
           }
-            echo "<a href='#'>Más información</a>";
+            echo "<a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'>Más información</a>";
             echo "<a href='index.php?controller=Base&action=añadirCarrito&isbn=".$valor->ISBN."&cantidad=1'>Añadir al carrito</a>";
           ?>
         </div>

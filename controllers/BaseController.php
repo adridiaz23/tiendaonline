@@ -64,7 +64,19 @@
                 }else if(array_key_exists('button3', $_POST)) {
                     unset($_SESSION['carrito'][$_POST['isbn']]);
                     //header('Location:index.php?controller=Base&action=listarCarrito');
+                }else if(array_key_exists('button4', $_POST)) {
+                    BaseController::vaciarCarrito();
+                    //unset($_SESSION['carrito'][$_POST['isbn']]);
+                    header('Location:index.php?controller=Base&action=listarCarrito');
                 }
+
+                /*Calcular Subtotal SIN IVA*/
+                $total = 0;
+                foreach ($listadoCarrito as $clave => $valor) {
+                    $total += $valor->precio*$_SESSION['carrito'][$valor->ISBN]['cantidad'];
+                }
+                $subtotal = $total-($total*0.04);
+                $iva = $total*0.04;
             }
             require_once "views/producto/carrito.php";
         }

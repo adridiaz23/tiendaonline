@@ -11,7 +11,23 @@
         </a></div>
         <div class="menu2">Buscador</div>
         <div class="menu3">favoritos</div>
-        <div class="menu4"><a href='index.php?controller=Base&action=listarCarrito'>Carrito</a></div>
+        <div class="menu4"><a href='index.php?controller=Base&action=listarCarrito'>
+        <?php 
+        if(isset($_SESSION['carrito'])){
+            //echo "<div class='numeroMenuCarrito'>".count($_SESSION['carrito'])."</div>";
+            echo '<h1><span class="blue">'.count($_SESSION['carrito']).'</span></h1>';
+        }
+        ?>
+        <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+        <lord-icon
+            src="https://cdn.lordicon.com/hyhnpiza.json"
+            trigger="loop-on-hover"
+            delay="500"
+            colors="primary:#121331"
+            state="hover"
+            style="width:50px;height:50px">
+        </lord-icon>
+        </a></div>
         <?php
         if(isset($_SESSION["Cliente"])){
             ?>

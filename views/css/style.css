@@ -5,179 +5,193 @@
 body {
     background: #EBEBE8;
     font-family: 'Montserrat', sans-serif;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
-h1{
+
+h1 {
     font-size: 40px;
     letter-spacing: 1px;
-    color:black;
+    color: black;
 }
-h2{
+
+h2 {
     font-size: 32px;
     letter-spacing: 1px;
 }
-h3{
+
+h3 {
     font-size: 24px;
     letter-spacing: 1px;
 }
-p{
+
+p {
     font-size: 16px;
     letter-spacing: 1px;
 }
-a{
+
+a {
     font-size: 16px;
     letter-spacing: 1px;
-    font:blod;
+    font: blod;
+    text-decoration: none;
 }
 
 /*
 *
 ! CSS Pagina de loggin
 *
-*/  
-    .header {
-    position:relative;
-    text-align:center;
-    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-    color:white;
-    }
+*/
+.header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+    color: white;
+}
 
-    .inner-header {
-    height:65vh;
-    width:100%;
+.inner-header {
+    height: 65vh;
+    width: 100%;
     margin: 0;
     padding: 0;
-    }
+}
 
-    .flex { /*Flexbox for containers*/
+.flex {
+    /*Flexbox for containers*/
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    }
+}
 
-    .Olas {
-    position:relative;
+.Olas {
+    position: relative;
     width: 100%;
-    height:15vh;
-    margin-bottom:-7px; /*Fix for safari gap*/
-    min-height:100px;
-    max-height:150px;
-    }
+    height: 15vh;
+    margin-bottom: -7px;
+    /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+}
 
-    .content {
-    position:relative;
-    height:20vh;
-    text-align:center;
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
     background-color: white;
-    }
+}
 
-    /* Animation */
+/* Animation */
 
-    .OlasLogin > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-    }
-    .OlasLogin > use:nth-child(1) {
+.OlasLogin>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.OlasLogin>use:nth-child(1) {
     animation-delay: -2s;
     animation-duration: 7s;
-    }
-    .OlasLogin > use:nth-child(2) {
+}
+
+.OlasLogin>use:nth-child(2) {
     animation-delay: -3s;
     animation-duration: 10s;
-    }
-    .OlasLogin > use:nth-child(3) {
+}
+
+.OlasLogin>use:nth-child(3) {
     animation-delay: -4s;
     animation-duration: 13s;
-    }
-    .OlasLogin > use:nth-child(4) {
+}
+
+.OlasLogin>use:nth-child(4) {
     animation-delay: -5s;
     animation-duration: 20s;
-    }
-    @keyframes move-forever {
+}
+
+@keyframes move-forever {
     0% {
-    transform: translate3d(-90px,0,0);
-    }
-    100% { 
-        transform: translate3d(85px,0,0);
-    }
+        transform: translate3d(-90px, 0, 0);
     }
 
-    .fromGenerico ::placeholder{
-        color: #e5e5e5;
+    100% {
+        transform: translate3d(85px, 0, 0);
     }
+}
 
-    .rainbowButton{
-        background-color: #2099FF !important;
-    }
-    
-    .rainbowButton:hover {
-        background-color:  rgba(0,172,193,1)  !important;
-        cursor: pointer;
-    }
+.fromGenerico ::placeholder {
+    color: #e5e5e5;
+}
 
-    .buttonSubmit{
-        height: 100px;
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .fromGenerico form *{
-        color: #ffffff;
-        letter-spacing: 0.5px;
-        outline: none;
-        border: none;
-    }
+.rainbowButton {
+    background-color: #209bff85 !important;
+}
 
-    .fromGenerico form{
-        width: 400px;
-        background-color: rgba(255,255,255,0.13);
-        position: absolute;
-        transform: translate(-50%,-50%);
-        top: 34%;
-        left: 50%;
-        border-radius: 10px;
-        border: 2px solid rgba(255,255,255,0.1);
-        box-shadow: 0 0 40px rgba(8,7,16,0.6);
-        padding-top: 15px;
-        padding: 50px 35px;
-        border-color:white;
-    }
+.rainbowButton:hover {
+    background-color: rgb(0, 106, 193) !important;
+    cursor: pointer;
+}
 
-    .fromGenerico label{
-        display: block;
-        margin-top: 10px;
-        font-size: 16px;
-        font-weight: 500;
-    }
+.buttonSubmit {
+    height: 100px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-    .fromGenerico input{
-        display: block;
-        height: 35px;
-        width: 100%;
-        background-color: rgba(255,255,255,0.07);
-        border-radius: 3px;
-        padding: 0 10px;
-        margin-top: 3px;
-        font-size: 14px;
-        font-weight: 300;
-      
-    }
-    .botonMostrar{
-        background-color: #00000000; 
-        position: absolute;
-        margin-left: 150px;
-        margin-top: -42px;
-       
-    }
-    .botonMostrar:hover{
-        cursor: pointer;
-    }
+.fromGenerico form * {
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.fromGenerico form {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 34%;
+    left: 50%;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding-top: 15px;
+    padding: 50px 35px;
+    border-color: white;
+}
+
+.fromGenerico label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.fromGenerico input {
+    display: block;
+    height: 35px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.botonMostrar {
+    background-color: #00000000;
+    position: absolute;
+    margin-left: 150px;
+    margin-top: -42px;
+}
+
+.botonMostrar:hover {
+    cursor: pointer;
+}
 
 /* 
 Final de CSS Pagina de loggin */
@@ -185,73 +199,80 @@ Final de CSS Pagina de loggin */
 *
 !Comienzo CSS del Menu
 */
-    div.spacerAdmin{
-        display: block;
-        height: 80px;
-    }
 
-    .menuAdmin {
-        max-width: 100%;
-        width: 100%;
-        background-color: rgba(0,0,0,0.8);
-        margin: 0px auto;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: 1fr;
-        align-content: center;
-        align-items: center;
-        height: 50px;
-        position: fixed;
-    }
-    
-    .menuAdmin > .menu1 { 
-        grid-area: 1 / 1 / 2 / 2; 
-    }
-    .menuAdmin > .menu2 { 
-        grid-area: 1 / 2 / 2 / 3; 
-    }
-    .menuAdmin > .menu3 { 
-        grid-area: 1 / 3 / 2 / 4;
-    }
-    .menuAdmin > .menu4 { 
-        grid-area: 1 / 4 / 2 / 5;
-    }
-    .menuAdmin > .menu5 { 
-        grid-area: 1 / 5 / 2 / 6; 
-    }
+div.spacerAdmin {
+    display: block;
+    height: 80px;
+}
 
-    .menuAdmin > div{
-        text-align: center;
-        text-decoration: none;
-        color: white;
-    }
+.menuAdmin {
+    max-width: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    align-content: center;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+}
 
-    a.enlaceMenuAdmin{
-        position: relative;
-        display: inline-block;
-        text-decoration: none;
-        color: white;
-    }
+.menuAdmin>.menu1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
 
-    a.enlaceMenuAdmin::before, a.enlaceMenuAdmin::after{
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #2099FF;
-        transform: scaleX(0);
-        transition: transform .25s; 
-    }
+.menuAdmin>.menu2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
 
-    a.enlaceMenuAdmin::before{
-        top: 18px;
-        transform-origin: right;
-    }
+.menuAdmin>.menu3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
 
-    a.enlaceMenuAdmin:hover::before,a.enlaceMenuAdmin:hover::after{
-        transform: scaleX(1);
-    }
+.menuAdmin>.menu4 {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.menuAdmin>.menu5 {
+    grid-area: 1 / 5 / 2 / 6;
+}
+
+.menuAdmin>div {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+a.enlaceMenuAdmin {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+a.enlaceMenuAdmin::before,
+a.enlaceMenuAdmin::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2099FF;
+    transform: scaleX(0);
+    transition: transform .25s;
+}
+
+a.enlaceMenuAdmin::before {
+    top: 18px;
+    transform-origin: right;
+}
+
+a.enlaceMenuAdmin:hover::before,
+a.enlaceMenuAdmin:hover::after {
+    transform: scaleX(1);
+}
 
 
 
@@ -263,58 +284,58 @@ Final de CSS Pagina de loggin */
 *
 */
 
-    .lupaPedido {
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 50px;
-    }
-    
-    .lupaPedido > div {
-        display: inline-block;
-        position: relative;
-        filter: drop-shadow(0 1px #2099FF);
-    }
-    
-    .lupaPedido> div:after {
-        content: "";
-        background: #2099FF;
-        width: 4px;
-        height: 16px;
-        position: absolute;
-        top: 28px;
-        right: 2px;
-        transform: rotate(145deg);
-    }
-   
-    .lupaPedido> div > input {
-        color: #000000;
-        font-size: 13px;
-        background: transparent;
-        width: 10px;
-        height: 10px;
-        padding: 8px;
-        border: solid 3px #2099FF;
-        outline: none;
-        border-radius: 35px;
-        transition: width 0.5s;
-    }
-    
-    .lupaPedido> div > input::placeholder {
-        color: #0a0a0a;
-        opacity: 0;
-        transition: opacity 150ms ease-out;
-    }
-    
-    .lupaPedido> div > input:focus::placeholder {
-        opacity: 1;
-    }
-    
-    .lupaPedido  > div > input:focus,
-    .lupaPedido  > div > input:not(:placeholder-shown) {
-        width: 150px;
-    }
+.lupaPedido {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.lupaPedido>div {
+    display: inline-block;
+    position: relative;
+    filter: drop-shadow(0 1px #2099FF);
+}
+
+.lupaPedido>div:after {
+    content: "";
+    background: #2099FF;
+    width: 4px;
+    height: 16px;
+    position: absolute;
+    top: 28px;
+    right: 2px;
+    transform: rotate(145deg);
+}
+
+.lupaPedido>div>input {
+    color: #000000;
+    font-size: 13px;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+    padding: 8px;
+    border: solid 3px #2099FF;
+    outline: none;
+    border-radius: 35px;
+    transition: width 0.5s;
+}
+
+.lupaPedido>div>input::placeholder {
+    color: #0a0a0a;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+.lupaPedido>div>input:focus::placeholder {
+    opacity: 1;
+}
+
+.lupaPedido>div>input:focus,
+.lupaPedido>div>input:not(:placeholder-shown) {
+    width: 150px;
+}
 
 
 /*Final del CSS del pedido Admin*/
@@ -324,13 +345,13 @@ Final de CSS Pagina de loggin */
 !Comienzo CSS de la pagina de Productos Admin
 *
 */
-.tablaAdmin{
-    margin: auto auto; 
+.tablaAdmin {
+    margin: auto auto;
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-.thAdmin{
+.thAdmin {
     background-color: #263239;
     color: white;
     font-size: 12px;
@@ -338,156 +359,193 @@ Final de CSS Pagina de loggin */
     text-align: center;
 }
 
-.imagenAdmin{
+.imagenAdmin {
     width: 100%;
     text-align: center;
 }
 
-.tdAdmin{
+.tdAdmin {
     border: 1px solid black;
     text-align: center;
     padding: 10px;
     width: 50px;
 }
 
-div.botonAdmin > a.enlaceAdmin{
+div.botonAdmin>a.enlaceAdmin {
     text-decoration: none;
     color: #2099FF;
     text-align: center;
     font-weight: 600;
 }
 
-div.botonAdmin{
+div.botonAdmin {
     margin: 10px;
     margin-left: 200px;
     text-align: center;
     width: 200px;
 }
 
-div.botonAdmin > a.enlaceAdmin:hover{
+div.botonAdmin>a.enlaceAdmin:hover {
     text-decoration: underline;
     color: black;
     letter-spacing: 2px;
     text-align: center;
-    
 }
 
-img.destacado{
+img.destacado {
     width: 50px;
     border-radius: 75%;
 }
 
-a.enlaceDestacado{
+a.enlaceDestacado {
     width: 200px;
 }
 
-
-
-td.tdAdmin > a > img.activado{
+td.tdAdmin>a>img.activado {
     width: 150px;
 }
 
-td.tdAdmin > a > img{
+td.tdAdmin>a>img {
     width: 100%;
 }
-
 
 /*Final del CSS PAgina de Productos Admin*/
 
 /*
 *
-*
 ! CSS Pagina de Menu 
+*
 */
-    .menu {
-        background-color:rgba(0,0,0,0.8);
-        color:#ffffff;
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 30px;
-        align-items: center;
-        align-content: center;
-        text-align: center;
-        padding-right: 50px;
-        padding-left: 50px;
-    }
-    
-    .menu1 { 
-        /*grid-area: 1 / 1 / 4 / 2;*/
-        grid-column: 1;
-        grid-row: 1/4;
-     }
+.menu {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 50px;
+}
 
-    .menu2 { 
-        /*grid-area: 1 / 2 / 2 / 5;*/
-        grid-column: 2/5;
-        grid-row: 1;
-     }
+.menu > div {
+    margin: 5px;
+}
 
-    .menu3 { 
-        /*grid-area: 1 / 5 / 2 / 6;*/
-        grid-column: 5;
-        grid-row: 1;
-     }
+.menu>div>a {
+    color: #209bff85;
+}
 
-    .menu4 { 
-        /*grid-area: 1 / 6 / 2 / 7;*/
-        grid-column: 6;
-        grid-row: 1;
-     }
+.menu>div>a:hover {
+    color: rgb(0, 106, 193);
+    font-weight: 700;
+}
 
-    .menu5 { 
-        /*grid-area: 1 / 7 / 2 / 8;*/
-        grid-column: 7;
-        grid-row: 1;
-     }
+.menu1 {
+    /*grid-area: 1 / 1 / 4 / 2;*/
+    grid-column: 1;
+    grid-row: 1/4;
+}
 
-    .menu6 { 
-        /*grid-area: 3 / 2 / 4 / 3;*/
-        grid-column: 2;
-        grid-row: 3;
-     }
+.menu2 {
+    /*grid-area: 1 / 2 / 2 / 5;*/
+    grid-column: 2/5;
+    grid-row: 1;
+}
 
-    .menu7 { 
-        /*grid-area: 3 / 3 / 4 / 4;*/
-        grid-column: 3;
-        grid-row: 3;
-     }
+.menu3 {
+    /*grid-area: 1 / 5 / 2 / 6;*/
+    grid-column: 5;
+    grid-row: 1;
+}
 
-    .menu8 { 
-        /*grid-area: 3 / 4 / 4 / 5;*/
-        grid-column: 4;
-        grid-row: 3;
-     }
+.menu4 {
+    /*grid-area: 1 / 6 / 2 / 7;*/
+    grid-column: 6;
+    grid-row: 1;
+}
 
-    .menu9 { 
-        /*grid-area: 3 / 5 / 4 / 6;*/
-        grid-column: 5;
-        grid-row: 3;
-     }
-    .menu10 { 
-        /*grid-area: 3 / 6 / 4 / 7;*/
-        grid-column: 6;
-        grid-row: 3;
-     }
+.menu4 > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu4 > a > div{
+    background-color: white;
+}
 
-    .menu11 { 
-        /*grid-area: 3 / 7 / 4 / 8;*/
-        grid-column: 7;
-        grid-row: 3;
-     }
+span.blue {
+    background: #2099FF;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1.6em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em; 
+  }
 
-    .menu12 { 
-        /*grid-area: 2 / 2 / 3 / 8;*/
-        grid-column: 2/8;
-        grid-row: 2;
-        width: 100%;
-     }
+.menu5 {
+    /*grid-area: 1 / 7 / 2 / 8;*/
+    grid-column: 7;
+    grid-row: 1;
+}
 
-     .menu12 > hr{
-        width: 100%;
-     }
+.menu6 {
+    /*grid-area: 3 / 2 / 4 / 3;*/
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.menu7 {
+    /*grid-area: 3 / 3 / 4 / 4;*/
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.menu8 {
+    /*grid-area: 3 / 4 / 4 / 5;*/
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.menu9 {
+    /*grid-area: 3 / 5 / 4 / 6;*/
+    grid-column: 5;
+    grid-row: 3;
+}
+
+.menu10 {
+    /*grid-area: 3 / 6 / 4 / 7;*/
+    grid-column: 6;
+    grid-row: 3;
+}
+
+.menu11 {
+    /*grid-area: 3 / 7 / 4 / 8;*/
+    grid-column: 7;
+    grid-row: 3;
+}
+
+.menu12 {
+    /*grid-area: 2 / 2 / 3 / 8;*/
+    grid-column: 2/8;
+    grid-row: 2;
+    width: 100%;
+    margin: 0px !important;
+}
+
+.menu12>hr {
+    width: 100%;
+    margin: 0px;
+}
+
+
 
 
 /* Final del CSS Pagina del menu*/
@@ -505,189 +563,179 @@ td.tdAdmin > a > img{
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-    
-.producto1 { 
-    grid-area: 1 / 1 / 2 / 6; 
+
+.producto1 {
+    grid-area: 1 / 1 / 2 / 6;
 }
-.producto2 { 
+
+.producto2 {
     grid-area: 2 / 1 / 3 / 6;
     background-color: #000000;
 }
+
 .producto3 {
-    grid-area: 3 / 1 / 4 / 6; 
+    grid-area: 3 / 1 / 4 / 6;
 }
-.producto4 { 
-    grid-area: 4 / 1 / 6 / 3; 
+
+.producto4 {
+    grid-area: 4 / 1 / 6 / 3;
     background-color: #000000;
 }
+
 .producto5 {
-    grid-area: 4 / 3 / 6 / 5; 
-} 
-
-.contenedorProducto
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 40px 0;
+    grid-area: 4 / 3 / 6 / 5;
 }
 
-.contenedorProducto .cajaProducto
-{
-  position: relative;
-  width: 320px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 30px;
-  transition: 0.5s;
+.contenedorProducto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
 }
 
-.contenedorProducto .cajaProducto::before
-{
-  content:' ';
-  position: absolute;
-  top: 0;
-  left: 50px;
-  width: 50%;
-  height: 100%;
-  text-decoration: none;
-  background: #fff;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: 0.5s;
+.contenedorProducto .cajaProducto {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
 }
 
-.contenedorProducto .cajaProducto::after
-{
-  content:'';
-  position: absolute;
-  top: 0;
-  left: 50;
-  width: 50%;
-  height: 100%;
-  background: #fff;
-  border-radius: 8px;
-  transform: skewX(15deg);
-  transition: 0.5s;
-  filter: blur(30px);
+.contenedorProducto .cajaProducto::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+.contenedorProducto .cajaProducto::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
 }
 
 .contenedorProducto .cajaProducto:hover:before,
-.contenedorProducto .cajaProducto:hover:after
-{
-  transform: skewX(0deg);
-  left: 20px;
-  width: calc(100% - 90px);
-  
+.contenedorProducto .cajaProducto:hover:after {
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+
 }
 
 .contenedorProducto .cajaProducto:before,
-.contenedorProducto .cajaProducto:after
-{
-    background: linear-gradient(315deg, rgba(84,58,183,1), rgba(0,172,193,1))
+.contenedorProducto .cajaProducto:after {
+    background: linear-gradient(315deg, rgba(84, 58, 183, 1), rgba(0, 172, 193, 1))
 }
 
-.contenedorProducto .cajaProducto span
-{
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 5;
-  pointer-events: none;
+.contenedorProducto .cajaProducto span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    pointer-events: none;
 }
 
-.contenedorProducto .cajaProducto span::before
-{
-  content:'';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: 0.1s;  
-  animation: animate 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+.contenedorProducto .cajaProducto span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.1s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08)
 }
 
-.contenedorProducto .cajaProducto:hover span::before
-{
-  top: -50px;
-  left: 50px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
+.contenedorProducto .cajaProducto:hover span::before {
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
 }
 
-.contenedorProducto .cajaProducto span::after
-{
-  content:'';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: 0.5s;
-  animation: animate 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  animation-delay: -1s;
+.contenedorProducto .cajaProducto span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation-delay: -1s;
 }
 
-.contenedorProducto .cajaProducto:hover span:after
-{
-  bottom: -50px;
-  right: 50px;
-  width: 100px;
-  height: 100px;
-  opacity: 1;
+.contenedorProducto .cajaProducto:hover span:after {
+    bottom: -50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
 }
 
-@keyframes animate
-{
-  0%, 100%
-  {
-    transform: translateY(10px);
-  }
-  
-  50%
-  {
-    transform: translate(-10px);
-  }
+@keyframes animate {
+
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translate(-10px);
+    }
 }
 
-.contenedorProducto .cajaProducto .contenidoProducto
-{
-  position: relative;
-  left: 0;
-  padding: 20px 40px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 1;
-  transform: 0.5s;
-  color: #fff;
+.contenedorProducto .cajaProducto .contenidoProducto {
+    position: relative;
+    left: 0;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+    transform: 0.5s;
+    color: #fff;
 }
 
 
 
-.contenedorProducto .cajaProducto:hover .contenidoProducto
-{
-  left: -25px;
-  padding: 60px 40px;
+.contenedorProducto .cajaProducto:hover .contenidoProducto {
+    left: -25px;
+    padding: 60px 40px;
 }
 
 /*Pendiente modificar los enlaces y textos para ser similares en todas las páginas.*/
@@ -695,49 +743,46 @@ td.tdAdmin > a > img{
 
 
 
-.contenedorProducto .cajaProducto .contenidoProducto h2
-{
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 10px;
+.contenedorProducto .cajaProducto .contenidoProducto h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 
-.contenedorProducto .cajaProducto .contenidoProducto p
-{
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  line-height: 1.4em;
+.contenedorProducto .cajaProducto .contenidoProducto p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
 }
 
-.contenedorProducto .cajaProducto .contenidoProducto a
-{
-  display: inline-block;
-  font-size: 1.1em;
-  color: #111;
-  background: #fff;
-  padding: 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 5px;
+.contenedorProducto .cajaProducto .contenidoProducto a {
+    display: inline-block;
+    font-size: 1.1em;
+    color: #111;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;
 }
 
-.contenedorProducto .cajaProducto .contenidoProducto a:hover
-{
-  background: #2099FF;
-  border: 1px solid rgba(255, 0, 88, 0.4);
-  box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+.contenedorProducto .cajaProducto .contenidoProducto a:hover {
+    background: #2099FF;
+    border: 1px solid rgba(255, 0, 88, 0.4);
+    box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
 
-.imagenHome{
+.imagenHome {
     width: 280px;
     margin-right: 100px;
     border-radius: 5%;
-    
+
 }
-.contenidoImpares{
-    color:black;
+
+.contenidoImpares {
+    color: black;
 }
 
 /*
@@ -746,7 +791,7 @@ td.tdAdmin > a > img{
 !CSS Pagina del Carrito
 */
 
-.containerCarrito{
+.containerCarrito {
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -754,8 +799,9 @@ td.tdAdmin > a > img{
     justify-items: center;
 }
 
-.containerProductos{
+.containerProductos {
     width: 50%;
+    margin-right: 100px;
 }
 
 .productoCarrito {
@@ -769,47 +815,52 @@ td.tdAdmin > a > img{
     border-bottom: #2099FF solid 1px;
 }
 
-.productoCarrito > div{
+.productoCarrito>div {
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
 }
 
-img.imagenCarrito{
+img.imagenCarrito {
     width: 50%;
 }
-    
-.div1Carrito { 
+
+.div1Carrito {
     /*grid-area: 1 / 1 / 4 / 2;*/
     grid-column: 1;
     grid-row: 1;
- }
-.div2Carrito { 
-   /*grid-area: 1 / 2 / 2 / 3;*/
-   grid-column: 2;
+}
+
+.div2Carrito {
+    /*grid-area: 1 / 2 / 2 / 3;*/
+    grid-column: 2;
     grid-row: 1;
 }
-.div3Carrito { 
-   /*grid-area: 1 / 3 / 4 / 4;*/
+
+.div3Carrito {
+    /*grid-area: 1 / 3 / 4 / 4;*/
     grid-column: 3;
     grid-row: 1;
 }
-.div4Carrito { 
-   /*grid-area: 1 / 4 / 4 / 5;*/
+
+.div4Carrito {
+    /*grid-area: 1 / 4 / 4 / 5;*/
     grid-column: 4;
     grid-row: 1;
 }
-.div5Carrito {
-     grid-column: 5;
-     grid-row: 1;
- }
- .div6Carrito {
-     grid-column: 6;
-     grid-row: 1;
- }
 
-div.cantidadCarrito{
+.div5Carrito {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.div6Carrito {
+    grid-column: 6;
+    grid-row: 1;
+}
+
+div.cantidadCarrito {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -818,11 +869,11 @@ div.cantidadCarrito{
     border-radius: 25px;
 }
 
-div.cantidadCarrito > *{
+div.cantidadCarrito>* {
     margin: 5%;
 }
 
-div.eliminarCarrito{
+div.eliminarCarrito {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -831,25 +882,375 @@ div.eliminarCarrito{
     border-radius: 50%;
 }
 
-div.eliminarCarrito > *{
+div.eliminarCarrito>* {
     margin: 5%;
 }
 
-.formCarrito > .button{
+.formCarrito>.button {
     font-size: large;
     background-color: transparent;
     border: none;
 }
 
-.formCarrito > .button:hover{
+.formCarrito>.button:hover {
     cursor: pointer;
 }
 
+.sumarioCarrito {
+    padding: 20px;
+    background-color: #2632395d;
+    border-radius: 25px;
+}
 
+.sumarioCarrito>div {
+    border-bottom: #263239 1px solid;
+}
+
+.sumarioCarrito2>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sumarioCarrito3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tituloCarrito {
+    text-align: center;
+}
+
+.vacioCarrito{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.buttonCarrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 300;
+
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+
+
+    background-color: rgb(0, 106, 193) !important;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
 
 /*Final del CSS Pagina del carrito*/
 
 /*Estilos pie de pagina*/
 
+.footer-distributed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 45px 50px;
+  }
+  
+  .footer-distributed .footer-left p {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0;
+  }
+  /* Footer links */
+  
+  .footer-distributed p.footer-links {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+    transition: ease .25s;
+  }
+  
+  .footer-distributed p.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+    transition: ease .25s;
+  }
+  
+  .footer-distributed .footer-links a:before {
+    content: "·";
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+  
+  .footer-distributed .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+  }
+  
+  .footer-distributed .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 3px;
+    transition:all .25s;
+  }
+  
+  .footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+  
+  .footer-distributed p.footer-links a:hover{text-decoration:underline;}
+  
+  /* Media Queries */
+  
+  @media (max-width: 600px) {
+    .footer-distributed .footer-left, .footer-distributed .footer-right {
+      text-align: center;
+    }
+    .footer-distributed .footer-right {
+      float: none;
+      margin: 0 auto 20px;
+    }
+    .footer-distributed .footer-left p.footer-links {
+      line-height: 1.8;
+    }
+  }
 
 /*Fin estilos pie de pagina*/
+
+/*
+*
+*
+!CSS Pagina de cada producto
+*
+*/
+
+.contenedorPaginaProducto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto:hover:before,
+.contenedorPaginaProducto .cajaPaginaProducto:hover:after {
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto:before,
+.contenedorPaginaProducto .cajaPaginaProducto:after {
+    background: linear-gradient(315deg, rgba(84, 58, 183, 1), rgba(0, 172, 193, 1))
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.1s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08)
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto:hover span::before {
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation-delay: -1s;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto:hover span:after {
+    bottom: -50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translate(-10px);
+    }
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto {
+    position: relative;
+    left: 0;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+    transform: 0.5s;
+    color: #fff;
+}
+
+
+
+.contenedorPaginaProducto .cajaPaginaProducto:hover .contenidoPaginaProducto {
+    left: -25px;
+    padding: 60px 40px;
+}
+
+/*Pendiente modificar los enlaces y textos para ser similares en todas las páginas.*/
+
+
+
+
+.contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+
+.contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto a {
+    display: inline-block;
+    font-size: 1.1em;
+    color: #111;
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto a:hover {
+    background: #2099FF;
+    border: 1px solid rgba(255, 0, 88, 0.4);
+    box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+}
+
+.imagenPaginaProducto {
+    width: 280px;
+    margin-right: 100px;
+    border-radius: 5%;
+
+}
+
+
+/*Final */

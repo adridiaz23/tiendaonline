@@ -48,7 +48,6 @@ session_start();
 
             echo "No existe el controlador";
         }
-        print_r($_SESSION['carrito']);
         require_once "views/general/pie.html";
         ?>
        

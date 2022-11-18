@@ -24,6 +24,9 @@
                 <div class="buttonSubmit">
                     <input type="submit" value="Iniciar sesión" class="rainbowButton" >
                 </div>
+
+                <a href= 'index.php?controller=Cliente&action=login' class='enlaceMenuAdmin'>Cliente Login</a>
+
             </form>
         </div>
     </div>

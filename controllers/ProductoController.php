@@ -201,6 +201,18 @@
             }else{
                 header("index.php");
             }
-        }        
+        }  
+
+        public function  paginaProducto(){
+            if(isset($_GET['isbn']) && $_GET['isbn'] != ''){
+                require_once "models/producto.php";
+                $producto = new Producto();
+                $producto->setIsbn($_GET['isbn']);
+                $listadoProducto = $producto->listadoProducto();
+                require_once "views/producto/paginaProducto.php";
+            }else{
+                echo "No existe el producto";
+            }
+        }      
 }
 ?>
