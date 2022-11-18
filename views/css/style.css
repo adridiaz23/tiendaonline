@@ -108,11 +108,11 @@ a{
     }
 
     .rainbowButton{
-        background-color: rgb(58, 60, 183) !important;
+        background-color: #2099FF !important;
     }
     
     .rainbowButton:hover {
-        background-color:  #2099FF  !important;
+        background-color:  rgba(0,172,193,1)  !important;
         cursor: pointer;
     }
 
@@ -146,6 +146,7 @@ a{
         box-shadow: 0 0 40px rgba(8,7,16,0.6);
         padding-top: 15px;
         padding: 50px 35px;
+        border-color:white;
     }
 
     .fromGenerico label{
@@ -165,12 +166,14 @@ a{
         margin-top: 3px;
         font-size: 14px;
         font-weight: 300;
+      
     }
     .botonMostrar{
         background-color: #00000000; 
         position: absolute;
         margin-left: 150px;
         margin-top: -42px;
+       
     }
     .botonMostrar:hover{
         cursor: pointer;
