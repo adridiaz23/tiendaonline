@@ -17,6 +17,11 @@ session_start();
     </head>
     <body>
     <script src="views/css/assets/js.js"></script>
+    <!-- Carga de pagina Loading  -->
+    <div class="loading show">
+        <div class="spin"></div>
+    </div>
+
         <?php 
         require_once "autoload.php";
         //require_once "views/general/cabecera.html";
