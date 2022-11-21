@@ -95,6 +95,9 @@
                     echo "<p>".$total."€</p>";
                 echo "</div>";
             echo "</div>";
+            echo "<div class='botonPagarCarrito'>";
+                echo "<a><p>Pagar</p></a>";
+            echo "</div>";
         echo "</div>";
     }else{
         echo "<div class='vacioCarrito'>";

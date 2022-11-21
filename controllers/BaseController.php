@@ -63,7 +63,7 @@
                     header('Location:index.php?controller=Base&action=listarCarrito');
                 }else if(array_key_exists('button3', $_POST)) {
                     unset($_SESSION['carrito'][$_POST['isbn']]);
-                    //header('Location:index.php?controller=Base&action=listarCarrito');
+                    header('Location:index.php?controller=Base&action=listarCarrito');
                 }else if(array_key_exists('button4', $_POST)) {
                     BaseController::vaciarCarrito();
                     //unset($_SESSION['carrito'][$_POST['isbn']]);
