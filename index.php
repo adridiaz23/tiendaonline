@@ -16,11 +16,7 @@ session_start();
     </head>
     <body>
     <script src="views/css/assets/js.js"></script>
-    <!-- Carga de pagina Loading 
-    <div class="loading show">
-        <div class="spin"></div>
-    </div>
-    -->
+    
         <?php 
         require_once "autoload.php";
         //require_once "views/general/cabecera.html";
@@ -56,6 +52,7 @@ session_start();
             echo "No existe el controlador";
         }
         require_once "views/general/pie.html";
+        
         ?>
        
     </body>

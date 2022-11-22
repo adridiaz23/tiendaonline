@@ -823,6 +823,7 @@ span.blue {
 
 img.imagenCarrito {
     width: 50%;
+    border-radius: 10px;
 }
 
 .div1Carrito {
@@ -1062,137 +1063,25 @@ div.eliminarCarrito>* {
 !CSS Pagina de cada producto
 *
 */
-
 .contenedorPaginaProducto {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 40px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .contenedorPaginaProducto .cajaPaginaProducto {
     position: relative;
-    width: 320px;
+    width: 550px;
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 40px 30px;
     transition: 0.5s;
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto::before {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 50px;
-    width: 50%;
-    height: 100%;
-    text-decoration: none;
-    background: #fff;
-    border-radius: 8px;
-    transform: skewX(15deg);
-    transition: 0.5s;
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50;
-    width: 50%;
-    height: 100%;
-    background: #fff;
-    border-radius: 8px;
-    transform: skewX(15deg);
-    transition: 0.5s;
-    filter: blur(30px);
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto:hover:before,
-.contenedorPaginaProducto .cajaPaginaProducto:hover:after {
-    transform: skewX(0deg);
-    left: 20px;
-    width: calc(100% - 90px);
-
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto:before,
-.contenedorPaginaProducto .cajaPaginaProducto:after {
-    background: linear-gradient(315deg, rgba(84, 58, 183, 1), rgba(0, 172, 193, 1))
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto span {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-    pointer-events: none;
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto span::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transition: 0.1s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08)
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto:hover span::before {
-    top: -50px;
-    left: 50px;
-    width: 100px;
-    height: 100px;
-    opacity: 1;
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto span::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transition: 0.5s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    animation-delay: -1s;
-}
-
-.contenedorPaginaProducto .cajaPaginaProducto:hover span:after {
-    bottom: -50px;
-    right: 50px;
-    width: 100px;
-    height: 100px;
-    opacity: 1;
-}
-
-@keyframes animate {
-
-    0%,
-    100% {
-        transform: translateY(10px);
-    }
-
-    50% {
-        transform: translate(-10px);
-    }
 }
 
 .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto {
@@ -1205,20 +1094,8 @@ div.eliminarCarrito>* {
     border-radius: 8px;
     z-index: 1;
     transform: 0.5s;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
-
-
-
-.contenedorPaginaProducto .cajaPaginaProducto:hover .contenidoPaginaProducto {
-    left: -25px;
-    padding: 60px 40px;
-}
-
-/*Pendiente modificar los enlaces y textos para ser similares en todas las páginas.*/
-
-
-
 
 .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto h2 {
     text-align: center;
@@ -1255,45 +1132,165 @@ div.eliminarCarrito>* {
     width: 280px;
     margin-right: 100px;
     border-radius: 5%;
-
+}
+.precioPaginaProducto{
+    color:rgb(191, 0, 25);
+    font-weight: 700;
+    font-size: 1.5em !important;
 }
 
+.corazonPaginaProducto{
+   display: flex;
+}
+.corazonMargen{
+    margin-left: 38px;
+}
 
 /*Final */
 
 /*
-Loading CSS
-*/   
- .loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: 1s all;
-    opacity: 0;
-}
-.loading.show {
-    opacity: 1;
-}
-.loading .spin {
-    border: 4px solid hsla(185, 100%, 62%, 0.2);
-    border-top-color: #2099FF;
-    border-radius: 50%;
-    width: 4em;
-    height: 4em;
-    animation: spin 2s linear infinite;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}   
-/*
-Fin Loading CSS
+*
+*
+!CSS Pagina de CheckOut
+*
 */
+
+/*body {
+    font-family: 'Roboto', sans-serif!important;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}*/
+
+.mainscreen
+{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    background-color: #DFDBE5;
+    background-image: url("https://wallpaperaccess.com/full/3063067.png");
+    color:#963E7B;
+}
+
+.card {
+	width: 60rem;
+    margin: auto;
+    background: white;
+    position:center;
+    align-self: center;
+    top: 50rem;
+    border-radius: 1.5rem;
+    box-shadow: 4px 3px 20px #3535358c;
+    display:flex;
+    flex-direction: row;
+    
+}
+
+.leftside {
+	background: #030303;
+	width: 25rem;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+
+.product {
+    object-fit: cover;
+	width: 20em;
+    height: 20em;
+    border-radius: 100%;
+}
+
+.rightside {
+    background-color: #ffffff;
+	width: 35rem;
+	border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem 2rem 3rem 3rem;
+}
+
+/*p{
+    display:block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: .8rem 0;
+}*/
+
+.inputbox
+{
+    color:#030303;
+	width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1.1rem;
+    font-weight: 500;
+  outline:none;
+}
+
+.expcvv {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+}
+
+.expcvv_text{
+    padding-right: 1rem;
+}
+.expcvv_text2{
+    padding:0 1rem;
+}
+
+.button{
+    background: linear-gradient(
+135deg
+, #753370 0%, #298096 100%);
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    width:100%;
+    letter-spacing: .11rem;
+    outline:none;
+}
+
+.button:hover
+{
+	transform: scale(1.05) translateY(-3px);
+    box-shadow: 3px 3px 6px #38373785;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card{
+        flex-direction: column;
+        width: auto;
+      
+    }
+
+    .leftside{
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+      border-top-right-radius:0;
+      border-radius:0;
+    }
+
+    .rightside{
+        width:auto;
+        border-bottom-left-radius: 1.5rem;
+        padding:0.5rem 3rem 3rem 2rem;
+      border-radius:0;
+    }
+}
+
+/*Final CSS CHECKOUT*/

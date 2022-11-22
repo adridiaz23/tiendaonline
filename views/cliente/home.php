@@ -25,7 +25,7 @@
             
           }
             echo "<a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'>Más información</a>";
-            echo "<a href='index.php?controller=Base&action=añadirCarrito&isbn=".$valor->ISBN."&cantidad=1'>Añadir al carrito</a>";
+            echo "<a href='index.php?controller=detallePedido&action=añadirCarrito&isbn=".$valor->ISBN."&cantidad=1'>Añadir al carrito</a>";
           ?>
         </div>
         </div>
