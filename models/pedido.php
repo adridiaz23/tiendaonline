@@ -47,42 +47,47 @@
                 $this->correoCliente = $correoCliente;
                 return $this;
         }
+
+        //Función que muestra todos los pedidos
         function mostrarPedidos(){   
-                // Consulta
                 $sql = "SELECT * FROM pedido";
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
         function mostrarPedido($idPedido){
-                // Consulta
                 $sql = "SELECT * FROM pedido WHERE idPedido = $idPedido";
                 $rows = $this->db->query($sql);
         }
+        //Función para editar el estado del pedido
         function editarEstado(){
-                // Consulta
                 $sql = "UPDATE pedido SET estado = '".$this->estado."' WHERE idPedido = '".$this->idPedido."'";
-                $this->db->query($sql);
-                //return $this;
+                $rows = $this->db->query($sql);
+               
         }
+
+        //Función para buscar solo por el estado del pedido
         function buscarEstado(){
-               // Consulta
                $sql = "SELECT * FROM pedido WHERE estado = ".$this->estado."";
                $rows = $this->db->query($sql);
                return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
+        //Función para buscar por solo el correo
         function buscarCorreo(){
-                // Consulta
                 $sql = "SELECT * FROM pedido WHERE correoCliente LIKE '%".$this->correoCliente."%'";
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
+         //Función para buscar por el correo y el estado
         function buscarCorreoEstado(){
                 $sql = "SELECT * FROM pedido WHERE correoCliente LIKE '%".$this->correoCliente."%' && estado = ".$this->estado."" ;
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
 
-
+        //Función para mostrar los detalles del pedido seleccionado
         function mostrarDetallePedido(){
                 $sql = "SELECT * FROM detallepedido WHERE idPedido = '".$this->idPedido."'";
                 $rows = $this->db->query($sql);

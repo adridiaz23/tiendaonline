@@ -4,6 +4,7 @@
         public function mostrarPedidos(){
             // Mientras no se pasen los datos del formulario mostraremos el else
             if(isset($_SESSION["Administrador"])){
+                //Parte del filtro de búsqueda, dependido los campos rellenados.
                 if (isset($_POST["estado"]) && $_POST['estado'] != ""){
                     require_once("models/pedido.php"); 
                     $pedido = new Pedido();
@@ -15,14 +16,13 @@
                         $pedido->setEstado($_POST['estado']);
                         $todosLosPedidos = $pedido->buscarEstado();
                     }
-                    //$todosLosPedidos = $pedido->mostrarPedidos();
                     require_once "views/pedido/mostrarPedidos.php";
+
                 }elseif(isset($_POST['txtbusca']) && $_POST['estado'] == ""){
                     require_once("models/pedido.php"); 
                     $pedido = new Pedido();
                     $pedido->setCorreoCliente($_POST['txtbusca']);
                     $todosLosPedidos = $pedido->buscarCorreo();
-                    //$todosLosPedidos = $pedido->mostrarPedidos();
                     require_once "views/pedido/mostrarPedidos.php";
                 }else{
                     require_once("models/pedido.php"); 
@@ -56,7 +56,7 @@
                 header("index.php");
             }
         }
-        //Funcion para editar el estado del pedido
+        //Funcion para mostrar el detalle del pedido seleccionado
         public function mostrarDetallePedido(){
             if(isset($_SESSION["Administrador"])){
                 if(isset($_GET['idPedido'])){
