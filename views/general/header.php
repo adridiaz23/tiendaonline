@@ -1,3 +1,4 @@
+
 <body>
     <div class="menu">
         <div class="menu1"><a href='index.php'>
@@ -38,7 +39,8 @@
             <?php
         }
         ?>
-        <div class="menu6"><?php echo $categorias[0]->nombre; ?></div>
+        
+        <div class="menu6"> <a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria= <?php echo  $categorias[0]->idCategoria; ?>'><?php echo  $categorias[0]->nombre; ?></a></div>
         <div class="menu7"><?php echo $categorias[1]->nombre; ?></div>
         <div class="menu8"><?php echo $categorias[2]->nombre; ?></div>
         <div class="menu9"><?php echo $categorias[3]->nombre; ?></div>

@@ -54,7 +54,7 @@
         }
         //FUNCION PARA PARA LISTAR 5 CATEGORIAS CON MAS LIBROS PARA EL sMENU
         public function  categoriasMenu(){
-                $sql = "SELECT categoria.nombre,COUNT(*) FROM `producto` INNER JOIN `categoria` ON categoria.idCategoria = producto.categoria GROUP by producto.categoria ORDER BY `COUNT(*)` DESC limit 5 ";
+                $sql = "SELECT categoria.nombre,COUNT(*) ,categoria.idCategoria FROM `producto` INNER JOIN `categoria` ON categoria.idCategoria = producto.categoria GROUP by producto.categoria, categoria.idCategoria ORDER BY `COUNT(*)` DESC limit 5 ";
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }

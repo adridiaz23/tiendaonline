@@ -36,8 +36,17 @@ class CategoriaController{
         require_once("models/categoria.php"); 
         $categoria = new Categoria("");
         $categorias =  $categoria->categoriasMenu();
+       // for($i=0;$i<count($categorias);i++){}
         require_once "views/general/header.php";
     }
 
+    public function categoriaCliente(){
+        require_once("models/categoria.php"); 
+        $categoria = new Categoria("");
+        $categoria->setIdCategoria($_GET['idCategoria']);
+        $lista =  $categoria->categoriaCliente();
+        require_once "views/categorias/categoriaCliente.php";
+        
+    }
 
 }
