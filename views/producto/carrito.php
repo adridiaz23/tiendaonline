@@ -1,32 +1,7 @@
 <body>
 
-<?php
-        /*if(array_key_exists('button1', $_POST)) {
-            button1($_POST['isbn']);
-            header('Location:index.php?controller=Base&action=listarCarrito');
-
-        }
-        else if(array_key_exists('button2', $_POST)) {
-            button2($_POST['isbn']);
-            header('Location:index.php?controller=Base&action=listarCarrito');
-        }else if(array_key_exists('button3', $_POST)) {
-            button3($_POST['isbn']);
-            //header('Location:index.php?controller=Base&action=listarCarrito');
-        }
-
-        function button1($isbn) {
-            $_SESSION['carrito'][$isbn]['cantidad']++;
-        }
-        function button2($isbn) {
-            if($_SESSION['carrito'][$isbn]['cantidad'] > 1){
-                $_SESSION['carrito'][$isbn]['cantidad']--;
-            }
-        }
-        function button3($isbn) {
-                unset($_SESSION['carrito'][$isbn]);
-        }*/
-    ?>
 <?php  
+require_once "models/detallePedido.php";
     if((isset($_SESSION['carrito']) && (count($_SESSION['carrito']) > 0))){
         echo "<h1 class='tituloCarrito'>Carrito de Compras</h1>";
         echo "<div class='containerCarrito'>";
@@ -46,9 +21,9 @@
             echo "</div>";
         foreach ($listadoCarrito as $clave => $valor){
             echo "<div class='productoCarrito'>";
-                echo "<div class='div1Carrito'><img class='imagenCarrito' src='$valor->imagen' /></div>";
+                echo "<div class='div1Carrito'><a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'><img class='imagenCarrito' src='$valor->imagen' /></a></div>";
                 echo "<div class='div2Carrito'>";
-                    echo "<p>$valor->nombre</p>";
+                    echo "<a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'><p>$valor->nombre</p></a>";
                 echo "</div>";
                 echo "<div class='div3Carrito'>";
                     echo "<p>$valor->precio €</p>";
@@ -59,14 +34,14 @@
                         echo "<input type='submit' name='button2' class='button' value='-' />";
                         echo "<input type='hidden' name='isbn' value='$valor->ISBN' />";
                         echo "</form>";
-                        echo "<p>".$_SESSION['carrito'][$valor->ISBN]['cantidad']."</p>";
+                        echo "<p>".$_SESSION['carrito'][$valor->ISBN]."</p>";
                         echo "<form method='post' class='formCarrito'>";
                         echo "<input type='submit' name='button1' class='button' value='+' />";
                         echo "<input type='hidden' name='isbn' value='$valor->ISBN' />";
                         echo "</form>";
                     echo "</div>";
                 echo "</div>";
-                echo "<div class='div5Carrito'>".($valor->precio*$_SESSION['carrito'][$valor->ISBN]['cantidad'])." €</div>";
+                echo "<div class='div5Carrito'>".($valor->precio*$_SESSION['carrito'][$valor->ISBN])." €</div>";
                 echo "<div class='div6Carrito'>";
                     echo "<div class='eliminarCarrito'>";
                         echo "<form method='post' class='formCarrito'>";
@@ -96,7 +71,7 @@
                 echo "</div>";
             echo "</div>";
             echo "<div class='botonPagarCarrito'>";
-                echo "<a><p>Pagar</p></a>";
+                echo "<a href='index.php?controller=Pedido&action=checkout'><p>Pagar</p></a>";
             echo "</div>";
         echo "</div>";
     }else{
@@ -119,6 +94,7 @@
             echo "<p><a class='buttonCarrito' href='index.php'>Explorar Productos</a></p>";
         echo "</div>";
     }
+    
     ?>
 </body>
 </html>

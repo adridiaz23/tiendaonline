@@ -8,7 +8,7 @@
             header("Location:index.php");
         }
 
-        public static function añadirCarrito(){
+        /*public static function añadirCarrito(){
             if(isset($_GET['isbn'])){ 
                 //unset($_SESSION['carrito']);
                 $isbn=intval($_GET['isbn']);
@@ -70,7 +70,7 @@
                     header('Location:index.php?controller=Base&action=listarCarrito');
                 }
 
-                /*Calcular Subtotal SIN IVA*/
+                //Calcular Subtotal SIN IVA
                 $total = 0;
                 foreach ($listadoCarrito as $clave => $valor) {
                     $total += $valor->precio*$_SESSION['carrito'][$valor->ISBN]['cantidad'];
@@ -79,7 +79,7 @@
                 $iva = $total*0.04;
             }
             require_once "views/producto/carrito.php";
-        }
+        }*/
 
     }
 ?>

@@ -11,7 +11,7 @@
             </lord-icon>
         </a></div>
         <div class="menu2">Buscador</div>
-        <div class="menu4"><a href='index.php?controller=Base&action=listarCarrito'>
+        <div class="menu4"><a href='index.php?controller=DetallePedido&action=listarCarrito'>
         <?php 
         if(isset($_SESSION['carrito'])){
             //echo "<div class='numeroMenuCarrito'>".count($_SESSION['carrito'])."</div>";
