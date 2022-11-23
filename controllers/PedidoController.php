@@ -79,9 +79,9 @@
 
         function checkout(){
             require_once("models/pedido.php");
-            if(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) > 2){
+            if(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) > 0){
                 require_once "views/pedido/checkout.php";
-            }elseif(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) > 0){
+            }elseif(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) == 0){
                 header("location:index.php?controller=DetallePedido&action=listarCarrito");
             }else{
                 header("location:index.php?controller=cliente&action=login");

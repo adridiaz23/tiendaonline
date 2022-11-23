@@ -48,7 +48,6 @@ session_start();
             }
             $controlador->$action();   
         }else{
-
             echo "No existe el controlador";
         }
         require_once "views/general/pie.html";

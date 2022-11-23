@@ -1,3 +1,9 @@
+<div class="tituloHomeCliente">
+    <h1> LOS MÁS VENDIDOS</h1>
+</div>
+<div class="lineaTituloHomeCliente"> 
+  <div class="lineaHome"></div>
+</div>
 <div class="productos">
   <?php
   $i = 1;

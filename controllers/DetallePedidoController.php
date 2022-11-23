@@ -34,7 +34,11 @@
                 <?php
                 
             }
-            header("Location:index.php");
+            if(isset($_GET['comprar']) && $_GET['comprar'] == 'si'){
+                header("Location:index.php?controller=DetallePedido&action=listarCarrito");
+            }else{
+                header("Location:index.php");
+            }    
         }
 
         public static function vaciarCarrito(){
@@ -50,8 +54,14 @@
                 }
                 $producto = new Producto();
                 $listadoCarrito = $producto->listadoCarrito($listaIsbn);
+                foreach($listadoCarrito as $clave => $valor){
+                    $listado[$valor->ISBN] = $valor;
+                }
                 if(array_key_exists('button1', $_POST)) {
-                    $_SESSION['carrito'][$_POST['isbn']]++;
+                    if(intval($listado[$_POST['isbn']]->stock) > intval($_SESSION['carrito'][$_POST['isbn']])){
+                        $_SESSION['carrito'][$_POST['isbn']]++;
+                    }
+                    
                     header('Location:index.php?controller=DetallePedido&action=listarCarrito');
         
                 }
@@ -69,12 +79,16 @@
                     DetallePedidoController::vaciarCarrito();
                     //unset($_SESSION['carrito'][$_POST['isbn']]);
                     header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                }else if(array_key_exists('cantidad', $_POST)) {
+                    $_SESSION['carrito'][$_POST['isbn']] = intval($_POST['cantidad']);
+                    //unset($_SESSION['carrito'][$_POST['isbn']]);
+                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
                 }
 
                 //Calcular Subtotal SIN IVA
                 $total = 0;
                 foreach ($listadoCarrito as $clave => $valor) {
-                    $total += $valor->precio*$_SESSION['carrito'][$valor->ISBN];
+                    $total += $valor->precio*intval($_SESSION['carrito'][$valor->ISBN]);
                 }
                 $subtotal = $total-($total*0.04);
                 $iva = $total*0.04;

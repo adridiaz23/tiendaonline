@@ -17,7 +17,7 @@
 
         public function getISBN(){
             return $this->ISBN;
-        }
+        }//Calcular Subtotal SIN IVA
         public function setISBN($ISBN){
             $this->ISBN = $ISBN;
         }

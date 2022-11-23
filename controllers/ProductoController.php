@@ -209,6 +209,34 @@
                 $producto = new Producto();
                 $producto->setIsbn($_GET['isbn']);
                 $listadoProducto = $producto->listadoProducto();
+
+                if(array_key_exists('button1', $_POST)) {
+                    if(intval($listadoProducto[0]->stock) > intval($_SESSION['carrito'][$_POST['isbn']])){
+                        $_SESSION['carrito'][$_POST['isbn']]++;
+                    }
+                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+        
+                }
+                else if(array_key_exists('button2', $_POST)) {
+                    if($_SESSION['carrito'][$_POST['isbn']] > 1){
+                        $_SESSION['carrito'][$_POST['isbn']]--;
+                    }
+                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+
+                }else if(array_key_exists('button3', $_POST)) {
+                    unset($_SESSION['carrito'][$_POST['isbn']]);
+                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+
+                }else if(array_key_exists('button4', $_POST)) {
+                    DetallePedidoController::vaciarCarrito();
+                    //unset($_SESSION['carrito'][$_POST['isbn']]);
+                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                }else if(array_key_exists('cantidad', $_POST)) {
+                    $_SESSION['carrito'][$_POST['isbn']] = intval($_POST['cantidad']);
+                    //unset($_SESSION['carrito'][$_POST['isbn']]);
+                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                }
+
                 require_once "views/producto/paginaProducto.php";
             }else{
                 echo "No existe el producto";

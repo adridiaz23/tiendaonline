@@ -93,6 +93,7 @@
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+        
 
         
     }

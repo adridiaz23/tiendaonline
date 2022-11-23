@@ -13,7 +13,7 @@
         <div class="menu2">Buscador</div>
         <div class="menu4"><a href='index.php?controller=DetallePedido&action=listarCarrito'>
         <?php 
-        if(isset($_SESSION['carrito'])){
+        if(isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0){
             //echo "<div class='numeroMenuCarrito'>".count($_SESSION['carrito'])."</div>";
             echo '<span class="blue">'.count($_SESSION['carrito']).'</span>';
         }

@@ -23,7 +23,7 @@
         //Apartado del añadir al carrito comrpar y el corazon.
         echo "<div class= 'corazonPaginaProducto'>";
           echo "<a href='index.php?controller=detallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1'>Añadir al carrito</a>";
-          echo "<a  class= 'corazonMargen' href='#'>Comprar</a>";
+          echo "<a  class= 'corazonMargen' href='index.php?controller=detallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1&comprar=si'>Comprar</a>";
           echo "<a  class= 'corazonMargen' href='#'> "?>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
             <lord-icon
@@ -36,22 +36,6 @@
       </div>
       <?php
           echo "<br>";
-          echo "<div class='div4Carrito'>";
-          /*
-          !!Falta terminar esta parte.
-          */
-                echo "<div class='cantidadCarrito'>";
-                    echo "<form method='post' class='formCarrito'>";
-                    echo "<input type='submit' name='button2' class='button' value='-' />";
-                    echo "<input type='hidden' name='isbn' value= ".$listadoProducto[0]->ISBN ."/>";
-                    echo "</form>";
-                    echo "<p>".$_SESSION['carrito'][$listadoProducto[0]->ISBN]."</p>";
-                    echo "<form method='post' class='formCarrito'>";
-                    echo "<input type='submit' name='button1' class='button' value='+' />";
-                    echo "<input type='hidden' name='isbn' value=".$listadoProducto[0]->ISBN."/>";
-                    echo "</form>";
-                echo "</div>";
-          echo "</div>";
           echo "<h4>Autor: </h4>";
           echo "<p>".$listadoProducto[0]->autor."</p>";
           echo "<h4>Descripcion del Libro: </h4>";

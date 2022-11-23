@@ -554,6 +554,29 @@ span.blue {
 *
 */
 
+.tituloHomeCliente{
+    display:flex;
+    justify-content: center;
+}
+.lineaTituloHomeCliente{
+    
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+.lineaHome{
+    height: 2px;
+    width: 40%;
+    background-image: linear-gradient(90deg, rgba(84, 58, 183, 1) 0%,  rgba(0, 172, 193, 1) 100%);
+    animation:slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+    to {
+      background-position:40vw;
+    }
+  }
+
 .productos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -641,7 +664,7 @@ span.blue {
 
 .contenedorProducto .cajaProducto:before,
 .contenedorProducto .cajaProducto:after {
-    background: linear-gradient(315deg, rgba(84, 58, 183, 1), rgba(0, 172, 193, 1))
+    background: linear-gradient(315deg, rgba(84, 58, 183, 1), rgba(0, 172, 193, 1));
 }
 
 .contenedorProducto .cajaProducto span {
@@ -788,6 +811,18 @@ span.blue {
 *
 !CSS Pagina del Carrito
 */
+
+.cantidad{
+    width: 20px;
+    border: 0px;
+    text-align: center;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+  }
 
 .containerCarrito {
     display: flex;
@@ -1146,12 +1181,13 @@ div.eliminarCarrito>* {
 }
 
 .corazonPaginaProducto{
-   display: flex;
-}
-.corazonMargen{
-    margin-left: 38px;
-}
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
 
+}
 /*Final */
 
 /*
