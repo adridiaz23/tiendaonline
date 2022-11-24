@@ -44,7 +44,7 @@ class CategoriaController{
         require_once("models/categoria.php"); 
         $categoria = new Categoria("");
         $categoria->setIdCategoria($_GET['idCategoria']);
-        $lista =  $categoria->categoriaCliente();
+        $lista =  $categoria->productosDeCate();
         require_once "views/categorias/categoriaCliente.php";
         
     }
