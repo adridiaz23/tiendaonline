@@ -7,6 +7,9 @@
             session_destroy();
             header("Location:index.php");
         }
+        public function contacto(){
+            require_once "views/general/contacto.php";
+        }
 
         /*public static function añadirCarrito(){
             if(isset($_GET['isbn'])){ 

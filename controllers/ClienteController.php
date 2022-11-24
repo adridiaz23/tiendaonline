@@ -10,10 +10,13 @@
                 $validar->setCorreoCliente($_POST["correo"]);
                 $validar->setPassword(md5($_POST["password"]));
                 $validarRow = $validar->validarCliente();
-
+                
+                $_SESSION["correo"] = $_POST["correo"];
                 if (isset($validarRow[0]->nombre)){
                     //Una vez validado se genera la session del cliente
                     $_SESSION["Cliente"] =$validarRow[0]->nombre;
+                   
+
                     if(isset($_SESSION["carrito"]) && (count($_SESSION["carrito"])>0 )){
                         header('Location:index.php?controller=Pedido&action=checkout');
                     }else{
@@ -76,5 +79,35 @@
             require_once "views/cliente/home.php";
            
         }
+
+        public function editarPerfil(){
+       // var_dump($_SESSION['correo']);
+           if(isset($_SESSION['Cliente'])){
+            if(isset($_GET['correo'])){
+                require_once "models/cliente.php";
+                $cliente = new Cliente();
+                //$cliente->setDni($_GET['correo']); 
+                $lista = $cliente->mostrarDatos();
+                require_once "views/cliente/editarPerfil.php";
+
+            }elseif(isset($_POST)){
+                require_once "models/cliente.php";
+                $cliente = new Cliente();
+                foreach($_POST as $clave => $valor){
+                    $set = "set".$clave;
+                    $cliente->$set($valor);
+                 }
+                $cliente->editarPerfil();
+                $lista = $cliente->mostrarDatos();
+                require_once "views/cliente/editarPerfil.php";
+            }else{
+                echo "El usuario no existe";
+                require_once "views/cliente/login.php";
+            }
+           }
+           
+            //require_once "views/cliente/editarPerfil.php";
+        }
+
 
     }

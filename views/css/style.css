@@ -1336,3 +1336,16 @@ div.eliminarCarrito>* {
 }
 
 /*Final CSS CHECKOUT*/
+
+.contactMap{
+    width: 70%;
+    margin: 5%;
+    display: inline-block;
+}
+
+.contactInfo{
+    width: 20%;
+    margin: 2%;
+    display: inline-block;
+    color:black;
+}

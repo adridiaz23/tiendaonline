@@ -109,7 +109,16 @@
                 }
         }
 
-      
+        public function editarPerfil(){
+                $sql = "UPDATE cliente 
+                        SET nombre='".$this->nombre."', apellido='".$this->apellido."', calle='".$this->calle."', numero='".$this->numero."', password='".$this->password."', codigoPostal='".$this->codigoPostal."'
+                        WHERE correoCliente= '".$_SESSION['correo']."'";
+                $this->db->query($sql);
+        }
 
-        
+        public function mostrarDatos(){
+                $sql = "SELECT * FROM cliente where correoCliente= '".$_SESSION['correo']."'";
+                $rows = $this->db->query($sql);
+                return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
     }
