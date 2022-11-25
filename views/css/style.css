@@ -427,14 +427,13 @@ td.tdAdmin>a>img {
 }
 
 /*Final del CSS PAgina de Productos Admin*/
-
 /*
 *
 ! CSS Pagina de Menu 
 *
 */
 .menu { 
-   
+
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     display: grid;
@@ -453,11 +452,19 @@ td.tdAdmin>a>img {
 }
 
 .menu>div>a {
-    color: #209bff85;
+    color: white; 
 }
 
 .menu>div>a:hover {
     color: rgb(0, 106, 193);
+    font-weight: 700;
+}
+
+.menu>div>a:focus {
+    color: red;
+}
+
+.menu>div>a:active{
     font-weight: 700;
 }
 
@@ -471,7 +478,67 @@ td.tdAdmin>a>img {
     /*grid-area: 1 / 2 / 2 / 5;*/
     grid-column: 2/5;
     grid-row: 2;
+    display: flex;
+    flex-direction: row;
 }
+
+.wrapper{
+    width: 450px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  .wrapper .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+  }
+  .wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid silver;
+  }
+  .input-data input:focus ~ label,
+  .input-data input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #4158d0;
+  }
+  .wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  .input-data .underline{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    
+  }
+
+  .underline{
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #4158d0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .input-data input:focus ~ .underline:before,
+  .input-data input:valid ~ .underline:before{
+    transform: scaleX(1);
+  }
 
 .menu4 {
     /*grid-area: 1 / 6 / 2 / 7;*/

@@ -3,14 +3,11 @@
     <div class="inner-header flex">
          <div class="fromGenerico">
             <!-- Creamos el formulario donde su action será pasar los datos al model/loginAdmin y su función validar -->
-            <form action="index.php?controller=Cliente&action=validarCliente" method="POST">
-                    
+            <form action="index.php?controller=Cliente&action=validarCliente" method="POST">       
                 <label for="correo">Correo Electronico:</label>
-                <input type="text"  placeholder="Correo Electronico" name="correo" id="correo" autofocus>
-
+                <input type="text" maxlength="30" placeholder="Correo Electronico" name="correo" id="correo" autofocus>
                 <label for="password">Contraseña:</label>
-                
-                <input type="password" placeholder="Password" name="password" id="password">
+                <input type="password" maxlength="50" placeholder="Password" name="password" id="password">
                 <button class="botonMostrar " type="button" onclick="mostrarContrasena()"> 
                     <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
                     <lord-icon
@@ -20,16 +17,12 @@
                         style="width:50px;height:50px">
                     </lord-icon>
                 </button>
-              
-
                 <div class="buttonSubmit">
                     <input type="submit" value="Iniciar sesión" class="rainbowButton" >
                     <br>
                     <a href= 'index.php?controller=Cliente&action=registrar' class='enlaceMenuAdmin'>Registrate</a>
                 </div>
-
                 <a href= 'index.php?controller=Admin&action=login' class='enlaceMenuAdmin'>Admin Login</a>
-            
             </form>
         </div>
     </div>

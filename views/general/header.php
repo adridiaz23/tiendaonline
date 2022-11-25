@@ -10,7 +10,14 @@
                 style='width:250px;height:50px'>
             </lord-icon>
         </a></div>
-        <div class="menu2">Buscador</div>
+        <div class="menu2">
+            <div class="wrapper">
+                <div class="input-data">
+                  <input type="text" required>
+                  <label>Buscador</label>
+                </div>
+            </div>
+        </div>
         <div class="menu4"><a href='index.php?controller=DetallePedido&action=listarCarrito'>
         <?php 
         if(isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0){
