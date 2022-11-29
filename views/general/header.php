@@ -11,11 +11,11 @@
             </lord-icon>
         </a></div>
         <div class="menu2">
-            <div class="wrapper">
+            <div class="wrapper"><form class='buscador' action='index.php?controller=Producto&action=buscador' method='Post'>
                 <div class="input-data">
-                  <input type="text" required>
-                  <label>Buscador</label>
-                </div>
+                        <input class='buscador' type="text" name='buscador' required>
+                        <label class='buscador'>Buscador</label>
+                </div></form>
             </div>
         </div>
         <div class="menu4"><a href='index.php?controller=DetallePedido&action=listarCarrito'>

@@ -223,5 +223,13 @@
             return $rows->fetchAll(PDO::FETCH_CLASS);
             //return $sql;
         }
+
+        //Funcion para enlistar los productos buscados por el buscador
+        public function buscador($nombre)
+        {
+            $sql = "SELECT * FROM producto WHERE nombre LIKE '%".$nombre."%'";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
 }
 ?>

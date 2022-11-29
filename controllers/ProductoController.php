@@ -203,6 +203,7 @@
             }
         }  
 
+        //Funcion para printar la pgina del cada producto
         public function  paginaProducto(){
             if(isset($_GET['isbn']) && $_GET['isbn'] != ''){
                 require_once "models/producto.php";
@@ -241,6 +242,19 @@
             }else{
                 echo "No existe el producto";
             }
-        }      
+        }   
+        
+        //Funcion para printar la pagina del producto
+        public function buscador()
+        {
+            if(isset($_POST['buscador'])){
+                require_once "models/producto.php";
+                $producto = new Producto();
+                $listadoProductos = $producto->buscador($_POST['buscador']);
+                require_once "views/producto/buscador.php";
+            }else{
+                header('location:index.php');
+            }
+        }
 }
 ?>
