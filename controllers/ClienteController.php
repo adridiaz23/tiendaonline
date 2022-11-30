@@ -52,6 +52,8 @@
                 if ( $validar->registrarCliente()==1){
 
                     $_SESSION["Cliente"] = $_POST["nombre"];
+                    $_SESSION["correoCliente"] = $_POST["correo"];
+
                     header('Location:index.php?controller=Cliente&action=home'); 
 
                 }else{
@@ -108,6 +110,29 @@
            
             //require_once "views/cliente/editarPerfil.php";
         }
+
+        //Funcion para añadir opiniones
+        public function opiniones()
+        {
+            if(isset($_SESSION['Cliente']) ){
+                if(isset($_POST['estrellas'])){
+                    require_once "models/pedido.php";
+                    $pedido = new Producto();
+                    $listadoPedido = $pedido->opiniones($_SESSION["correo"]);
+                    require_once "views/cliente/opiniones.php";
+                }
+                else{
+                    require_once "models/pedido.php";
+                    $pedido = new Pedido();
+                    $listadoPedido = $pedido->opiniones($_SESSION["correo"]);
+                    require_once "views/cliente/opiniones.php";
+                }
+            }else{
+
+                header('location:index.php');
+            }
+        }
+
 
 
     }

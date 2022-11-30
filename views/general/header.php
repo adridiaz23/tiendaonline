@@ -11,9 +11,9 @@
             </lord-icon>
         </a></div>
         <div class="menu2">
-            <div class="wrapper"><form class='buscador' action='index.php?controller=Producto&action=buscador' method='Post'>
+            <div class="wrapper"><form class='buscador'  action='index.php?controller=Producto&action=buscador' method='Post'>
                 <div class="input-data">
-                        <input class='buscador' type="text" name='buscador' required>
+                        <input class='buscador' type="search" pattern="[a-zA-Z0-9]{0,100}" name='buscador' required>
                         <label class='buscador'>Buscador</label>
                 </div></form>
             </div>
