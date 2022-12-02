@@ -83,8 +83,7 @@
                         $producto->setEstado('0');
                     }
                     $producto->activar();
-                    $lista = $producto->listadoProductos();
-                    require_once "views/producto/lista.php";
+                    header('location:index.php?controller=Producto&action=listado');
                 }else{
                     require_once "views/producto/lista.php";
                 }
@@ -189,10 +188,8 @@
                     $producto -> setIsbn($_GET['isbn']);
                     $producto -> setDestacado($_GET['destacado']);
                     $producto->editarDestacado();
-                    $lista = $producto->listadoProductos();
-                    require_once "views/producto/lista.php";
+                    header('location:index.php?controller=Producto&action=listado');
                 }else{
-                    echo "No hay ISBN para editar";
                     require_once "models/producto.php";
                     $producto = new Producto();
                     $lista = $producto->listadoProductos();

@@ -26,7 +26,7 @@ session_start();
         }elseif(!(isset($_GET['controller']) && isset($_GET['action']))){
             $categorias = new CategoriaController("");
             $categorias->categoriasMenu();
-        }else if($_GET['action'] != "validarCliente" && $_GET['action'] != "login" && $_GET['action'] != "registrar"){
+        }else if($_GET['action'] != "validarCliente" && $_GET['action'] != "login" && $_GET['action'] != "registrar" && $_GET['action'] != "validar"){
             $categorias = new CategoriaController("");
             $categorias->categoriasMenu();
         }
