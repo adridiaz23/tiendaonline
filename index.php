@@ -15,6 +15,9 @@ session_start();
         <title>Document</title>
     </head>
     <body>
+    
+    <script src="views/css/assets/jquery-3.6.2.js"></script>
+    <script src="views/css/assets/lockr/lockr.js"></script>
     <script src="views/css/assets/js.js"></script>
     
         <?php 
