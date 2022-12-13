@@ -1,5 +1,9 @@
 
 <body>
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <div class="menu">
         <div class="menu1"><a href='index.php'>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
@@ -38,7 +42,35 @@
         <?php
         if(isset($_SESSION["Cliente"])){
             ?>
-            <div class="menu5"> <a href="index.php?controller=Cliente&action=editarPerfil&correo=<?php echo $_SESSION["correo"]; ?>"><?php echo $_SESSION["Cliente"]; ?> </a> / <a href='index.php?controller=Base&action=salir'>Salir</a> </div>
+            <div class="menu5"> 
+                <!-- <a href="index.php?controller=Cliente&action=editarPerfil&correo=<?php //echo $_SESSION["correo"]; ?>"><?php// echo $_SESSION["Cliente"]; ?> </a> / <a href='index.php?controller=Base&action=salir'>Salir</a> -->
+                <div class="dropdown" id="dropdown">
+                    <!--<button onclick="handleDropdownClicked(event)">
+                        <span class="material-symbols-outlined"> settings </span>
+                        More Actions
+                        <span id="icon" class="material-symbols-outlined"> expand_more </span>
+                    </button>-->
+                    <button onclick="handleDropdownClicked(event)">
+                        <span class="material-symbols-outlined"><?php echo $_SESSION["Cliente"]; ?></span>
+                            <span id="icon" class="material-symbols-outlined"> expand_more </span>
+                    </button>
+                    <div class="menuPerfil">
+                        <button >
+                            <span class="material-symbols-outlined"> build </span>
+                            Build Tools
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined"> description </span>
+                            File Manager
+                        </button>
+                        <button>
+                            <span class="material-symbols-outlined"> logout </span>
+                            Logout
+                        </button>
+                    </div>
+                </div>
+
+            </div>
             <?php
         }else{
             ?>
@@ -47,11 +79,11 @@
         }
         ?>
         
-        <div class="menu6"> <a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[0]->idCategoria; ?>'><?php echo  $categorias[0]->nombre; ?></a></div>
-        <div class="menu7"><a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[1]->idCategoria; ?>'><?php echo $categorias[1]->nombre; ?></a></div>
-        <div class="menu8"><a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[2]->idCategoria; ?>'><?php echo $categorias[2]->nombre; ?></a></div>
-        <div class="menu9"><a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[3]->idCategoria; ?>'><?php echo $categorias[3]->nombre; ?></a></div>
-        <div class="menu10"><a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[4]->idCategoria; ?>'><?php echo $categorias[4]->nombre; ?></a></div>
+        <div class="menu6"> <a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[0]->idCategoria; ?>'><?php echo  $categorias[0]->nombre; ?></a></div>
+        <div class="menu7"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[1]->idCategoria; ?>'><?php echo $categorias[1]->nombre; ?></a></div>
+        <div class="menu8"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[2]->idCategoria; ?>'><?php echo $categorias[2]->nombre; ?></a></div>
+        <div class="menu9"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[3]->idCategoria; ?>'><?php echo $categorias[3]->nombre; ?></a></div>
+        <div class="menu10"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[4]->idCategoria; ?>'><?php echo $categorias[4]->nombre; ?></a></div>
         <div class="menu11">Todos</div>
         
     </div>
