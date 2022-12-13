@@ -79,9 +79,8 @@
             $producto =  new Producto();
             $lista = $producto->listadoProductosDestacados();
             require_once "views/cliente/home.php";
-           
         }
-
+        
         public function editarPerfil(){
        // var_dump($_SESSION['correo']);
            if(isset($_SESSION['Cliente'])){
@@ -91,7 +90,6 @@
                 //$cliente->setDni($_GET['correo']); 
                 $lista = $cliente->mostrarDatos();
                 require_once "views/cliente/editarPerfil.php";
-
             }elseif(isset($_POST)){
                 require_once "models/cliente.php";
                 $cliente = new Cliente();
@@ -107,7 +105,6 @@
                 require_once "views/cliente/login.php";
             }
            }
-           
             //require_once "views/cliente/editarPerfil.php";
         }
 
@@ -117,18 +114,17 @@
             if(isset($_SESSION['Cliente']) ){
                 if(isset($_POST['estrellas'])){
                     require_once "models/pedido.php";
-                    $pedido = new Producto();
+                    $pedido = new Pedido();
                     $listadoPedido = $pedido->opiniones($_SESSION["correo"]);
                     require_once "views/cliente/opiniones.php";
-                }
-                else{
+
+                }else{
                     require_once "models/pedido.php";
                     $pedido = new Pedido();
                     $listadoPedido = $pedido->opiniones($_SESSION["correo"]);
                     require_once "views/cliente/opiniones.php";
                 }
             }else{
-
                 header('location:index.php');
             }
         }

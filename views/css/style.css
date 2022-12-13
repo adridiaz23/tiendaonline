@@ -219,8 +219,10 @@ Final de CSS Pagina de loggin */
 
 div.spacerAdmin {
     display: block;
-    height: 80px;
+    height: 50px;
 }
+
+
 
 .menuAdmin {
     max-width: 100%;
@@ -307,20 +309,24 @@ a.enlaceMenuAdmin:hover::after {
 ! CSS Pagina de Registro de Producto Admin
 */
 
-.containerRegistroProducto{
+.inner-headerProducto{
+    height: 78.45vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.buttonSubmitProducto{
+    height: 100px;
+    width: 60%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.divFormulario label {
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.divFormulario input {
+.selectProducto{
     display: block;
     height: 35px;
     width: 100%;
@@ -330,6 +336,16 @@ a.enlaceMenuAdmin:hover::after {
     margin-top: 3px;
     font-size: 14px;
     font-weight: 300;
+}
+
+option.optionProducto{
+    color: black;
+}
+
+.tituloRegistroProducto{
+    padding-top: 15px;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 /* Final CSS Pagina de Registro de Producto Admin*/
