@@ -1898,3 +1898,106 @@ CSS estrellas valoraciones
 /*
 Fin CSS valoraciones
 */
+
+
+/*
+!!!Responsive Smartphone
+*/
+
+/*
+Responsive Smartphone Login/Registrar
+*/
+@media only screen and (max-width: 767px){
+    .fromGenerico form {
+        width: 292px;
+    }
+    .botonMostrar{
+        margin-left: 105px;
+    }
+    .content {
+        margin-bottom: 75px;
+    }
+}
+
+/*
+Responsive Smartphone Home
+*/
+@media only screen and (max-width: 767px){
+    .tituloHomeCliente {
+        text-align: center;
+    }
+    .tituloHomeCliente > h1{
+        font-size: 20px;
+    }
+    .productos{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .producto1  { grid-area: 1 / 1 / 2 / 2; }
+    .producto2  { grid-area: 2 / 1 / 3 / 2; }
+    .producto3  { grid-area: 3 / 1 / 4 / 2; }
+    .producto4  { grid-area: 4 / 1 / 5 / 2; }
+    .producto5  { grid-area: 5 / 1 / 6 / 2; }
+
+    .imagenHome {
+        margin-right: 0px; 
+        width: 220px;
+    }
+    .contenedorProducto .cajaProducto {
+        width: 220px;
+        height: 330px;
+    }
+    .contenedorProducto .cajaProducto .contenidoProducto h2 {
+        font-size: 15px;
+    }
+    .contenedorProducto .cajaProducto .contenidoProducto p {
+        font-size: 15px;
+    }
+    .contenedorProducto .cajaProducto .contenidoProducto a {
+        font-size: 12px;
+    }
+
+}
+
+/*
+Responsive Smartphone Pagina Producto
+*/
+
+@media only screen and (max-width: 767px){
+
+    .imagenPaginaProducto{
+        width: 220px;
+        margin-right: 0px
+    }
+    .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto {
+        width: 220px;
+        height: 400px;
+    }
+    .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto h2 {
+        font-size: 15px;
+    }
+    .precioPaginaProducto {
+        font-size: 15px !important;
+    }
+    .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto p {
+        font-size: 12px;
+    }
+    .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto a {
+        font-size: 10px;
+    }
+    .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto h4 {
+        font-size: 13px;
+    }
+    .corazonPaginaProducto {
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+}
