@@ -94,7 +94,6 @@
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
         
-        
         //Funcion para mostrar los pedidos pagados 
         public function opiniones($nomUsuario){
                 $sql = "SELECT * FROM pedido WHERE estado == 1 ";
