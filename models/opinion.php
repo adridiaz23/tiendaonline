@@ -43,7 +43,7 @@
 
         public function validarOpinion(){
 
-            $sql = " INSERT INTO valoraciones VALUES  (ISBN, comentario, valoracion) VALUES ('".$this->idValoracion."', '".$this->comentario."','".$this->valoracion."') ";
+            $sql = "INSERT INTO valoraciones (idOpinion, ISBN, comentario, valoracion) VALUES ('".$this->idValoracion."', '".$this->comentario."','".$this->valoracion."') ";
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
