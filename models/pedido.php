@@ -102,18 +102,7 @@
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
-<<<<<<< Updated upstream
        
-=======
-
-        public function insert($importe){
-            $sql = "INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `importeTotal`) VALUES (NULL, '".$_SESSION['correo']."', '".date('d-m-Y')."', NULL, '".$importe."');";
-            $this->db->query($sql);
-            //return $this;   
-            return $sql;
-        }
-        
->>>>>>> Stashed changes
     }
 
 ?>
