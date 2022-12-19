@@ -130,20 +130,24 @@
         }
         public function validarOpinion(){
             // Mientras no se pasen los datos del formulario mostraremos el else
-            if (isset($_POST["valoracion"]) && isset($_POST["descripcion"])) {
-                require_once("models/pedido.php"); 
-                $validar = new Opinion();
+            if (isset($_POST["estrellas"]) && isset($_POST["descripcion"])) {
+                require_once("models/opinion.php"); 
+                /* A class that is not defined. */
+                /* A class that is not defined in the code you posted. */
+                $opinion = new Opinion();
 
-                $validar->setIdValoracion($_POST["ISBN"]);
-                $validar->setComentario($_POST["descripcion"]);
-                $validar->setValoracion($_POST["valoracion"]);
+                $opinion->setIdValoracion($_POST["isbn"]);
+                $opinion->setComentario($_POST["descripcion"]);
+                $opinion->setValoracion($_POST["estrellas"]);
 
-                $listadoOpinion = $validar->validarOpinion();
+                $listadoOpinion = $opinion->validarOpinion();
+                
                 require_once "views/cliente/opiniones.php";
 
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {
-                header("index.php");
+                header("location:index.php");
+
             }
         }
 

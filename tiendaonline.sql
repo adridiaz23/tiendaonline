@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2022 a las 10:27:32
+-- Tiempo de generación: 19-12-2022 a las 12:15:58
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -148,7 +148,7 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `importeTotal`) VALUES
-(4, 'victor@gmail.com', '2022-11-14', 0, 0.00),
+(4, 'victor@gmail.com', '2022-11-14', 1, 0.00),
 (5, 'pau@gmail.com', '2022-11-14', 0, 0.00),
 (6, 'guille@gmail.com', '2022-11-14', 0, 0.00),
 (7, 'david@gmail.com', '2022-11-14', 0, 0.00),
@@ -210,6 +210,18 @@ INSERT INTO `producto` (`ISBN`, `nombre`, `descripcion`, `imagen`, `precio`, `st
 (28, 'Fundamentos de Programación', 'Este manual pretende ser una guía de referencia para la utilización del lenguaje de programación C++ en el desarrollo de programas. Está orientada a alumnos de primer curso de programación de Ingeniería Informática y está concebido como un libro de apoyo a la docencia.', 'views/css/assets/fotos/foto_28.jpg', 10.00, 30, 3, 'Viciente Benjumea', 0, 0),
 (29, 'Fundamentos de la Programación', 'Esta publicación contiene los apuntes de clase de la asignatura Fundamentos de la programación, asignatura de 1º curso de los grados que se imparten en la Facultad de Informática de la UCM.', 'views/css/assets/fotos/foto_29.jpg', 15.00, 9, 3, 'Luis Hernández Yáñez', 0, 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `valoraciones`
+--
+
+CREATE TABLE `valoraciones` (
+  `idValoracion` int(11) NOT NULL,
+  `comentario` text NOT NULL,
+  `valoracion` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Índices para tablas volcadas
 --
@@ -256,6 +268,12 @@ ALTER TABLE `producto`
   ADD KEY `categoria` (`categoria`);
 
 --
+-- Indices de la tabla `valoraciones`
+--
+ALTER TABLE `valoraciones`
+  ADD PRIMARY KEY (`idValoracion`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -299,6 +317,12 @@ ALTER TABLE `pedido`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`idCategoria`);
+
+--
+-- Filtros para la tabla `valoraciones`
+--
+ALTER TABLE `valoraciones`
+  ADD CONSTRAINT `valoraciones_ibfk_1` FOREIGN KEY (`idValoracion`) REFERENCES `producto` (`ISBN`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
