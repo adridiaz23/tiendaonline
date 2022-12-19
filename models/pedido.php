@@ -102,6 +102,18 @@
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
+        //Funcion para saber el id del siguiente pedido
+        public function ultimoPedido(){
+                $sql = "SELECT idPedido FROM `pedido` order by idPedido DESC limit 1";
+                $rows = $this->db->query($sql);
+                return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
+
+        public function insert(){
+                $sql = "INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `importeTotal`) VALUES (NULL, '".$this->correoCliente."', '".$this->fechaPeticion."', '0', '".$this->importeTotal."')";
+                $this->db->query($sql);
+        }
        
     }
 

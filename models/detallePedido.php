@@ -37,12 +37,10 @@
             $this->idPedido = $idPedido;
         }
 
-        public function insertar()
+        public function insert()
         {
-            $sql = "INSERT INTO `detallepedido` (`idDetallePedido`, `ISBN`, `unidades`, `idPedido`) VALUES (NULL, '1', '5', '10');";
+            $sql = "INSERT INTO `detallepedido` (`idDetallePedido`, `ISBN`, `unidades`, `idPedido`) VALUES (NULL, '".$this->ISBN."', '".$this->unidades."', '".$this->idPedido."');";
             $this->db->query($sql);
-            //return $this;   
-            return $sql;
         }
 
     }

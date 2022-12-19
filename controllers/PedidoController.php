@@ -90,9 +90,40 @@
 
         function finalizarCompra(){
             require_once("models/pedido.php");
-            
-            require_once("models/detallePedido.php");
             require_once("models/producto.php");
+            $pedido = new Pedido();
+            $pedido->setCorreoCliente($_SESSION['correo']);
+
+            foreach($_SESSION['carrito'] as $clave => $valor){
+                $listaIsbn[] = $clave;
+            }
+            $producto = new Producto();
+            $listadoCarrito = $producto->listadoCarrito($listaIsbn);
+            foreach($listadoCarrito as $clave => $valor){
+                $listado[$valor->ISBN] = $valor;
+            }
+            $total = 0;
+            foreach ($listadoCarrito as $clave => $valor) {
+                $total += $valor->precio*intval($_SESSION['carrito'][$valor->ISBN]);
+            }
+
+            $pedido->setImporteTotal($total);
+            $pedido->setFechaPeticion(date('Y-m-d'));
+            $pedido->insert();
+
+            $id = $pedido->ultimoPedido();
+
+            require_once("models/detallePedido.php");
+            foreach($_SESSION['carrito'] as $clave => $valor){
+                $detallePedido = new DetallePedido();
+                $detallePedido->setISBN($clave);
+                $detallePedido->setUnidades($valor);
+                $detallePedido->setIdPedido($id[0]->idPedido);
+                $detallePedido->insert();
+            }
+
+            DetallePedidoController::vaciarCarrito();
+            //header("location:index.php");
         }
     }
         
