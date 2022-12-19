@@ -38,7 +38,7 @@
                 header("Location:index.php?controller=DetallePedido&action=listarCarrito");
             }else{
                 header("Location:index.php");
-            }    
+            }
         }
 
         public static function vaciarCarrito(){

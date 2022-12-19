@@ -87,5 +87,12 @@
                 header("location:index.php?controller=cliente&action=login");
             }
         }
+
+        function finalizarCompra(){
+            require_once("models/pedido.php");
+            
+            require_once("models/detallePedido.php");
+            require_once("models/producto.php");
+        }
     }
         

@@ -17,7 +17,8 @@
 
         public function getISBN(){
             return $this->ISBN;
-        }//Calcular Subtotal SIN IVA
+        }
+
         public function setISBN($ISBN){
             $this->ISBN = $ISBN;
         }
@@ -34,6 +35,14 @@
         }
         public function setIdPedido($idPedido){
             $this->idPedido = $idPedido;
+        }
+
+        public function insertar()
+        {
+            $sql = "INSERT INTO `detallepedido` (`idDetallePedido`, `ISBN`, `unidades`, `idPedido`) VALUES (NULL, '1', '5', '10');";
+            $this->db->query($sql);
+            //return $this;   
+            return $sql;
         }
 
     }
