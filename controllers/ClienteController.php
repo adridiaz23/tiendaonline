@@ -128,7 +128,29 @@
                 header('location:index.php');
             }
         }
+        public function validarOpinion(){
+            // Mientras no se pasen los datos del formulario mostraremos el else
+            if (isset($_POST["valoracion"]) && isset($_POST["descripcion"])) {
+                require_once("models/pedido.php"); 
+                $validar = new Opinion();
 
+                $validar->setIdValoracion($_POST["ISBN"]);
+                $validar->setComentario($_POST["descripcion"]);
+                $validar->setValoracion($_POST["valoracion"]);
+
+                $listadoOpinion = $validar->validarOpinion();
+                require_once "views/cliente/opiniones.php";
+
+                //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
+            } else {
+                header("index.php");
+            }
+        }
+
+         //Función para crear el formulario de las valoraciones/opiniones
+        public function paginaOpiniones(){
+            require_once "views/producto/paginaOpiniones.php";
+        }
 
 
     }

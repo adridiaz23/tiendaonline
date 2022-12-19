@@ -98,11 +98,11 @@
         //Funcion para mostrar los pedidos pagados 
         public function opiniones($nomUsuario){
                 $sql = "SELECT * FROM pedido WHERE estado == 1 ";
-                $sql = "SELECT producto.imagen  FROM (`detallepedido` INNER JOIN `pedido` ON detallepedido.idPedido = pedido.idPedido) INNER JOIN `producto`  ON detallepedido.ISBN = producto.ISBN WHERE pedido.estado = 1 AND pedido.correoCliente = '$nomUsuario'" ;
+                $sql = "SELECT producto.imagen, detallepedido.ISBN FROM (`detallepedido` INNER JOIN `pedido` ON detallepedido.idPedido = pedido.idPedido) INNER JOIN `producto`  ON detallepedido.ISBN = producto.ISBN WHERE pedido.estado = 1 AND pedido.correoCliente = '$nomUsuario'" ;
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
-        
+       
     }
 
 ?>

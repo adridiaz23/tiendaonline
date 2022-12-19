@@ -1790,7 +1790,7 @@ Final del CSS de buscador
 */
 
 /*
-CSS estrellas valoraciones
+CSS Pagina Opiniones
 */
 .valoracion {
     position: relative;
@@ -1816,6 +1816,86 @@ CSS estrellas valoraciones
     color: #fdfd00;
 }
 
+.containerOpinines{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 9%;
+    text-align: center;
+    justify-content: center;
+}
+
+.fromGenerico ::placeholder {
+    color: #e5e5e5;
+}
+
+.rainbowButton {
+    background-color: #209bff85 !important;
+}
+
+.rainbowButton:hover {
+    background-color: rgb(0, 106, 193) !important;
+    cursor: pointer;
+}
+
+.buttonSubmit {
+    height: 100px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fromGenericoOpiniones form * {
+    color: #000;
+ 
+    outline: none;
+    border: none;
+}
+
+.fromGenericoOpiniones form {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding-top: 15px;
+    padding: 50px 35px;
+    border-color: white;
+}
+
+.fromGenericoOpiniones label {
+    display: block;
+    margin-top: 10px;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.fromGenericoOpiniones input {
+    display: block;
+    height: 35px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+
+/*
+Fin CSS Opiniones
+*/
 
 /* Perfil usuario */
 
@@ -1895,9 +1975,7 @@ CSS estrellas valoraciones
     background-color: blue;
 }
 
-/*
-Fin CSS valoraciones
-*/
+
 
 
 /*
