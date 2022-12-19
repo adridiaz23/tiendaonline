@@ -619,7 +619,9 @@ td.tdAdmin>a>img {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: min-content;
 }
+
 .menu4 > a > div{
     background-color: white;
 }
@@ -1483,7 +1485,7 @@ path.two {
 }
 
 .leftside {
-	background: #030303;
+	background: #B8D4FB;
 	width: 25rem;
 	display: inline-flex;
     align-items: center;
@@ -1497,6 +1499,7 @@ path.two {
 	width: 20em;
     height: 20em;
     border-radius: 100%;
+    border: 2px solid #7647CD;
 }
 
 .rightside {
@@ -1546,7 +1549,7 @@ path.two {
 .buttonCheckout{
     background: linear-gradient(
 135deg
-, #753370 0%, #298096 100%);
+, #B8D4FB 0%, #7647CD 100%);
     padding: 15px;
     border: none;
     border-radius: 50px;
@@ -1557,6 +1560,7 @@ path.two {
     width:100%;
     letter-spacing: .11rem;
     outline:none;
+    cursor: pointer;
 }
 
 .buttonCheckout:hover
