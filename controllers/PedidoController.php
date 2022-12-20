@@ -111,6 +111,10 @@
             $listadoCarrito = $producto->listadoCarrito($listaIsbn);
             foreach($listadoCarrito as $clave => $valor){
                 $listado[$valor->ISBN] = $valor;
+                $productoStock = new Producto();
+                $productoStock->setIsbn($valor->ISBN);
+                $productoStock->setStock($valor->stock-intval($_SESSION['carrito'][$valor->ISBN]));
+                $productoStock->updateStock();
             }
             $total = 0;
             foreach ($listadoCarrito as $clave => $valor) {

@@ -277,5 +277,25 @@
             }
         }
 
+        public function añadirFavorito(){
+            if(isset($_GET['isbn'])){
+                require_once "models/favoritos.php";
+                $productoFavorito = new Favorito();
+                $productoFavorito->setIsbn($_GET['isbn']);
+                $productoFavorito->setCorreoCliente($_SESSION['correo']);
+                $lista = $productoFavorito->comprobarFavorito();
+                if(count($lista) > 0){
+                    
+                }
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
+            }else{
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
+            }
+        }
+
 }
 ?>

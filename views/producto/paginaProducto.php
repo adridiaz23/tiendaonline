@@ -24,7 +24,7 @@
         echo "<div class= 'corazonPaginaProducto'>";
           echo "<a href='index.php?controller=detallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1'>Añadir al carrito</a>";
           echo "<a  class= 'corazonMargen' href='index.php?controller=DetallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1&comprar=si'>Comprar</a>";
-          echo "<a  class= 'corazonMargen' href='#'> "?>
+          echo "<a  class= 'corazonMargen' href='index.php?controller=Producto&action=añadirFavorito&isbn=".$listadoProducto[0]->ISBN."'> "?>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
             <lord-icon
                 src='https://cdn.lordicon.com/rjzlnunf.json'

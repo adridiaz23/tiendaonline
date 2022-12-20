@@ -232,6 +232,11 @@
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
 
-        
+        //Funcion para actualizar el stock del producto
+        public function updateStock()
+        {
+            $sql = "UPDATE producto set stock = '".$this->stock."' WHERE ISBN = '".$this->isbn."'";
+            $this->db->query($sql);
+        }
 }
 ?>
