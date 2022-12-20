@@ -7,8 +7,8 @@
           
                 <select id="estado" name="estado"> 
                     <option value="" selected></option> 
-                    <option value="0">Falta Pagar</option>
-                    <option value="1">Pagado</option>
+                    <option value="0">En reparto</option>
+                    <option value="1">Envio entregado</option>
                 </select>
                 
                 <input type="submit" value="Buscar"  >
