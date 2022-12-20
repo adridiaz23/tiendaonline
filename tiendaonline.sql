@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-12-2022 a las 10:14:35
+-- Tiempo de generación: 20-12-2022 a las 10:40:20
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -131,6 +131,17 @@ INSERT INTO `detallepedido` (`idDetallePedido`, `ISBN`, `unidades`, `idPedido`) 
 (20, 16, 2, 11),
 (23, 9, 2, 28),
 (24, 9, 1, 29);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `favoritos`
+--
+
+CREATE TABLE `favoritos` (
+  `correoCliente` varchar(30) NOT NULL,
+  `ISBN` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -278,6 +289,13 @@ ALTER TABLE `detallepedido`
   ADD KEY `ISBN` (`ISBN`);
 
 --
+-- Indices de la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD PRIMARY KEY (`correoCliente`,`ISBN`),
+  ADD KEY `ISBN` (`ISBN`);
+
+--
 -- Indices de la tabla `pedido`
 --
 ALTER TABLE `pedido`
@@ -337,6 +355,13 @@ ALTER TABLE `valoraciones`
 ALTER TABLE `detallepedido`
   ADD CONSTRAINT `detallepedido_ibfk_1` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`),
   ADD CONSTRAINT `detallepedido_ibfk_2` FOREIGN KEY (`ISBN`) REFERENCES `producto` (`ISBN`);
+
+--
+-- Filtros para la tabla `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`correoCliente`) REFERENCES `cliente` (`correoCliente`),
+  ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`ISBN`) REFERENCES `producto` (`ISBN`);
 
 --
 -- Filtros para la tabla `pedido`

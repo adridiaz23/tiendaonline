@@ -1046,12 +1046,16 @@ img.imagenCarrito {
     grid-row: 1;
 }
 
-.div2Carrito > a > p{
+.div2Carrito > p > a{
     color: #000000;
 }
 
-.div2Carrito > a{
+.div1Carrito > a{
     width: 50%;
+}
+
+.div1Carrito > a > img{
+    width: 100%;
 }
 
 div.cantidadCarrito {
