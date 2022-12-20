@@ -149,7 +149,9 @@
 
                 $listadoOpinion = $opinion->validarOpinion();
                 
-                require_once "views/cliente/home.php";
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
 
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {
