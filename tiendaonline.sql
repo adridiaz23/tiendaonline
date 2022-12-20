@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-12-2022 a las 12:15:58
+-- Tiempo de generación: 20-12-2022 a las 10:14:35
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -127,7 +127,10 @@ INSERT INTO `detallepedido` (`idDetallePedido`, `ISBN`, `unidades`, `idPedido`) 
 (16, 9, 1, 9),
 (17, 6, 1, 10),
 (18, 10, 1, 10),
-(19, 3, 1, 5);
+(19, 3, 1, 5),
+(20, 16, 2, 11),
+(23, 9, 2, 28),
+(24, 9, 1, 29);
 
 -- --------------------------------------------------------
 
@@ -148,13 +151,32 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `importeTotal`) VALUES
-(4, 'victor@gmail.com', '2022-11-14', 1, 0.00),
+(4, 'victor@gmail.com', '2022-11-14', 0, 0.00),
 (5, 'pau@gmail.com', '2022-11-14', 0, 0.00),
 (6, 'guille@gmail.com', '2022-11-14', 0, 0.00),
 (7, 'david@gmail.com', '2022-11-14', 0, 0.00),
 (8, 'alejandro@gmail.com', '2022-11-14', 0, 0.00),
 (9, 'albert@gmail.com', '2022-11-14', 0, 0.00),
-(10, 'adri@gmail.com', '2022-11-14', 0, 0.00);
+(10, 'adri@gmail.com', '2022-11-14', 0, 0.00),
+(11, 'albert@gmail.com', '2022-12-07', 0, 0.00),
+(12, 'victor@gmail.com', '2022-12-19', 0, 0.00),
+(13, 'alejandro@gmail.com', '2022-12-19', 0, 0.00),
+(14, 'victor@gmail.com', '0000-00-00', 0, 90.00),
+(15, 'victor@gmail.com', '0000-00-00', 0, 90.00),
+(16, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(17, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(18, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(19, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(20, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(21, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(22, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(23, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(24, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(25, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(26, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(27, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(28, 'victor@gmail.com', '2022-12-19', 0, 90.00),
+(29, 'victor@gmail.com', '2022-12-19', 0, 45.00);
 
 -- --------------------------------------------------------
 
@@ -217,9 +239,11 @@ INSERT INTO `producto` (`ISBN`, `nombre`, `descripcion`, `imagen`, `precio`, `st
 --
 
 CREATE TABLE `valoraciones` (
-  `idValoracion` int(11) NOT NULL,
-  `comentario` text NOT NULL,
-  `valoracion` int(5) NOT NULL
+  `idOpinion` int(11) NOT NULL,
+  `ISBN` int(11) NOT NULL,
+  `comentario` tinytext NOT NULL,
+  `valoracion` int(5) NOT NULL,
+  `correoCliente` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -271,7 +295,9 @@ ALTER TABLE `producto`
 -- Indices de la tabla `valoraciones`
 --
 ALTER TABLE `valoraciones`
-  ADD PRIMARY KEY (`idValoracion`);
+  ADD PRIMARY KEY (`idOpinion`),
+  ADD KEY `ISBN` (`ISBN`),
+  ADD KEY `valoraciones_ibfk_2` (`correoCliente`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -287,13 +313,19 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `detallepedido`
 --
 ALTER TABLE `detallepedido`
-  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de la tabla `valoraciones`
+--
+ALTER TABLE `valoraciones`
+  MODIFY `idOpinion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -322,7 +354,8 @@ ALTER TABLE `producto`
 -- Filtros para la tabla `valoraciones`
 --
 ALTER TABLE `valoraciones`
-  ADD CONSTRAINT `valoraciones_ibfk_1` FOREIGN KEY (`idValoracion`) REFERENCES `producto` (`ISBN`);
+  ADD CONSTRAINT `valoraciones_ibfk_1` FOREIGN KEY (`ISBN`) REFERENCES `producto` (`ISBN`),
+  ADD CONSTRAINT `valoraciones_ibfk_2` FOREIGN KEY (`correoCliente`) REFERENCES `cliente` (`correoCliente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
