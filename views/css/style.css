@@ -1988,14 +1988,12 @@ Fin CSS Opiniones
 }
 
 
-
-
 /*
 !!!Responsive Smartphone
 */
 
 /*
-Responsive Smartphone Login/Registrar
+Responsive Smartphone Formularios.
 */
 @media only screen and (max-width: 767px){
     .fromGenerico form {
@@ -2006,6 +2004,10 @@ Responsive Smartphone Login/Registrar
     }
     .content {
         margin-bottom: 75px;
+    }
+
+    .fromGenericoOpiniones form {
+        width: 275px;
     }
 }
 
