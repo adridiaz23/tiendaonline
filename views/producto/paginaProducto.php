@@ -32,6 +32,13 @@
                 colors='primary:#000000,secondary:#f30000'
                 style='width:23px;height:23px'>
             </lord-icon> </a>
+            <!--<script src='https://cdn.lordicon.com/qjzruarw.js'></script>
+            <lord-icon
+                src='https://cdn.lordicon.com/xryjrepg.json'
+                trigger='hover'
+                colors='primary:red,secondary:black'
+                style='width:23px;height:23px'>
+            </lord-icon>-->
         
       </div>
       <?php

@@ -284,8 +284,12 @@
                 $productoFavorito->setIsbn($_GET['isbn']);
                 $productoFavorito->setCorreoCliente($_SESSION['correo']);
                 $lista = $productoFavorito->comprobarFavorito();
-                if(count($lista) > 0){
-                    
+                if(count($lista) == 0){
+                    $productoFavorito->insert();
+                }else{
+                    ?>
+                    <script>alert("Producto ya favorito");</script>
+                    <?php
                 }
                 ?>
                 <script>window.location.replace("index.php");</script>

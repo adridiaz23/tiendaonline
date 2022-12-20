@@ -29,7 +29,7 @@
         }
 
         public function comprobarFavorito(){
-            $sql = "SELECT * FROM `favoritos` where `correoCliente` = '$this->correoCliente' and `ISBN` = '$this->isbn'";
+            $sql = "SELECT * FROM `favoritos` where `correoCliente` = '".$this->correoCliente."' and `ISBN` = '".$this->isbn."'";
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
