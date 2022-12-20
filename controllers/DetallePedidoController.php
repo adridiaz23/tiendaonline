@@ -7,7 +7,7 @@
                 $lista = array();
                 if(isset($_SESSION['carrito'][$isbn])){ 
                     
-                    $_SESSION['carrito'];
+                    $_SESSION['carrito'][$isbn]++;
 
                 }else{
                     require_once "models/producto.php";
@@ -35,9 +35,13 @@
                 
             }
             if(isset($_GET['comprar']) && $_GET['comprar'] == 'si'){
-                header("Location:index.php?controller=DetallePedido&action=listarCarrito");
+                ?>
+                <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                <?php
             }else{
-                header("Location:index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -61,28 +65,33 @@
                     if(intval($listado[$_POST['isbn']]->stock) > intval($_SESSION['carrito'][$_POST['isbn']])){
                         $_SESSION['carrito'][$_POST['isbn']]++;
                     }
-                    
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
         
                 }
                 else if(array_key_exists('button2', $_POST)) {
                     if($_SESSION['carrito'][$_POST['isbn']] > 1){
                         $_SESSION['carrito'][$_POST['isbn']]--;
                     }
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
-
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }else if(array_key_exists('button3', $_POST)) {
                     unset($_SESSION['carrito'][$_POST['isbn']]);
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
-
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }else if(array_key_exists('button4', $_POST)) {
                     DetallePedidoController::vaciarCarrito();
-                    //unset($_SESSION['carrito'][$_POST['isbn']]);
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }else if(array_key_exists('cantidad', $_POST)) {
                     $_SESSION['carrito'][$_POST['isbn']] = intval($_POST['cantidad']);
-                    //unset($_SESSION['carrito'][$_POST['isbn']]);
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }
 
                 //Calcular Subtotal SIN IVA

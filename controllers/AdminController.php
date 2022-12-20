@@ -17,7 +17,9 @@
                 }
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 

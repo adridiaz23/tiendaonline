@@ -31,7 +31,9 @@
                     require_once "views/pedido/mostrarPedidos.php";
                 }
             } else {
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
         //Funcion para editar el estado del pedido
@@ -53,7 +55,9 @@
                     require_once "views/pedido/mostrarPedidos.php";
                 }
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
         //Funcion para mostrar el detalle del pedido seleccionado
@@ -73,7 +77,9 @@
                     require_once "views/pedido/mostrarPedidos.php";
                 }
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -82,9 +88,13 @@
             if(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) > 0){
                 require_once "views/pedido/checkout.php";
             }elseif(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) == 0){
-                header("location:index.php?controller=DetallePedido&action=listarCarrito");
+                ?>
+                <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                <?php
             }else{
-                header("location:index.php?controller=cliente&action=login");
+                ?>
+                <script>window.location.replace("index.php?controller=cliente&action=login");</script>
+                <?php
             }
         }
 
@@ -123,7 +133,9 @@
             }
 
             DetallePedidoController::vaciarCarrito();
-            //header("location:index.php");
+            ?>
+            <script>window.location.replace("index.php");</script>
+            <?php
         }
     }
         

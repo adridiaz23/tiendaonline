@@ -29,7 +29,9 @@
                 }
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -53,8 +55,9 @@
 
                     $_SESSION["Cliente"] = $_POST["nombre"];
                     $_SESSION["correoCliente"] = $_POST["correo"];
-
-                    header('Location:index.php?controller=Cliente&action=home'); 
+                    ?>
+                    <script>window.location.replace("index.php?controller=Cliente&action=home");</script>
+                    <?php
 
                 }else{
                     echo "<h1>Correo ya registrado</h1>";
@@ -62,7 +65,9 @@
                 }
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -105,7 +110,6 @@
                 require_once "views/cliente/login.php";
             }
            }
-            //require_once "views/cliente/editarPerfil.php";
         }
 
         //Funcion para añadir opiniones
@@ -125,7 +129,9 @@
                     require_once "views/cliente/opiniones.php";
                 }
             }else{
-                header('location:index.php');
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
         public function validarOpinion(){
@@ -146,8 +152,9 @@
 
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {
-                header("location:index.php");
-
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 

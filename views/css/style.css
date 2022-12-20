@@ -1046,6 +1046,14 @@ img.imagenCarrito {
     grid-row: 1;
 }
 
+.div2Carrito > a > p{
+    color: #000000;
+}
+
+.div2Carrito > a{
+    width: 50%;
+}
+
 div.cantidadCarrito {
     display: flex;
     align-items: center;
@@ -1068,17 +1076,17 @@ div.eliminarCarrito {
     border-radius: 50%;
 }
 
-div.eliminarCarrito>* {
+div.eliminarCarrito > * {
     margin: 5%;
 }
 
-.formCarrito>.button {
+.formCarrito > .button {
     font-size: large;
     background-color: transparent;
     border: none;
 }
 
-.formCarrito>.button:hover {
+.formCarrito > .button:hover {
     cursor: pointer;
 }
 
@@ -1089,11 +1097,11 @@ div.eliminarCarrito>* {
     height: min-content;
 }
 
-.sumarioCarrito>div {
+.sumarioCarrito > div {
     border-bottom: #263239 1px solid;
 }
 
-.sumarioCarrito2>div {
+.sumarioCarrito2 > div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -52,7 +52,9 @@
                     require_once "views/producto/registro.php";
                 }
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -64,7 +66,9 @@
                 $lista = $producto->listadoProductos();
                 require_once "views/producto/lista.php";
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
             
         }
@@ -83,12 +87,16 @@
                         $producto->setEstado('0');
                     }
                     $producto->activar();
-                    header('location:index.php?controller=Producto&action=listado');
+                    ?>
+                    <script>window.location.replace("index.php?controller=Producto&action=listado");</script>
+                    <?php
                 }else{
                     require_once "views/producto/lista.php";
                 }
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -120,7 +128,9 @@
                     require_once "views/producto/lista.php";
                 }
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -175,7 +185,9 @@
                     require_once "views/producto/lista.php";
                 }
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 
@@ -188,7 +200,9 @@
                     $producto -> setIsbn($_GET['isbn']);
                     $producto -> setDestacado($_GET['destacado']);
                     $producto->editarDestacado();
-                    header('location:index.php?controller=Producto&action=listado');
+                    ?>
+                    <script>window.location.replace("index.php?controller=Producto&action=listado");</script>
+                    <?php
                 }else{
                     require_once "models/producto.php";
                     $producto = new Producto();
@@ -196,7 +210,9 @@
                     require_once "views/producto/lista.php";
                 }
             }else{
-                header("index.php");
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }  
 
@@ -212,27 +228,32 @@
                     if(intval($listadoProducto[0]->stock) > intval($_SESSION['carrito'][$_POST['isbn']])){
                         $_SESSION['carrito'][$_POST['isbn']]++;
                     }
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
-        
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }
                 else if(array_key_exists('button2', $_POST)) {
                     if($_SESSION['carrito'][$_POST['isbn']] > 1){
                         $_SESSION['carrito'][$_POST['isbn']]--;
                     }
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
-
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }else if(array_key_exists('button3', $_POST)) {
                     unset($_SESSION['carrito'][$_POST['isbn']]);
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
-
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }else if(array_key_exists('button4', $_POST)) {
                     DetallePedidoController::vaciarCarrito();
-                    //unset($_SESSION['carrito'][$_POST['isbn']]);
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }else if(array_key_exists('cantidad', $_POST)) {
                     $_SESSION['carrito'][$_POST['isbn']] = intval($_POST['cantidad']);
-                    //unset($_SESSION['carrito'][$_POST['isbn']]);
-                    header('Location:index.php?controller=DetallePedido&action=listarCarrito');
+                    ?>
+                    <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                    <?php
                 }
 
                 require_once "views/producto/paginaProducto.php";
@@ -250,7 +271,9 @@
                 $listadoProductos = $producto->buscador($_POST['buscador']);
                 require_once "views/producto/buscador.php";
             }else{
-                header('location:index.php');
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
             }
         }
 

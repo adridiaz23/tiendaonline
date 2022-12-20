@@ -19,7 +19,9 @@ class CategoriaController{
             $categorias =  $categoria->mostrarCategorias();
             require_once "views/categorias/mostrarCategorias.php";
         } else {
-            header("index.php");
+            ?>
+            <script>window.location.replace("index.php");</script>
+            <?php
         }
     }
 

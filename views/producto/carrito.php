@@ -23,7 +23,7 @@ require_once "models/detallePedido.php";
             echo "<div class='productoCarrito'>";
                 echo "<div class='div1Carrito'><a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'><img class='imagenCarrito' src='$valor->imagen' /></a></div>";
                 echo "<div class='div2Carrito'>";
-                    echo "<a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'><p>$valor->nombre</p></a>";
+                    echo "<p><a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'>$valor->nombre</a></p>";
                 echo "</div>";
                 echo "<div class='div3Carrito'>";
                     echo "<p>$valor->precio €</p>";
