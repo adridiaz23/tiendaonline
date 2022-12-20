@@ -43,13 +43,13 @@
         if(isset($_SESSION["Cliente"])){
             ?>
             <div class="menu5"> 
-                <!-- <a href="index.php?controller=Cliente&action=editarPerfil&correo=<?php //echo $_SESSION["correo"]; ?>"><?php// echo $_SESSION["Cliente"]; ?> </a> / <a href='index.php?controller=Base&action=salir'>Salir</a> -->
-                <div class="dropdown" id="dropdown">
-                    <!--<button onclick="handleDropdownClicked(event)">
+                <a href="index.php?controller=Cliente&action=editarPerfil&correo=<?php echo $_SESSION["correo"]; ?>"><?php echo $_SESSION["Cliente"]; ?> </a> / <a href='index.php?controller=Base&action=salir'>Salir</a> 
+                <!--<div class="dropdown" id="dropdown">
+                    <button onclick="handleDropdownClicked(event)">
                         <span class="material-symbols-outlined"> settings </span>
                         More Actions
                         <span id="icon" class="material-symbols-outlined"> expand_more </span>
-                    </button>-->
+                    </button>
                     <button onclick="handleDropdownClicked(event)">
                         <span class="material-symbols-outlined"><?php echo $_SESSION["Cliente"]; ?></span>
                             <span id="icon" class="material-symbols-outlined"> expand_more </span>
@@ -68,7 +68,7 @@
                             Logout
                         </button>
                     </div>
-                </div>
+                </div>-->
 
             </div>
             <?php
