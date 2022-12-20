@@ -142,9 +142,10 @@
                 /* A class that is not defined in the code you posted. */
                 $opinion = new Opinion();
 
-                $opinion->setIdValoracion($_POST["isbn"]);
+                $opinion->setISBN($_POST["isbn"]);
                 $opinion->setComentario($_POST["descripcion"]);
                 $opinion->setValoracion($_POST["estrellas"]);
+                $opinion->setICorreoCliente($_SESSION['correo']);
 
                 $listadoOpinion = $opinion->validarOpinion();
                 

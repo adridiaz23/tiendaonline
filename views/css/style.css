@@ -1046,16 +1046,12 @@ img.imagenCarrito {
     grid-row: 1;
 }
 
-.div2Carrito > p > a{
+.div2Carrito > a > p{
     color: #000000;
 }
 
-.div1Carrito > a{
+.div2Carrito > a{
     width: 50%;
-}
-
-.div1Carrito > a > img{
-    width: 100%;
 }
 
 div.cantidadCarrito {
@@ -2009,7 +2005,6 @@ Responsive Smartphone Formularios.
     .content {
         margin-bottom: 75px;
     }
-
     .fromGenericoOpiniones form {
         width: 275px;
     }
