@@ -56,7 +56,7 @@
                     $_SESSION["Cliente"] = $_POST["nombre"];
                     $_SESSION["correoCliente"] = $_POST["correo"];
                     ?>
-                    <script>window.location.replace("index.php?controller=Cliente&action=home");</script>
+                    <script>window.location.replace("index.php?controller=Cliente&action=login");</script>
                     <?php
 
                 }else{

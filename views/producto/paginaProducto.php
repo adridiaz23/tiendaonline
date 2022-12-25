@@ -15,15 +15,21 @@
         echo "<p class= 'precioPaginaProducto'>".$listadoProducto[0]->precio."€"."</p>";
 
         //Saber si el producto tiene stock o no.
-        if ($listadoProducto[0]->stock > 0){
-          echo "<p>¡En stock! ¡Recíbelo mañana!</p>";
-        }else{
-          echo "<p>¡Sin stock! </p>";
+        if ($listadoProducto[0]->stock > 5){
+          echo "<p class='stockSi'>¡En stock! ¡Recíbelo mañana!</p>";
+        }elseif($listadoProducto[0]->stock > 0 && $listadoProducto[0]->stock <5){
+          echo "<p class='stockBajo'> ¡¡Rápido, quedan pocos!! </p>";
+        }
+      
+        else{
+          echo "<p class='stockNo'>¡Sin stock! </p>";
         }
         //Apartado del añadir al carrito comrpar y el corazon.
         echo "<div class= 'corazonPaginaProducto'>";
+        if ($listadoProducto[0]->stock > 0){
           echo "<a href='index.php?controller=detallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1'>Añadir al carrito</a>";
           echo "<a  class= 'corazonMargen' href='index.php?controller=DetallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1&comprar=si'>Comprar</a>";
+        }
           echo "<a  class= 'corazonMargen' href='index.php?controller=Producto&action=añadirFavorito&isbn=".$listadoProducto[0]->ISBN."'> "?>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
             <lord-icon
