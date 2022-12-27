@@ -24,8 +24,7 @@
                     }
                    
                 }else{
-                    echo "<h1> Nombre o contraseña incorrectos </h1>";
-                    require_once ("views/cliente/login.php");
+                    require_once ("views/cliente/login.php?&val1 = '1'");
                 }
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {

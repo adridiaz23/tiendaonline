@@ -133,6 +133,10 @@ a {
         transform: translate3d(85px, 0, 0);
     }
 }
+.cabeceraLogin{
+    color: #e5e5e5;
+    margin-bottom: 342px;
+}
 
 .fromGenerico ::placeholder {
     color: #e5e5e5;
@@ -516,7 +520,7 @@ td.tdAdmin>a>img {
 }
 
 .menu>div>a:focus {
-    color: red;
+    color: rgba(84, 58, 183, 1);
 }
 
 .menu>div>a:active{
@@ -2000,7 +2004,12 @@ Fin CSS Opiniones
   }
 
 .categoriaLinkActive{
-    background-color: blue;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font: blod;
+    text-decoration: none;
+    color: #2099FF !important;
+    font-weight: 700;
 }
 
 

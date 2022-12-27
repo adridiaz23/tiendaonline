@@ -12,7 +12,6 @@
                     $_SESSION["Administrador"] = $_POST["nombre"];
                     header('Location:index.php?controller=Admin&action=home'); 
                 }else{
-                    echo "<h1> Nombre o contraseña incorrectos </h1>";
                     require_once ("views/admin/login.php");
                 }
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
