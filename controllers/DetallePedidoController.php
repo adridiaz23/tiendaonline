@@ -104,5 +104,7 @@
             }
             require_once "views/producto/carrito.php";
         }
+
+        
     }
 ?>

@@ -49,7 +49,7 @@ session_start();
             else{
                 $action ="home";
             }
-            $controlador->$action();   
+            $controlador->$action();
         }else{
             echo "No existe el controlador";
         }

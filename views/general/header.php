@@ -26,7 +26,12 @@
         <?php 
         if(isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0){
             //echo "<div class='numeroMenuCarrito'>".count($_SESSION['carrito'])."</div>";
-            echo '<span class="blue">'.count($_SESSION['carrito']).'</span>';
+            
+            $count = 0;
+            foreach ($_SESSION['carrito'] as $c) {
+                $count += $c;
+            }
+            echo '<span class="blue">'.$count.'</span>';
         }
         ?>
         <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
@@ -85,6 +90,22 @@
         <div class="menu9"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[3]->idCategoria; ?>'><?php echo $categorias[3]->nombre; ?></a></div>
         <div class="menu10"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[4]->idCategoria; ?>'><?php echo $categorias[4]->nombre; ?></a></div>
         <div class="menu11">Todos</div>
+
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <li><a>holaaaa</a></li>
+                <li><div class="menu7"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[1]->idCategoria; ?>'><?php echo $categorias[1]->nombre; ?></a></div></li>
+                <li><div class="menu8"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[2]->idCategoria; ?>'><?php echo $categorias[2]->nombre; ?></a></div></li>
+                <li><div class="menu9"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[3]->idCategoria; ?>'><?php echo $categorias[3]->nombre; ?></a></div></li>
+                <li><div class="menu10"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[4]->idCategoria; ?>'><?php echo $categorias[4]->nombre; ?></a></div></li>
+                <li><div class="menu11">Todos</div></li>
+            </ul>
+        </div>
         
     </div>
+            
 </body>

@@ -83,7 +83,7 @@ require_once "models/detallePedido.php";
                     ?>
                     <!-- designed by me... enjoy! -->
                     <div class="wrapperCarrito">
-                      <a class="cta" href='index.php?controller=Pedido&action=checkout'>
+                      <a class="cta" href='index.php?controller=Pedido&action=confirmarPedido'>
                         <span>Pagar</span>
                         <span>
                           <svg width="54px" height="30px" viewBox="0 0 66 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

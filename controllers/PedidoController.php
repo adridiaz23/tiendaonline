@@ -83,6 +83,31 @@
             }
         }
 
+        function confirmarPedido(){
+            require_once "models/producto.php";
+            require_once "models/detallePedido.php";
+            if(isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0){
+                foreach($_SESSION['carrito'] as $clave => $valor){
+                    $listaIsbn[] = $clave;
+                }
+                $producto = new Producto();
+                $listadoCarrito = $producto->listadoCarrito($listaIsbn);
+                foreach($listadoCarrito as $clave => $valor){
+                    $listado[$valor->ISBN] = $valor;
+                }
+                
+                //Calcular Subtotal SIN IVA
+                $total = 0;
+                foreach ($listadoCarrito as $clave => $valor) {
+                    $total += $valor->precio*intval($_SESSION['carrito'][$valor->ISBN]);
+                }
+                $subtotal = $total-($total*0.04);
+                $iva = $total*0.04;
+            }
+            require_once "views/pedido/confirmarPedido.php";
+        
+        }
+
         function checkout(){
             require_once("models/pedido.php");
             if(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) > 0){
@@ -137,9 +162,7 @@
             }
 
             DetallePedidoController::vaciarCarrito();
-            ?>
-            <script>window.location.replace("index.php");</script>
-            <?php
+            require("views/pedido/confirmarPedido.php");
         }
     }
         
