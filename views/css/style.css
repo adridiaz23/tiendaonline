@@ -132,6 +132,10 @@ a {
         transform: translate3d(85px, 0, 0);
     }
 }
+.cabeceraLogin{
+    color: #e5e5e5;
+    margin-bottom: 342px;
+}
 
 .fromGenerico ::placeholder {
     color: #e5e5e5;
@@ -515,7 +519,7 @@ td.tdAdmin>a>img {
 }
 
 .menu>div>a:focus {
-    color: red;
+    color: rgba(84, 58, 183, 1);
 }
 
 .menu>div>a:active{
@@ -720,6 +724,7 @@ span.blue {
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    margin-bottom: 7%;
 }
 
 .producto1 {
@@ -1347,10 +1352,10 @@ path.two {
       line-height: 1.8;
     }
   }
-.espacioFooter{
+/*.espacioFooter{
     width:100%;
     height: 152px;
-}
+}*/
 
 .footer-right > a > img {
     width: 25px;
@@ -1450,6 +1455,22 @@ path.two {
     align-items: center;
 
 }
+
+.stockSi{
+    color:green;
+    font-weight: 700;
+}
+.stockNo{
+    color: rgb(191, 0, 25);
+    font-weight: 700;
+}
+.stockBajo{
+    color: #ff6000;
+    font-weight: 700;
+}
+
+
+
 /*Final */
 
 /*
@@ -1983,7 +2004,12 @@ Fin CSS Opiniones
   }
 
 .categoriaLinkActive{
-    background-color: blue;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font: blod;
+    text-decoration: none;
+    color: #2099FF !important;
+    font-weight: 700;
 }
 
 
@@ -2025,6 +2051,7 @@ Responsive Smartphone Home
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
+        margin-bottom: 40%;
     }
     .producto1  { grid-area: 1 / 1 / 2 / 2; }
     .producto2  { grid-area: 2 / 1 / 3 / 2; }
@@ -2254,3 +2281,38 @@ Responsive Smartphone Pagina Producto
 
     
 }
+
+
+
+/*
+!!!Responsive Smartphone Fin
+*/
+
+
+/*
+!!!Responsive Tablet
+*/
+
+    /*
+        CSS Pagina Producto
+    */
+    @media screen and (min-width:767px)and(max-width:1023px){
+        .contenedorPaginaProducto {
+            margin-top: 65px;
+        }
+    }
+    @media screen and (min-width:767px)and(max-width:1025px){
+        .productos{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+        .producto1  { grid-area: 1 / 1 / 2 / 2; }
+        .producto2  { grid-area: 2 / 1 / 3 / 2; }
+        .producto3  { grid-area: 3 / 1 / 4 / 2; }
+        .producto4  { grid-area: 4 / 1 / 5 / 2; }
+        .producto5  { grid-area: 5 / 1 / 6 / 2; }
+
+    }

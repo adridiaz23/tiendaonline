@@ -24,8 +24,7 @@
                     }
                    
                 }else{
-                    echo "<h1> Nombre o contraseña incorrectos </h1>";
-                    require_once ("views/cliente/login.php");
+                    require_once ("views/cliente/login.php?&val1 = '1'");
                 }
                 //Una vez terminado recoger los datos, validarlos los pasaremos a la vista y dependiendo los datos se mostrará una cosa u otra.
             } else {
@@ -56,7 +55,7 @@
                     $_SESSION["Cliente"] = $_POST["nombre"];
                     $_SESSION["correoCliente"] = $_POST["correo"];
                     ?>
-                    <script>window.location.replace("index.php?controller=Cliente&action=home");</script>
+                    <script>window.location.replace("index.php?controller=Cliente&action=login");</script>
                     <?php
 
                 }else{
