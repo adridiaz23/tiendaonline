@@ -2308,6 +2308,7 @@ Responsive Smartphone Pagina Producto
             grid-template-rows: repeat(5, 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 0px;
+            margin-bottom: 20%;
         }
         .producto1  { grid-area: 1 / 1 / 2 / 2; }
         .producto2  { grid-area: 2 / 1 / 3 / 2; }
