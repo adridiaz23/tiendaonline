@@ -162,7 +162,8 @@
 
         //Funcion para obtener arrat del producto
         public function listadoProducto(){
-            $sql = "SELECT * FROM producto WHERE ISBN = '".$this->isbn."'";
+            /*$sql = "SELECT * FROM producto WHERE ISBN = '".$this->isbn."'";*/
+            $sql ="SELECT producto.*, AVG(valoraciones.valoracion) AS media, COUNT(valoraciones.ISBN) AS cuenta ,valoraciones.comentario, valoraciones.correoCliente,valoraciones.valoracion FROM `producto` INNER JOIN `valoraciones` ON producto.ISBN = valoraciones.ISBN WHERE producto.ISBN = '".$this->isbn."'";
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }

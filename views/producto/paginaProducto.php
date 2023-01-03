@@ -53,9 +53,50 @@
           echo "<p>".$listadoProducto[0]->autor."</p>";
           echo "<h4>Descripcion del Libro: </h4>";
           echo "<p>".$listadoProducto[0]->descripcion."</p>";
-          ?>
-    </div>
-    </div>
+          echo "<h4>Valoracion: </h4>";
+          echo "<div class='valoracion'>";
+            for($i=1 ; $i<= 5 ; $i++ ){
+                if ($i<=$listadoProducto[0]->media){
+                  echo "<font color=\"yellow\">★</font>";
+                }else{
+                  echo "★";
+                }
+            }
+           echo " </div>";
+           echo "</div>";
+           echo "</div>";
+           echo "</div>";
+
+          
+
+          echo "<div class=comentariosClientes>";
+          echo "<h2>Valoraciones </h2>";
+          if($listadoProducto[0]->cuenta==0){
+            echo "<h4>Sin valoraciones: </h4>";
+          }else{
+           for($i=0; $i<= $listadoProducto[0]->cuenta ; $i++){
+              foreach ($listadoProducto as $clave => $valor){
+                echo "<h4>Correo: </h4>";
+                echo "<p>".$valor->correoCliente."</p>";
+                echo "<h4>Comentario: </h4>";
+                echo "<p>".$valor->comentario."</p>";
+                echo "<h4>Valoracion: </h4>";
+                echo "<div class='valoracion'>";
+                for($i=1 ; $i<= 5 ; $i++ ){
+                    if ($i<=$valor->valoracion){
+                      echo "<font color=\"yellow\">★</font>";
+                    }else{
+                      echo "★";
+                    }
+                }
+                echo " </div>";
+              }
+          
+            }
+          }
+            echo "</div>";
+           ?>
+    
   </div>
  
 </div> 

@@ -64,10 +64,18 @@
                 return $this;
         }
 
+        //Funcion para insertar una nueva opinion sobre un prodcuto
         public function validarOpinion(){
 
             $sql = "INSERT INTO valoraciones (idOpinion, ISBN, comentario, valoracion, correoCliente) VALUES (NULL,'".$this->ISBN."', '".$this->comentario."','".$this->valoracion."','".$this->correoCliente."') ";
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
+        public function opinionesProductos(){
+
+                $sql = "SELECT * FROM valoraciones";
+                $rows = $this->db->query($sql);
+                return $rows->fetchAll(PDO::FETCH_CLASS);
+            }
 }

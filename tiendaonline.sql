@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-12-2022 a las 10:40:20
+-- Tiempo de generación: 03-01-2023 a las 09:40:34
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -92,6 +92,9 @@ INSERT INTO `cliente` (`nombre`, `apellido`, `correoCliente`, `calle`, `numero`,
 ('alejandro', 'moreno', 'alejandro@gmail.com', '1', 1, '555555555', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
 ('david', 'raigoza', 'david@gmail.com', '1', 1, '333333333', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
 ('guille', 'navarro', 'guille@gmail.com', '1', 1, '777777777', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
+('mayol', 'pons', 'mayol@gmail.com', '1', 123, '121231235', 'c4ca4238a0b923820dcc509a6f75849b', '08302', 0),
+('olga', 'Domene ', 'olga@gmail.com', '12', 8, '12442141', '8767c0125a5918fffd1f75667e6fb8ce', '08302', 0),
+('paris', 'alfonso', 'paris@dortoka.com', 'vinyar 53', 88, '89898989', '6f9a5a011c744baf64a58efc9c781369', '0827', 0),
 ('pau', 'raigoza', 'pau@gmail.com', '1', 1, '444444444', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0),
 ('victor', 'lopez', 'victor@gmail.com', '1', 1, '111111111', 'c4ca4238a0b923820dcc509a6f75849b', '1', 0);
 
@@ -130,18 +133,14 @@ INSERT INTO `detallepedido` (`idDetallePedido`, `ISBN`, `unidades`, `idPedido`) 
 (19, 3, 1, 5),
 (20, 16, 2, 11),
 (23, 9, 2, 28),
-(24, 9, 1, 29);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `favoritos`
---
-
-CREATE TABLE `favoritos` (
-  `correoCliente` varchar(30) NOT NULL,
-  `ISBN` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(24, 9, 1, 29),
+(25, 9, 1, 31),
+(26, 3, 2, 33),
+(27, 9, 16, 34),
+(28, 3, 1, 35),
+(29, 7, 1, 36),
+(30, 3, 1, 37),
+(31, 10, 1, 37);
 
 -- --------------------------------------------------------
 
@@ -162,7 +161,7 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `importeTotal`) VALUES
-(4, 'victor@gmail.com', '2022-11-14', 0, 0.00),
+(4, 'victor@gmail.com', '2022-11-14', 1, 0.00),
 (5, 'pau@gmail.com', '2022-11-14', 0, 0.00),
 (6, 'guille@gmail.com', '2022-11-14', 0, 0.00),
 (7, 'david@gmail.com', '2022-11-14', 0, 0.00),
@@ -187,7 +186,13 @@ INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `i
 (26, 'victor@gmail.com', '2022-12-19', 0, 90.00),
 (27, 'victor@gmail.com', '2022-12-19', 0, 90.00),
 (28, 'victor@gmail.com', '2022-12-19', 0, 90.00),
-(29, 'victor@gmail.com', '2022-12-19', 0, 45.00);
+(29, 'victor@gmail.com', '2022-12-19', 0, 45.00),
+(31, 'victor@gmail.com', '2022-12-20', 0, 45.00),
+(33, 'mayol@gmail.com', '2022-12-20', 1, 40.00),
+(34, 'victor@gmail.com', '2022-12-20', 0, 720.00),
+(35, 'victor@gmail.com', '2022-12-20', 0, 20.00),
+(36, 'victor@gmail.com', '2022-12-20', 0, 20.00),
+(37, 'paris@dortoka.com', '2022-12-20', 1, 58.00);
 
 -- --------------------------------------------------------
 
@@ -215,14 +220,14 @@ CREATE TABLE `producto` (
 INSERT INTO `producto` (`ISBN`, `nombre`, `descripcion`, `imagen`, `precio`, `stock`, `categoria`, `autor`, `destacado`, `estado`) VALUES
 (1, 'Código limpio', 'Cada año, se invierten innumerables horas y se pierden numerosos recursos debido a código mal escrito...', 'views/css/assets/fotos/foto_1.jpg', 15.00, 5, 2, 'Robert C. Martin', 0, 0),
 (2, 'Eloquent javascript', 'Este libro se introduce dentro del lenguaje Javascript...', 'views/css/assets/fotos/foto_2.jpg', 10.00, 5, 1, 'Marijn Haverbeke', 0, 0),
-(3, 'The pragmatic programmer ', 'Muy buen libro, recomendado para aquellos programadores que quieren afianzar conceptos...', 'views/css/assets/fotos/foto_3.jpg', 20.00, 8, 3, 'Andrew Hunt & David Thomas', 0, 0),
+(3, 'The pragmatic programmer ', 'Muy buen libro, recomendado para aquellos programadores que quieren afianzar conceptos...', 'views/css/assets/fotos/foto_3.jpg', 20.00, 4, 3, 'Andrew Hunt & David Thomas', 0, 0),
 (4, 'Introduction to Algorithms ', ' Mejores prácticas de programación.', 'views/css/assets/fotos/foto_4.jpg', 16.00, 4, 4, 'Clifford stein', 0, 0),
 (5, 'Code Complete 2', ' Mejores prácticas de programación.', 'views/css/assets/fotos/foto_5.jpg', 35.00, 15, 2, 'Steve McConnell', 0, 0),
 (6, 'Introducción a CSS', 'Introducción a CSS ', 'views/css/assets/fotos/foto_6.jpg', 10.00, 6, 6, 'Javier Eguiluz', 0, 0),
-(7, 'Introducción a HTML', 'Introducción a HTML', 'views/css/assets/fotos/foto_7.jpg', 20.00, 4, 6, 'Javier Eguiluz', 0, 0),
-(8, 'JavaScript. La Guía Definitiva', 'JavaScript es el lenguaje interpretado más utilizado, principalmente en la construcción de páginas Web...', 'views/css/assets/fotos/foto_8.jpg', 80.00, 14, 1, 'David Flanagan', 0, 0),
-(9, 'C++ Annotations', 'En su Versión 10.7.2, este libro ofrece un extenso tutorial sobre el lenguaje de programación C ++...', 'views/css/assets/fotos/foto_9.jpg', 45.00, 19, 3, 'Frank B.Brokken', 0, 0),
-(10, 'PHP Pandas', 'Este libro es para principiantes y desarrolladores de nivel intermedio que deseen aprender cosas nuevas y mejorar sus habilidades...', 'views/css/assets/fotos/foto_10.jpg', 38.00, 15, 4, 'Dayler rees', 0, 0),
+(7, 'Introducción a HTML', 'Introducción a HTML', 'views/css/assets/fotos/foto_7.jpg', 20.00, 3, 6, 'Javier Eguiluz', 0, 0),
+(8, 'JavaScript. La Guía Definitiva', 'JavaScript es el lenguaje interpretado más utilizado, principalmente en la construcción de páginas Web...', 'views/css/assets/fotos/foto_8.jpg', 80.00, 0, 1, 'David Flanagan', 0, 0),
+(9, 'C++ Annotations', 'En su Versión 10.7.2, este libro ofrece un extenso tutorial sobre el lenguaje de programación C ++...', 'views/css/assets/fotos/foto_9.jpg', 45.00, 0, 3, 'Frank B.Brokken', 0, 0),
+(10, 'PHP Pandas', 'Este libro es para principiantes y desarrolladores de nivel intermedio que deseen aprender cosas nuevas y mejorar sus habilidades...', 'views/css/assets/fotos/foto_10.jpg', 38.00, 14, 4, 'Dayler rees', 0, 0),
 (11, 'JavaScript, ¡Inspírate!', 'Este libro que tienes ahora mismo ante tus ojos, es el resultado de mi esfuerzo personal, con el objeto de crear un instrumento sencillo y simple que muestre al lector la base de un lenguaje tan peculiar y extendido como JavaScript. ', 'views/css/assets/fotos/foto_11.jpg', 25.00, 19, 1, 'Leanpub', 0, 0),
 (12, 'C Sharp Programming', 'Although C# is derived from the C programming language, it has features such as garbage collection that allow beginners to become proficient in C# more quickly than in C or C++. Similar to Java, it is object-oriented, comes with an extensive class library, and supports exception handling, multiple types of polymorphism.', 'views/css/assets/fotos/foto_12.jpg', 20.00, 30, 2, 'Wikibooks', 0, 0),
 (13, 'Learn Programming', 'This book is aimed at readers who are interested in software development but have very little to no prior experience.', 'views/css/assets/fotos/foto_13.jpg', 15.00, 10, 2, 'Autoedición', 0, 0),
@@ -231,7 +236,7 @@ INSERT INTO `producto` (`ISBN`, `nombre`, `descripcion`, `imagen`, `precio`, `st
 (16, ' C#', 'Fundamentals of Computer Programming with C#.\r\nIf you want to take up programming seriously, you’ve come across the right book. For real! This is the book with which you can make your first steps in programming. It will give a flying start to your long journey into learning modern programming languages and software development technologies. ', 'views/css/assets/fotos/foto_16.jpg', 20.00, 19, 2, 'Telerik Software Academy', 0, 0),
 (17, 'TypeScript', 'TypeScript es un lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft. Es un superconjunto de JavaScript, que esencialmente añade tipado estático y objetos basados en clases. Anders Hejlsberg, diseñador de C# y creador de Delphi y Turbo Pascal, ha trabajado en el desarrollo de TypeScript . ', 'views/css/assets/fotos/foto_17.jpg', 25.00, 8, 1, 'Autoedición', 0, 0),
 (18, 'Optimization Coaching', 'The performance of dynamic object-oriented programming languages such as JavaScript depends heavily on highly optimizing just-in-time compilers. Such compilers, like all compilers, can silently fall back to generating conservative, low-performance code during optimization. ', 'views/css/assets/fotos/foto_18.jpg', 19.00, 22, 1, 'ECOOP', 0, 0),
-(19, 'Javascript in Ten Minutes', 'JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.\r\n\r\nEsta guía es para todo aquel que quiera conocer Javascript de una forma rápida pero amplia.', 'views/css/assets/fotos/foto_19.jpg', 19.00, 15, 1, 'Autoedición', 0, 0),
+(19, 'Javascript in Ten Minutes', 'JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.\r\n\r\nEsta guía es para todo aquel que quiera conocer Javascript de una forma rápida pero amplia.', 'views/css/assets/fotos/foto_19.jpg', 19.00, 7, 1, 'Autoedición', 0, 0),
 (20, 'Symfony, the Cookbook', 'Symfony is a set of PHP Components, a Web Application framework, a Philosophy, and a Community — all working together in harmony.\r\nThe Symfony Cookbook is a continuously growing collection of specific recipes that explain how to correctly solve the most recurrent problems that Symfony developers face in their day to day work.', 'views/css/assets/fotos/foto_20.jpg', 15.00, 10, 4, 'Autoedición', 0, 0),
 (21, 'PHP Notes for Professionals', 'This PHP Notes for Professionals book is compiled from Stack Overflow Documentation, the content is written by the beautiful people at Stack Overflow.\r\nText content is released under Creative Commons BY-SA, see credits at the end of this book whom contributed to the various chapters. Images may be copyright of their respective owners unless otherwise specified.', 'views/css/assets/fotos/foto_21.jpg', 17.00, 6, 4, 'GoalKicker.com', 0, 0),
 (22, 'CodeIgniter', 'Su objetivo es permitirle desarrollar proyectos mucho más rápido que lo que podría hacer si escribiera el código desde cero, proveyéndole un rico conjunto de bibliotecas para tareas comunes, así como y una interfaz sencilla y una estructura lógica para acceder a esas bibliotecas. ', 'views/css/assets/fotos/foto_22.jpg', 18.00, 14, 4, 'Autoedición', 0, 0),
@@ -256,6 +261,16 @@ CREATE TABLE `valoraciones` (
   `valoracion` int(5) NOT NULL,
   `correoCliente` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `valoraciones`
+--
+
+INSERT INTO `valoraciones` (`idOpinion`, `ISBN`, `comentario`, `valoracion`, `correoCliente`) VALUES
+(4, 9, 'Este libro esta muy bien para empezar en la programación.', 2, 'victor@gmail.com'),
+(5, 5, 'buen libro', 4, 'victor@gmail.com'),
+(6, 9, 'Este libro esta muy bien para empezar en la programación.', 2, 'victor@gmail.com'),
+(7, 3, 'iejbvtobeterpowepowekfr', 4, 'paris@dortoka.com');
 
 --
 -- Índices para tablas volcadas
@@ -286,13 +301,6 @@ ALTER TABLE `cliente`
 ALTER TABLE `detallepedido`
   ADD PRIMARY KEY (`idDetallePedido`),
   ADD KEY `idPedido` (`idPedido`),
-  ADD KEY `ISBN` (`ISBN`);
-
---
--- Indices de la tabla `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD PRIMARY KEY (`correoCliente`,`ISBN`),
   ADD KEY `ISBN` (`ISBN`);
 
 --
@@ -331,19 +339,19 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `detallepedido`
 --
 ALTER TABLE `detallepedido`
-  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `valoraciones`
 --
 ALTER TABLE `valoraciones`
-  MODIFY `idOpinion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idOpinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
@@ -355,13 +363,6 @@ ALTER TABLE `valoraciones`
 ALTER TABLE `detallepedido`
   ADD CONSTRAINT `detallepedido_ibfk_1` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`),
   ADD CONSTRAINT `detallepedido_ibfk_2` FOREIGN KEY (`ISBN`) REFERENCES `producto` (`ISBN`);
-
---
--- Filtros para la tabla `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`correoCliente`) REFERENCES `cliente` (`correoCliente`),
-  ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`ISBN`) REFERENCES `producto` (`ISBN`);
 
 --
 -- Filtros para la tabla `pedido`

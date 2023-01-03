@@ -136,9 +136,12 @@ a {
 }
 .cabeceraLogin{
     color: #e5e5e5;
-    margin-bottom: 342px;
+    margin-bottom: 20%;
 }
-
+.cabeceraRegistro{
+    color: #e5e5e5;
+    margin-bottom: 24%;
+}
 .fromGenerico ::placeholder {
     color: #e5e5e5;
 }
@@ -726,7 +729,6 @@ span.blue {
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    margin-bottom: 7%;
 }
 
 .producto1 {
@@ -1359,10 +1361,10 @@ path.two {
       line-height: 1.8;
     }
   }
-/*.espacioFooter{
+.espacioFooter{
     width:100%;
-    height: 152px;
-}*/
+    height: 147px;
+}
 
 .footer-right > a > img {
     width: 25px;
@@ -1441,6 +1443,11 @@ path.two {
     background: #2099FF;
     border: 1px solid rgba(255, 0, 88, 0.4);
     box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+}
+
+.comentariosClientes{
+    margin-left: 24%;
+    margin-bottom: 5%;
 }
 
 .imagenPaginaProducto {
@@ -2058,7 +2065,6 @@ Responsive Smartphone Home
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
-        margin-bottom: 40%;
     }
     .producto1  { 
         grid-area: 1 / 1 / 2 / 2;
@@ -2112,8 +2118,9 @@ Responsive Smartphone Pagina Producto
         margin-right: 0px
     }
     .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto {
-        width: 220px;
-        height: 400px;
+        width: 215px;
+        height: 448px;
+        margin-top: 10%;
     }
     .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto h2 {
         font-size: 15px;
@@ -2137,6 +2144,13 @@ Responsive Smartphone Pagina Producto
         align-items: center;
         flex-wrap: wrap;
         justify-content: flex-start;
+    }
+    .comentariosClientes h2{
+        font-size: 15px;
+    }
+    .comentariosClientes{
+        font-size: 12px;
+        margin-bottom: 25%;
     }
 
     /*
@@ -2348,7 +2362,7 @@ Responsive Smartphone Pagina Producto
             grid-template-rows: repeat(5, 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 0px;
-            margin-bottom: 20%;
+         
         }
         .producto1  { grid-area: 1 / 1 / 2 / 2; }
         .producto2  { grid-area: 2 / 1 / 3 / 2; }

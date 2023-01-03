@@ -1,6 +1,9 @@
 <div class="header">
 <!--Contenido antes de las olas-->
     <div class="inner-header flex">
+    <div class = 'cabeceraRegistro'> 
+            <h1>Registro Usuario </h1>
+        </div>
          <div class="fromGenerico">
             <!-- Creamos el formulario donde su action será pasar los datos al model/loginAdmin y su función validar -->
             <form action="index.php?controller=Cliente&action=registrarCliente" method="POST">
