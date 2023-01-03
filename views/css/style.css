@@ -762,6 +762,11 @@ span.blue {
     z-index: -2;
     position: static;
 }
+.contenedorCajaProducto{
+    display: flex;
+    border: 3px solid #2099FF;
+    border-radius: 3%;
+}
 
 .contenedorProducto .cajaProducto {
     position: relative;
@@ -950,6 +955,8 @@ span.blue {
     width: 280px;
     margin-right: 100px;
     border-radius: 5%;
+    margin-top: 5%;
+    margin-left: 2%;
 
 }
 

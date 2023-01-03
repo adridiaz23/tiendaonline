@@ -10,6 +10,7 @@
   foreach($lista as $clave => $valor){
     echo "<div class='producto$i '> "?>
     <div class="contenedorProducto">
+      <div class="contenedorCajaProducto">
       <div class="imagenHome">
         <?php
           echo "<img class='imagenHome' src='".$valor->imagen."' >";
@@ -35,6 +36,7 @@
           ?>
         </div>
         </div>
+      </div>
       </div>
     </div>
   <?php
