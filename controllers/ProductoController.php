@@ -222,7 +222,7 @@
                 require_once "models/producto.php";
                 $producto = new Producto();
                 $producto->setIsbn($_GET['isbn']);
-                $listadoProducto = $producto->listadoProducto();
+                $listadoProducto = $producto->listadoProducto3();
                 $listadoProducto2 = $producto->listadoProducto2();
 
                 if(array_key_exists('button1', $_POST)) {

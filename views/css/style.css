@@ -2443,18 +2443,65 @@ Responsive Smartphone Pagina Producto
         }
     }
     @media screen and (min-width:767px)and(max-width:1025px){
+        .tituloHomeCliente {
+            text-align: center;
+        }
+        .tituloHomeCliente > h1{
+            font-size: 20px;
+        }
         .productos{
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(5, 1fr);
             grid-column-gap: 0px;
             grid-row-gap: 0px;
-         
+            margin-bottom: 22%;
         }
-        .producto1  { grid-area: 1 / 1 / 2 / 2; }
-        .producto2  { grid-area: 2 / 1 / 3 / 2; }
-        .producto3  { grid-area: 3 / 1 / 4 / 2; }
-        .producto4  { grid-area: 4 / 1 / 5 / 2; }
-        .producto5  { grid-area: 5 / 1 / 6 / 2; }
-
+        .producto1  { 
+            grid-area: 1 / 1 / 2 / 2;
+        }
+        .producto2  { 
+            grid-area: 2 / 1 / 3 / 2;
+            z-index: -2;
+        }
+        .producto3  { 
+            grid-area: 3 / 1 / 4 / 2;
+        }
+        .producto4  { 
+            grid-area: 4 / 1 / 5 / 2;
+        }
+        .producto5  { 
+            grid-area: 5 / 1 / 6 / 2;
+        }
+    
+        .imagenHome {
+            margin-right: 0px; 
+            width: 160px;
+            
+        }
+        .contenedorProducto .cajaProducto {
+            width: 145px;
+            height: 177px;
+           
+        }
+        .contenedorProducto .cajaProducto .contenidoProducto h2 {
+            font-size: 10px;
+        }
+        .contenedorProducto .cajaProducto .contenidoProducto p {
+            font-size: 10px;
+        }
+        .contenedorProducto .cajaProducto .contenidoProducto a {
+            font-size: 6px;
+            padding: 4px;
+        }
+        .contenedorProducto .cajaProducto .contenidoProducto {
+            padding: 5px 17px;
+        }
+    
+        .contenedorProducto{
+          
+            justify-content: center;
+        }
+        
+    
     }

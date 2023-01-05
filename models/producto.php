@@ -159,10 +159,15 @@
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
-
         //Funcion para obtener array del producto
-        public function listadoProducto(){
-            /*$sql = "SELECT * FROM producto WHERE ISBN = '".$this->isbn."'";*/
+            public function listadoProducto(){
+            $sql = "SELECT * FROM producto WHERE ISBN = '".$this->isbn."'";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
+
+        //Funcion para obtener array del producto y mas
+        public function listadoProducto3(){
             $sql ="SELECT producto.*, valoraciones.comentario, valoraciones.correoCliente,valoraciones.valoracion 
              FROM `producto` INNER JOIN `valoraciones` ON producto.ISBN = valoraciones.ISBN WHERE producto.ISBN = '".$this->isbn."'";
             $rows = $this->db->query($sql);
