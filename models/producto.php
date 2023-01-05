@@ -163,10 +163,19 @@
         //Funcion para obtener array del producto
         public function listadoProducto(){
             /*$sql = "SELECT * FROM producto WHERE ISBN = '".$this->isbn."'";*/
-            $sql ="SELECT producto.*, AVG(valoraciones.valoracion) AS media, COUNT(valoraciones.ISBN) AS cuenta ,valoraciones.comentario, valoraciones.correoCliente,valoraciones.valoracion FROM `producto` INNER JOIN `valoraciones` ON producto.ISBN = valoraciones.ISBN WHERE producto.ISBN = '".$this->isbn."'";
+            $sql ="SELECT producto.*, valoraciones.comentario, valoraciones.correoCliente,valoraciones.valoracion 
+             FROM `producto` INNER JOIN `valoraciones` ON producto.ISBN = valoraciones.ISBN WHERE producto.ISBN = '".$this->isbn."'";
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+          //Funcion para obtener la media del producto 
+          public function listadoProducto2(){
+            $sql ="SELECT AVG(valoraciones.valoracion) AS media, COUNT(valoraciones.ISBN) AS cuenta 
+            FROM `producto` INNER JOIN `valoraciones` ON producto.ISBN = valoraciones.ISBN WHERE producto.ISBN = '".$this->isbn."'";
+           $rows = $this->db->query($sql);
+           return $rows->fetchAll(PDO::FETCH_CLASS);
+          }
+
 
         //Funcion para editar un producto
         public function editar(){
@@ -207,7 +216,7 @@
         //Funcion para enlistar los productos destacados
         function listadoProductosDestacados(){
                 
-            $sql = "SELECT producto.*,COUNT(*) FROM `producto` INNER JOIN `detallepedido` on `detallepedido`.`ISBN`=`producto`.`ISBN` GROUP BY `producto`.`ISBN` ORDER BY COUNT(*) DESC LIMIT 5";
+            $sql = "SELECT producto.*,COUNT(*) FROM `producto` INNER JOIN `detallepedido` on `detallepedido`.`ISBN`=`producto`.`ISBN` WHERE `producto`.`stock`>0 GROUP BY `producto`.`ISBN` ORDER BY COUNT(*) DESC LIMIT 5 ";
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
 

@@ -223,6 +223,7 @@
                 $producto = new Producto();
                 $producto->setIsbn($_GET['isbn']);
                 $listadoProducto = $producto->listadoProducto();
+                $listadoProducto2 = $producto->listadoProducto2();
 
                 if(array_key_exists('button1', $_POST)) {
                     if(intval($listadoProducto[0]->stock) > intval($_SESSION['carrito'][$_POST['isbn']])){

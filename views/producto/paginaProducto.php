@@ -33,6 +33,7 @@
           echo "<a  class= 'corazonMargen' href='index.php?controller=Producto&action=añadirFavorito&isbn=".$listadoProducto[0]->ISBN."'> "?>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
             <lord-icon
+                class='lord-iconCorazon'
                 src='https://cdn.lordicon.com/rjzlnunf.json'
                 trigger='hover'
                 colors='primary:#000000,secondary:#f30000'
@@ -56,7 +57,7 @@
           echo "<h4>Valoracion: </h4>";
           echo "<div class='valoracion'>";
             for($i=1 ; $i<= 5 ; $i++ ){
-                if ($i<=$listadoProducto[0]->media){
+                if ($i<=$listadoProducto2[0]->media){
                   echo "<font color=\"yellow\">★</font>";
                 }else{
                   echo "★";
@@ -71,11 +72,12 @@
 
           echo "<div class=comentariosClientes>";
           echo "<h2>Valoraciones </h2>";
-          if($listadoProducto[0]->cuenta==0){
+          if($listadoProducto2[0]->cuenta==0){
             echo "<h4>Sin valoraciones: </h4>";
           }else{
-           for($i=0; $i<= $listadoProducto[0]->cuenta ; $i++){
+           for($i=0; $i<= $listadoProducto2[0]->cuenta ; $i++){
               foreach ($listadoProducto as $clave => $valor){
+                echo "<div class=cajaComentariosClientes>";
                 echo "<h4>Correo: </h4>";
                 echo "<p>".$valor->correoCliente."</p>";
                 echo "<h4>Comentario: </h4>";
@@ -90,10 +92,12 @@
                     }
                 }
                 echo " </div>";
+                echo "</div>";
               }
           
             }
           }
+            
             echo "</div>";
            ?>
     

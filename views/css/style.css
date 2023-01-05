@@ -1452,10 +1452,6 @@ path.two {
     box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
 
-.comentariosClientes{
-    margin-left: 24%;
-    margin-bottom: 5%;
-}
 
 .imagenPaginaProducto {
     width: 280px;
@@ -1489,6 +1485,21 @@ path.two {
     color: #ff6000;
     font-weight: 700;
 }
+
+.comentariosClientes{
+    margin-left: 28%;
+    margin-bottom: 5%;
+}
+.cajaComentariosClientes{
+
+    background-color: white;
+    width: 50%;
+    padding: 1%;
+    margin-bottom: 2%;
+    border: 2px solid grey;
+        
+}
+
 
 
 
@@ -2054,6 +2065,13 @@ Responsive Smartphone Formularios.
     .fromGenericoOpiniones form {
         width: 275px;
     }
+
+    .cabeceraLogin {
+        margin-bottom: 80%;
+    }
+    .cabeceraRegistro {
+        margin-bottom: 113%;
+    }
 }
 
 /*
@@ -2072,6 +2090,7 @@ Responsive Smartphone Home
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
+        margin-bottom: 22%;
     }
     .producto1  { 
         grid-area: 1 / 1 / 2 / 2;
@@ -2092,22 +2111,33 @@ Responsive Smartphone Home
 
     .imagenHome {
         margin-right: 0px; 
-        width: 220px;
+        width: 160px;
+        
     }
     .contenedorProducto .cajaProducto {
-        width: 220px;
-        height: 330px;
+        width: 145px;
+        height: 177px;
+       
     }
     .contenedorProducto .cajaProducto .contenidoProducto h2 {
-        font-size: 15px;
+        font-size: 10px;
     }
     .contenedorProducto .cajaProducto .contenidoProducto p {
-        font-size: 15px;
+        font-size: 10px;
     }
     .contenedorProducto .cajaProducto .contenidoProducto a {
-        font-size: 12px;
+        font-size: 6px;
+        padding: 4px;
+    }
+    .contenedorProducto .cajaProducto .contenidoProducto {
+        padding: 5px 17px;
     }
 
+    .contenedorProducto{
+      
+        justify-content: center;
+    }
+    
 }
 
 /*
@@ -2125,8 +2155,8 @@ Responsive Smartphone Pagina Producto
         margin-right: 0px
     }
     .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto {
-        width: 215px;
-        height: 448px;
+       /* width: 215px;
+        height: 448px;*/
         margin-top: 10%;
     }
     .contenedorPaginaProducto .cajaPaginaProducto .contenidoPaginaProducto h2 {
@@ -2158,6 +2188,17 @@ Responsive Smartphone Pagina Producto
     .comentariosClientes{
         font-size: 12px;
         margin-bottom: 25%;
+    }
+    .lord-iconCorazon{
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .comentariosClientes{
+        margin-left: 10%;
+    }
+    .cajaComentariosClientes{
+        width: 80%;
     }
 
     /*
@@ -2332,6 +2373,7 @@ Responsive Smartphone Pagina Producto
       opacity:0.5;
     }
 
+    
     lord-icon{
         width: 60px !important;
         height: 50px !important;
