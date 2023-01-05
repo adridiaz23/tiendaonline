@@ -248,5 +248,12 @@
             $sql = "UPDATE producto set stock = '".$this->stock."' WHERE ISBN = '".$this->isbn."'";
             $this->db->query($sql);
         }
+
+        //FUNCION PARA OBTENER STOCK DEL PRODUCTO
+        public function obtenerStock(){
+            $sql = "SELECT `stock` FROM producto WHERE ISBN = '".$this->isbn."'";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
 }
 ?>

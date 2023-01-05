@@ -55,15 +55,15 @@
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
 
-        function mostrarPedido($idPedido){
-                $sql = "SELECT * FROM pedido WHERE idPedido = $idPedido";
+        function mostrarPedido(){
+                $sql = "SELECT * FROM pedido WHERE idPedido = '".$this->idPedido."'";
                 $rows = $this->db->query($sql);
+                return $rows->fetch(PDO::FETCH_CLASS);
         }
         //Función para editar el estado del pedido
         function editarEstado(){
                 $sql = "UPDATE pedido SET estado = '".$this->estado."' WHERE idPedido = '".$this->idPedido."'";
                 $rows = $this->db->query($sql);
-               
         }
 
         //Función para buscar solo por el estado del pedido
@@ -112,7 +112,4 @@
                 $sql = "INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `importeTotal`) VALUES (NULL, '".$this->correoCliente."', '".$this->fechaPeticion."', '0', '".$this->importeTotal."')";
                 $this->db->query($sql);
         }
-       
-    }
-
-?>
+}

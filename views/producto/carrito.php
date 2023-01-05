@@ -1,7 +1,4 @@
-<body>
-
-<?php  
-require_once "models/detallePedido.php";
+<?php
     if((isset($_SESSION['carrito']) && (count($_SESSION['carrito']) > 0))){
         echo "<h1 class='tituloCarrito'>Carrito de Compras</h1>";
         echo "<div class='containerCarrito'>";
@@ -83,7 +80,7 @@ require_once "models/detallePedido.php";
                     ?>
                     <!-- designed by me... enjoy! -->
                     <div class="wrapperCarrito">
-                      <a class="cta" href='index.php?controller=Pedido&action=confirmarPedido'>
+                      <a class="cta" href='index.php?controller=Pedido&action=checkout'>
                         <span>Pagar</span>
                         <span>
                           <svg width="54px" height="30px" viewBox="0 0 66 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -123,5 +120,4 @@ require_once "models/detallePedido.php";
     }
     
     ?>
-</body>
 </html>

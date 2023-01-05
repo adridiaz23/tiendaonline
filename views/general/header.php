@@ -1,9 +1,8 @@
 
-<body>
-<link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link href="//fonts.googleapis.com/css?family=Lobster:400" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <div class="menu">
         <div class="menu1"><a href='index.php'>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
@@ -91,22 +90,23 @@
         <div class="menu10"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[4]->idCategoria; ?>'><?php echo $categorias[4]->nombre; ?></a></div>
         <div class="menu11">Todos</div>
 
-        <div id="menuToggle">
-            <input type="checkbox"/>
-            <span class="eliminarSpan"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-                <li><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[0]->idCategoria; ?>'><?php echo  $categorias[0]->nombre; ?></a></li>
-                <li><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[1]->idCategoria; ?>'><?php echo $categorias[1]->nombre; ?></a></li>
-                <li><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[2]->idCategoria; ?>'><?php echo $categorias[2]->nombre; ?></a></li>
-                <li><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[3]->idCategoria; ?>'><?php echo $categorias[3]->nombre; ?></a></li>
-                <li><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[4]->idCategoria; ?>'><?php echo $categorias[4]->nombre; ?></a></li>
-                <li><a class = "categoriaLink">Todos</a></div></li>
-            </ul>
-        </div>
+        <!-- Hack Para Desplegar el Menú activando un checkbox -->
+        <input type="checkbox" class="checkbox" id="menu-toogle"/>
+        <label for="menu-toogle" class="menu-toogle"></label>
+        <nav class="nav">
+            <?php
+                foreach ($categorias as $clave => $valor) {
+                    if(isset($_GET['idCategoria']) && $_GET['idCategoria'] == $valor->idCategoria){
+                        ?>
+                            <a class = "nav__item current" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $valor->idCategoria; ?>'><?php echo  $valor->nombre; ?></a>
+                        <?php
+                    }else{
+                    ?>
+                    <a class = "nav__item" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $valor->idCategoria; ?>'><?php echo  $valor->nombre; ?></a>
+                    <?php
+                    }
+                }
+            ?>
+        </nav>
         
     </div>
-            
-</body>

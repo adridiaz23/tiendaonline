@@ -85,24 +85,14 @@
 
         function confirmarPedido(){
             require_once "models/producto.php";
-            require_once "models/detallePedido.php";
-            if(isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0){
-                foreach($_SESSION['carrito'] as $clave => $valor){
-                    $listaIsbn[] = $clave;
-                }
-                $producto = new Producto();
-                $listadoCarrito = $producto->listadoCarrito($listaIsbn);
-                foreach($listadoCarrito as $clave => $valor){
-                    $listado[$valor->ISBN] = $valor;
-                }
-                
-                //Calcular Subtotal SIN IVA
-                $total = 0;
-                foreach ($listadoCarrito as $clave => $valor) {
-                    $total += $valor->precio*intval($_SESSION['carrito'][$valor->ISBN]);
-                }
-                $subtotal = $total-($total*0.04);
-                $iva = $total*0.04;
+            if($_GET['pedido'] && $_GET['pedido'] != ''){
+                require_once "models/pedido.php";
+                $pedido = new Pedido();
+                $pedido->setIdPedido($_GET['pedido']);
+                $listaPedido = mostrarPedido();
+            }else{
+                echo "<script>alert('Pedido no encontrado');
+                window.location.replace('index.php');</script>";
             }
             require_once "views/pedido/confirmarPedido.php";
         
@@ -162,7 +152,8 @@
             }
 
             DetallePedidoController::vaciarCarrito();
-            require("views/pedido/confirmarPedido.php");
+
+            echo "<script>window.location.replace('index.php?controller=Pedido&action=confirmarPedido&pedido=".$id[0]->idPedido."');</script>";
         }
     }
         

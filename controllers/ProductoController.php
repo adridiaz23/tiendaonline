@@ -24,7 +24,7 @@
                         if (!((strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
                             echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
                             - Se permiten archivos .jpg, .png. y de 200 kb como máximo.</b><br>Por favor Vuelva a registrarse</div>';
-                            echo "<meta http-equiv=REFRESH content=2,URL=registro_cursos.php>";
+                            echo "<meta http-equiv=REFRESH content=2,URL=index.php?controller=Producto&action=registrar>";
                         }else{
                             //Si la imagen es correcta en tamaño y tipo
                             //Se intenta subir al servidor C:\xampp\htdocs\tiendaonline\views\css\assets\fotos
@@ -42,7 +42,7 @@
                         }
                     }
                     }else{
-                        echo "El ISBN ".$_POST['isbn']." ya esta Registrado";
+                        echo "<script>alert('El ISBN ".$_POST['isbn']." ya esta Registrado')</script>";
                         require_once "views/producto/registro.php";
                     }
                 }else{

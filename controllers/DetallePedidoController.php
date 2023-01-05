@@ -1,14 +1,18 @@
 <?php 
     class DetallePedidoController{
         public static function añadirCarrito(){
-            if(isset($_GET['isbn'])){ 
+            if(isset($_GET['isbn'])){
                 //unset($_SESSION['carrito']);
                 $isbn=intval($_GET['isbn']);
                 $lista = array();
                 if(isset($_SESSION['carrito'][$isbn])){ 
-                    
-                    $_SESSION['carrito'][$isbn]++;
-
+                    require_once "models/producto.php";
+                    $producto = new Producto();
+                    $producto->setIsbn($isbn);
+                    $stock = $producto->obtenerStock();
+                    if($_SESSION['carrito'][$isbn] > $stock[0]->stock){
+                        $_SESSION['carrito'][$isbn]++;
+                    }
                 }else{
                     require_once "models/producto.php";
                     require_once "models/detallePedido.php";
@@ -19,9 +23,14 @@
                     $producto = new Producto();
                     $producto->setIsbn($isbn);
                     if($producto->listadoProducto()){
-                        //$_SESSION['carrito'] = $producto;
-                        //array_push($lista,$producto);
-                        $_SESSION['carrito'][$detallePedido->getISBN()] = $detallePedido->getUnidades();
+                        $stock = $producto->obtenerStock();
+                        if($stock[0]->stock > 1){
+                            $_SESSION['carrito'][$detallePedido->getISBN()] = $detallePedido->getUnidades();
+                        }else{
+                            ?>
+                            <script>alert('No hay stock del producto')</script>
+                            <?php
+                        }
                     }else{
                         ?>
                         <script>alert('No existe el producto')</script>

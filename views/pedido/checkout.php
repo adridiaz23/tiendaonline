@@ -22,7 +22,7 @@
             <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
 
             <p class="expcvv_text2">CVV</p>
-            <input type="password" class="inputbox" name="cvv" id="cvv" maxlength="3" required />
+            <input type="number" class="inputbox" name="cvv" id="cvv" min="000" max="999" required />
         </div>
             <p></p>
             <button type="submit" class="buttonCheckout">CheckOut</button>
