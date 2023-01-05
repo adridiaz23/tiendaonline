@@ -2437,12 +2437,12 @@ Responsive Smartphone Pagina Producto
     /*
         CSS Pagina Producto
     */
-    @media screen and (min-width:767px)and(max-width:1023px){
+    @media screen and (min-width:768px)and(max-width:1023px){
         .contenedorPaginaProducto {
             margin-top: 65px;
         }
     }
-    @media screen and (min-width:767px)and(max-width:1025px){
+    @media screen and (min-width:768px)and(max-width:1023px){
         .tituloHomeCliente {
             text-align: center;
         }
@@ -2505,3 +2505,5 @@ Responsive Smartphone Pagina Producto
         
     
     }
+
+  
