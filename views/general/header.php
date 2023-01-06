@@ -13,7 +13,7 @@
                 colors='primary:#ffffff,secondary:#1663c7'
                 style='width:250px;height:50px'>
             </lord-icon>
-        </a></div>
+        Tienda Online</a></div>
         <div class="menu2">
             <div class="wrapper"><form class='buscador'  action='index.php?controller=Producto&action=buscador' method='Post'>
                 <div class="input-data">
@@ -97,13 +97,7 @@
 	        <div id="mySidenav" class="sidenav">
                 <?php
                 foreach ($categorias as $clave => $valor){
-                    echo "<a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=".$valor->idCategoria."'>".$valor->nombre."</a>";
-	        	    echo "<div class='line'></div>";
-                }
-                ?>
-                <?php
-                foreach ($categorias as $clave => $valor){
-                    echo "<a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=".$valor->idCategoria."'>".$valor->nombre."</a>";
+                    echo "<a class='sidenav_item' href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=".$valor->idCategoria."'>".$valor->nombre."</a>";
 	        	    echo "<div class='line'></div>";
                 }
                 ?>

@@ -4,11 +4,11 @@
         echo "<div class='containerCarrito'>";
         echo "<div class='containerProductos'>";
             echo "<div class='productoCarrito'>";
-                echo "<div class='div1Carrito'>PRODUCTO</div>";
+                echo "<div class='div1Carrito'>Producto</div>";
                 echo "<div class='div2Carrito'></div>";
-                echo "<div class='div3Carrito'>PRECIO</div>";
-                echo "<div class='div4Carrito'>CANTIDAD</div>";
-                echo "<div class='div5Carrito'>TOTAL</div>";
+                echo "<div class='div3Carrito'>Precio</div>";
+                echo "<div class='div4Carrito'>Cantidad</div>";
+                echo "<div class='div5Carrito'>Total</div>";
                 echo "<div class='div6Carrito'>";
                     echo "<form method='post' class='formCarrito'>";
                     echo "<input type='submit' name='button4' class='button' value='Vaciar Carrito' />";
@@ -51,12 +51,18 @@
                         echo "</form>"; 
                     echo "</div>";
                 echo "</div>";
+                echo "<div class='div7Carrito'>";
+                    echo "<p>Unidad:</p>";
+                echo "</div>";
+                echo "<div class='div8Carrito'>";
+                    echo "<p>Total:</p>";
+                echo "</div>";
             echo "</div>";
         }
             echo "</div>";
             echo "<div class='carritoDerecha'>";
                 echo "<div class='sumarioCarrito'>";
-                    echo "<div class='sumarioCarrito1'>Resumen del Pedido</div>";
+                    echo "<div class='sumarioCarrito1'><p><b>Resumen del Pedido</b></p></div>";
                     echo "<div class='sumarioCarrito2'>";
                         echo "<div 'subtotal'>";
                             echo "<p>Subtotal</p>";
@@ -68,8 +74,8 @@
                         echo "</div>";
                     echo "</div>";
                     echo "<div class='sumarioCarrito3'>";
-                        echo "<p>Total</p>";
-                        echo "<p>".$total."€</p>";
+                        echo "<p><b>Total</b></p>";
+                        echo "<p><b>".$total."€</b></p>";
                     echo "</div>";
                 echo "</div>";
                 /*echo "<div class='botonPagarCarrito'>";

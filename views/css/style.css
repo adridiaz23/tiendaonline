@@ -311,6 +311,7 @@ a.enlaceMenuAdmin:hover::after {
 .openSideMenu{
     position: relative;
     z-index: -1;
+    display: none;
 }
 
 .sidenav {
@@ -320,7 +321,7 @@ a.enlaceMenuAdmin:hover::after {
     z-index: 2;
     top: 0;
     right: 0;
-    background-color: rgb(148, 147, 147);;
+    background-color: rgba(29, 33, 32, 1);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 61px;
@@ -328,33 +329,30 @@ a.enlaceMenuAdmin:hover::after {
 }
 
 .line {
-    border-bottom: 1px solid #2099FF;
+    border-bottom: 1px solid rgba(221, 231, 228, 1);
     margin-left: 10px;
     margin-right: 10px;
     display: block;
     transition: 0.3s;
 }
 
-.sidenav a {
+.sidenav a.sidenav_item {
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 20px;
     text-align: left;
     text-decoration: none;
     font-size: 15px;
-    color: #000;
+    color: rgba(221, 231, 228, 1);
     display: block;
     transition: 0.3s;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
     
 .menuIconToggle {
     box-sizing: border-box;
     cursor: pointer;
-    position: fixed;
+    position: relative;
     z-index: 10;
     height: 100%;
     width: 100%;
@@ -364,24 +362,14 @@ a.enlaceMenuAdmin:hover::after {
     z-index: 10;
 }
 
-input[type=checkbox]:checked ~ .menuIconToggle > .hor {
-    box-sizing: border-box;
-    opacity: 0;
-    transition: all .25s;
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
-input[type=checkbox]:checked ~ .menuIconToggle > .dia.p-1 {
-    box-sizing: border-box;
-    transform: rotate(135deg);
-    margin-top: 8px;
-    transition: all .25s;
-}
-
-input[type=checkbox]:checked ~ .menuIconToggle > .dia.p-2 {
-    box-sizing: border-box;
-    transform: rotate(-135deg);
-    margin-top: -9px;
-    transition: all .25s;
+input#openSideMenu[type=checkbox]:checked ~ body{
+    height: 100%;
+    overflow: hidden;
 }
 
 
@@ -651,6 +639,14 @@ td.tdAdmin>a>img {
     /*grid-area: 1 / 1 / 4 / 2;*/
     grid-column: 1;
     grid-row: 1/3;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu1 > a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .menu2 {
@@ -1225,9 +1221,11 @@ div.eliminarCarrito > * {
 
 .sumarioCarrito {
     padding: 20px;
-    background-color: #2632395d;
-    border-radius: 25px;
     height: min-content;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #2099FF;
 }
 
 .sumarioCarrito > div {
@@ -1290,7 +1288,9 @@ div.carritoDerecha{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    height: min-content;
+    position: sticky;
+    top: 50px;
 }
 
 /*BOTON CARRITO*/
@@ -2499,7 +2499,7 @@ Responsive Smartphone Pagina Producto
         left:-220px; /*Ocultamos el menú en la parte izquierda para que no se vea a menos que pulsemos sobre la hamburguesa*/
         padding-top:47px;
         background-color: rgba(29, 33, 32, 1);
-        border-right:4px solid rgba(114, 126, 3, 1);
+        border-right:4px solid #2099FF;
         transition:all .5s ease; /*Damos a la caja del menú una transición para que tenga un desplazamiento suave*/
         z-index: 2;
     }
@@ -2539,7 +2539,7 @@ Responsive Smartphone Pagina Producto
         height:0;
         position:absolute;/*Le damos al after una posición absoluta relativa al li que lo contiene*/
         border-top:16.5px solid transparent;
-        border-left:17px solid rgba(114, 126, 3, 1);
+        border-left:17px solid #2099FF;
         border-bottom:17px solid transparent;
         top:.5px;
         right:-21px;
@@ -2580,12 +2580,135 @@ Responsive Smartphone Pagina Producto
         margin-left:200px; /*Cuando el checkbox asigna un margen al contenedor principal para que se desplace junto con el menú*/
     }
     .checkbox:checked ~ .menu-toogle { 
-        left:208px;
+        left:150px;
         position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
     }   
   
     /*
     Final Responsive Smartphone Header
+    */
+
+    /*
+    !CSS RESPONSIVE SMARTPHONE CARRITO
+    */
+    .containerCarrito{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .containerProductos {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .containerProductos > .productoCarrito:first-child{
+        display: none;
+    }
+
+    .productoCarrito{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #2099FF;
+    }
+
+    .div1Carrito{
+        grid-area: 1 / 1 / 6 / 3;
+        width: 100%;
+    }
+
+    .div2Carrito{
+        grid-area: 1 / 3 / 2 / 5;
+    }
+
+    .div3Carrito{
+        grid-area: 2 / 4 / 3 / 5;
+    }
+
+    .div4Carrito{
+        grid-area: 3 / 3 / 4 / 4;
+    }
+
+    .div5Carrito{
+        grid-area: 4 / 4 / 5 / 5;
+    }
+
+    .div6Carrito{
+        grid-area: 3 / 4 / 4 / 5;
+    }
+
+    .div7Carrito{
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    .div8Carrito{
+        grid-area: 4 / 3 / 5 / 4;
+    }
+
+    .tituloCarrito{
+        font-size: 25px;
+        letter-spacing: 1px;
+        color: black;
+        text-align: center;
+    }
+
+    img.imagenCarrito{
+        width: 85%;
+    }
+
+    /*
+    ! FINAL CSS RESPONSIVE SMARTPHONE CARRITO
+    */
+
+     /*
+    !CSS RESPONSIVE SMARTPHONE CHECKOUT
+    */
+
+    .card{
+        width: 90%;
+    }
+
+    .product {
+        object-fit: cover;
+        width: 17em;
+        height: 17em;
+        border-radius: 100%;
+        border: 2px solid #7647CD;
+    }
+    
+    /*
+    ! FINAL CSS RESPONSIVE SMARTPHONE CHECKOUT
+    */
+
+    /*
+    !CSS RESPONSIVE SMARTPHONE FOOTER
+    */
+    footer{
+        background-color: black;
+        bottom: 0;
+        margin-top: 40px;
+        width: 100%;
+        color: white;
+        position: unset;
+    }
+
+    .espacioFooter{
+        display: none;
+    }
+    
+    
+    /*
+    ! FINAL CSS RESPONSIVE SMARTPHONE FOOTER
     */
 
     
@@ -2600,6 +2723,12 @@ Responsive Smartphone Pagina Producto
     }
     nav.nav{
         display: none;
+    }
+    .div7Carrito{
+        display: none !important;
+    }
+    .div8Carrito{
+        display: none !important;
     }
 }
 
