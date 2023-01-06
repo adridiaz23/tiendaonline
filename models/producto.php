@@ -159,6 +159,7 @@
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+        
         //Funcion para obtener array del producto
             public function listadoProducto(){
             $sql = "SELECT * FROM producto WHERE ISBN = '".$this->isbn."'";

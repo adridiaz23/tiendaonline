@@ -84,12 +84,24 @@
         }
 
         function confirmarPedido(){
-            require_once "models/producto.php";
             if($_GET['pedido'] && $_GET['pedido'] != ''){
                 require_once "models/pedido.php";
                 $pedido = new Pedido();
                 $pedido->setIdPedido($_GET['pedido']);
-                $listaPedido = mostrarPedido();
+                $listaPedido = $pedido->mostrarPedido();
+
+                require_once "models/detallePedido.php";
+                $detallePedido = new DetallePedido();
+                $detallePedido->setIdPedido($listaPedido[0]->idPedido);
+                $listaDetallePedido = $detallePedido->obtenerDetallePedido();
+
+                require_once "models/producto.php";
+                $listaProductos = [];
+                foreach ($listaDetallePedido as $key => $value) {
+                    $producto = new Producto();
+                    $producto->setISBN($value->ISBN);
+                    $listaProductos[] = $producto->listadoProducto();
+                }
             }else{
                 echo "<script>alert('Pedido no encontrado');
                 window.location.replace('index.php');</script>";

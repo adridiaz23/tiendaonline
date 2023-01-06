@@ -3,6 +3,7 @@
     <link href="//fonts.googleapis.com/css?family=Lobster:400" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src="views\css\assets\script.js"></script>
     <div class="menu">
         <div class="menu1"><a href='index.php'>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
@@ -88,7 +89,26 @@
         <div class="menu8"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[2]->idCategoria; ?>'><?php echo $categorias[2]->nombre; ?></a></div>
         <div class="menu9"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[3]->idCategoria; ?>'><?php echo $categorias[3]->nombre; ?></a></div>
         <div class="menu10"><a class = "categoriaLink" href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=<?php echo  $categorias[4]->idCategoria; ?>'><?php echo $categorias[4]->nombre; ?></a></div>
-        <div class="menu11">Todos</div>
+        <div class="menu11">
+            
+	        <label for="openSideMenu" class="menuIconToggle">
+                Categorias
+	        </label><input type="checkbox" id="openSideMenu" class="openSideMenu" onclick="openNav()">
+	        <div id="mySidenav" class="sidenav">
+                <?php
+                foreach ($categorias as $clave => $valor){
+                    echo "<a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=".$valor->idCategoria."'>".$valor->nombre."</a>";
+	        	    echo "<div class='line'></div>";
+                }
+                ?>
+                <?php
+                foreach ($categorias as $clave => $valor){
+                    echo "<a href='index.php?controller=Categoria&action=categoriaCliente&idCategoria=".$valor->idCategoria."'>".$valor->nombre."</a>";
+	        	    echo "<div class='line'></div>";
+                }
+                ?>
+	        </div>
+        </div>
 
         <!-- Hack Para Desplegar el Menú activando un checkbox -->
         <input type="checkbox" class="checkbox" id="menu-toogle"/>

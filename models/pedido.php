@@ -58,8 +58,9 @@
         function mostrarPedido(){
                 $sql = "SELECT * FROM pedido WHERE idPedido = '".$this->idPedido."'";
                 $rows = $this->db->query($sql);
-                return $rows->fetch(PDO::FETCH_CLASS);
+                return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
         //Función para editar el estado del pedido
         function editarEstado(){
                 $sql = "UPDATE pedido SET estado = '".$this->estado."' WHERE idPedido = '".$this->idPedido."'";

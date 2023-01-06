@@ -36,6 +36,15 @@
         public function setIdPedido($idPedido){
             $this->idPedido = $idPedido;
         }
+        
+        //FUNCION PARA DEVOLVER TODOS LOS DETALLES DEL PEDIDO MEDIANTO SU ID PEDIDO GLOBAL
+        public function obtenerDetallePedido()
+        {
+            $sql = "SELECT * FROM detallePedido WHERE idPedido = '".$this->idPedido."'";
+            $rows = $this->db->query($sql);
+            return $rows->fetchAll(PDO::FETCH_CLASS);
+        }
+
 
         public function insert()
         {
@@ -43,6 +52,5 @@
             $this->db->query($sql);
         }
 
-    }
-
+}    
 ?>

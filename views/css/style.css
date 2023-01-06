@@ -308,6 +308,81 @@ a.enlaceMenuAdmin:hover::after {
     transform: scaleX(1);
 }
 
+.openSideMenu{
+    position: relative;
+    z-index: -1;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background-color: rgb(148, 147, 147);;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 61px;
+    border-left: 2px solid #2099FF;
+}
+
+.line {
+    border-bottom: 1px solid #2099FF;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+    
+.menuIconToggle {
+    box-sizing: border-box;
+    cursor: pointer;
+    position: fixed;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    height: 22px;
+    width: 22px;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+input[type=checkbox]:checked ~ .menuIconToggle > .hor {
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all .25s;
+}
+
+input[type=checkbox]:checked ~ .menuIconToggle > .dia.p-1 {
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+    transition: all .25s;
+}
+
+input[type=checkbox]:checked ~ .menuIconToggle > .dia.p-2 {
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+    transition: all .25s;
+}
 
 
 /*Final del CSS del Menu*/
@@ -2080,7 +2155,110 @@ Fin CSS Opiniones
     color: #2099FF !important;
     font-weight: 700;
 }
+/*
+!Final CSS Perfil Usuario
+*/
 
+/*
+*
+!CSS Pagina Confirmar Pedido
+*/
+
+.contenedorConfirmarPedido{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contenedorConfirmarPedido1{
+    width: 60%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedorConfirmarPedido1 > div{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(148, 147, 147);
+    margin: 10px;
+}
+
+.contenedorConfirmarPedido1 > div > div.imagenConfirmarPedido{
+    width: 150px;
+    margin: 10px;
+}
+
+div.imagenConfirmarPedido > a > img{
+    width: 120px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+a.linkConfirmarPedido{
+    text-decoration: none;
+    color: #000;
+}
+
+h3.tituloConfirmarPedido{
+    text-align: center;
+}
+
+div.contenedorConfirmarPedido2{
+    width: 25%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(148, 147, 147);
+    height: fit-content;
+    position: sticky;
+    top: 50px;
+    margin-top: 10px;
+}
+
+div.resumenConfirmarPedido{
+    border-bottom: 1px solid rgb(148, 147, 147);
+}
+
+div.resumenConfirmarPedido > p{
+    font-weight: bold;
+}
+
+div.subtotalConfirmarPedido{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(148, 147, 147);
+}
+
+div.totalConfirmarPedido{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+div.totalConfirmarPedido > div > p{
+    font-weight: bold;
+}
+
+/*
+!Final CSS Pagina Confirmar Pedido
+*/
 
 /*
 !!!Responsive Smartphone
