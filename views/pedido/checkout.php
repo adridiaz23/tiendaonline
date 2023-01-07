@@ -16,15 +16,16 @@
             <input type="text" class="inputbox" name="name" required />
             <p>Numero de Targeta</p> 
             <input type="text" class="inputbox" name="card_number" id="card_number" value="ES" maxlength="24" required" /> 
-<div class="expcvv">
-
-            <p class="expcvv_text">Fecha de Expiracion</p>
-            <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
-
-            <p class="expcvv_text2">CVV</p>
-            <input type="number" class="inputbox" name="cvv" id="cvv" min="000" max="999" required />
-        </div>
-            <p></p>
+          <div class="expcvv">
+            <div>
+              <p class="expcvv_text">Fecha de Expiracion</p>
+              <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+            </div>
+            <div>
+              <p class="expcvv_text2">CVV</p>
+              <input type="number" class="inputbox" name="cvv" id="cvv" min="000" max="999" required />
+            </div>
+          </div>
             <button type="submit" class="buttonCheckout">CheckOut</button>
           </form>
         </div>

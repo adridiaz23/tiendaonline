@@ -1709,6 +1709,8 @@ path.two {
     display:flex;
     justify-content: space-between;
     padding-top: 0.6rem;
+    flex-direction: row;
+    padding-right: 50px;
 }
 
 .expcvv_text{
@@ -1752,15 +1754,15 @@ path.two {
         width: 100%;
         border-top-right-radius: 0;
         border-bottom-left-radius: 0;
-      border-top-right-radius:0;
-      border-radius:0;
+        border-top-right-radius:0;
+        border-radius:0;
     }
 
     .rightside{
         width:auto;
         border-bottom-left-radius: 1.5rem;
         padding:0.5rem 3rem 3rem 2rem;
-      border-radius:0;
+        border-radius:0;
     }
 }
 
@@ -2302,7 +2304,7 @@ Responsive Smartphone Home
     .productos{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(1, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
         margin-bottom: 22%;
@@ -2327,7 +2329,9 @@ Responsive Smartphone Home
     .imagenHome {
         margin-right: 0px; 
         width: 160px;
-        
+        display: flex;
+        align-items: center;
+        margin-top: 0px;
     }
     .contenedorProducto .cajaProducto {
         width: 145px;
@@ -2689,6 +2693,16 @@ Responsive Smartphone Pagina Producto
         width: 85%;
     }
 
+    .vacioCarrito {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        margin: 25px;
+    }
+
     /*
     ! FINAL CSS RESPONSIVE SMARTPHONE CARRITO
     */
@@ -2708,9 +2722,92 @@ Responsive Smartphone Pagina Producto
         border-radius: 100%;
         border: 2px solid #7647CD;
     }
+
+    .leftside{
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+    }
+
+    .rightside{
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+
+    .rightside > form > h1{
+        font-size: 25px;
+        letter-spacing: 1px;
+        color: black;
+        text-align: center;
+    }
+    
+    .rightside > form > h2{
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: black;
+        text-align: center;
+    }
+
+    .leftside > img{
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .expcvv{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.6rem;
+        flex-direction: column;
+        padding: 0px;
+    }
     
     /*
     ! FINAL CSS RESPONSIVE SMARTPHONE CHECKOUT
+    */
+
+    /*
+    !CSS RESPONSIVE SMARTPHONE CONFIRMAR PEDIDO
+    */
+
+    h3.tituloConfirmarPedido {
+        text-align: center;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .contenedorConfirmarPedido {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contenedorConfirmarPedido1 {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    div.contenedorConfirmarPedido2 {
+        width: -webkit-fill-available;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(148, 147, 147);
+    }
+
+    /*
+    ! FINAL CSS RESPONSIVE SMARTPHONE CONFIRMAR PEDIDO
     */
 
     /*
