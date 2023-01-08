@@ -42,7 +42,7 @@
                         echo "</form>";
                     echo "</div>";
                 echo "</div>";
-                echo "<div class='div5Carrito'>".($valor->precio*intval($_SESSION['carrito'][$valor->ISBN]))." €</div>";
+                echo "<div class='div5Carrito'><p>".($valor->precio*intval($_SESSION['carrito'][$valor->ISBN]))." €</p></div>";
                 echo "<div class='div6Carrito'>";
                     echo "<div class='eliminarCarrito'>";
                         echo "<form method='post' class='formCarrito'>";
@@ -115,7 +115,8 @@
                 delay="2000"
                 colors="primary:#006ac1"
                 state="hover-1"
-                style="width:150px;height:150px">
+                style="width:150px;height:150px"
+                class="iconCarritoVacio">
             </lord-icon>
             <?php
             echo "</div>";
