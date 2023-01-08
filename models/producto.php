@@ -168,15 +168,15 @@
         }
 
         //Funcion para obtener array del producto y mas
-        public function listadoProducto3(){
-            $sql ="SELECT producto.*, valoraciones.comentario, valoraciones.correoCliente,valoraciones.valoracion 
+        public function listadoProductoComentarios(){
+            $sql ="SELECT valoraciones.comentario, valoraciones.correoCliente,valoraciones.valoracion 
              FROM `producto` INNER JOIN `valoraciones` ON producto.ISBN = valoraciones.ISBN WHERE producto.ISBN = '".$this->isbn."'";
             $rows = $this->db->query($sql);
             return $rows->fetchAll(PDO::FETCH_CLASS);
         }
           //Funcion para obtener la media del producto 
-          public function listadoProducto2(){
-            $sql ="SELECT AVG(valoraciones.valoracion) AS media, COUNT(valoraciones.ISBN) AS cuenta 
+          public function listadoProductoMedia(){
+            $sql ="SELECT  AVG(valoraciones.valoracion) AS media, COUNT(valoraciones.ISBN) AS cuenta 
             FROM `producto` INNER JOIN `valoraciones` ON producto.ISBN = valoraciones.ISBN WHERE producto.ISBN = '".$this->isbn."'";
            $rows = $this->db->query($sql);
            return $rows->fetchAll(PDO::FETCH_CLASS);
