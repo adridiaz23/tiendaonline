@@ -2014,6 +2014,7 @@ CSS Pagina Opiniones
     margin-right: 9%;
     text-align: center;
     justify-content: center;
+  
 }
 
 .fromGenerico ::placeholder {
@@ -2626,6 +2627,27 @@ Responsive Smartphone Pagina Producto
     /*
     Final Responsive Smartphone Header
     */
+
+    /*
+    Responsive Smartphone Pagina Opiniones
+    */
+
+    @media only screen and (max-width: 767px){
+        .containerOpinines{
+            margin-bottom: 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .imagenOpiones{
+            width: 320px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+
+    }
+
+
 
     /*
     !CSS RESPONSIVE SMARTPHONE CARRITO

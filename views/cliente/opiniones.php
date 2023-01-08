@@ -5,7 +5,7 @@
 
         if ($valor->idPedido == $idPedido){
             ?>
-            <div class="imagenHome">
+            <div class="imagenHome imagenOpiones">
             <?php
             if ($valor->estado == 1){
             echo "<div class='div1Carrito'><a href='index.php?controller=Cliente&action=paginaOpiniones&isbn=".$valor->ISBN."'><img class='imagenCarrito' src='$valor->imagen' /></a></div>";
