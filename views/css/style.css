@@ -224,7 +224,7 @@ a {
 Final de CSS Pagina de loggin */
 /*
 *
-!Comienzo CSS del Menu
+!Comienzo CSS del Menu ADMIN
 */
 
 div.spacerAdmin {
@@ -765,6 +765,8 @@ span.blue {
     /*grid-area: 1 / 7 / 2 / 8;*/
     grid-column: 7;
     grid-row: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .menu6 {
@@ -803,7 +805,76 @@ span.blue {
     grid-row: 1;
 }
 
+/* menu */
 
+#menu ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+   }
+   
+   /* items del menu */
+   
+   #menu ul li.usuarioLi1 {
+	background-color:rgba(0, 0, 0, 0.8);
+   }
+   
+   /* enlaces del menu */
+   
+   #menu ul a.usuarioLink {
+	display:block;
+	color:#fff;
+	text-decoration:none;
+	font-weight:400;
+	font-size:12px;
+	font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:1px;
+   }
+   
+   /* items del menu */
+   
+   #menu ul li {
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+   }
+   
+   /* efecto al pasar el ratón por los items del menu */
+   
+   
+
+   /* menu desplegable */
+
+#menu ul ul {
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#eee;
+	padding:0;
+   }
+   
+   /* items del menu desplegable */
+   
+   #menu ul ul li {
+	float:none;
+	width:150px
+   }
+   
+   /* enlaces de los items del menu desplegable */
+   
+   #menu ul ul a.usuarioLink {
+	line-height:120%;
+	padding:10px 15px;
+   }
+   
+   /* items del menu desplegable al pasar el ratón */
+   
+   #menu ul li:hover > ul {
+	display:block;
+   }
 
 
 /* Final del CSS Pagina del menu*/
@@ -2623,6 +2694,16 @@ Responsive Smartphone Pagina Producto
         left:150px;
         position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
     }   
+
+
+    #menu ul  ul{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -50px;
+        background: #eee;
+        padding: 0;
+    }
   
     /*
     Final Responsive Smartphone Header

@@ -48,33 +48,26 @@
         if(isset($_SESSION["Cliente"])){
             ?>
             <div class="menu5"> 
-                <a href="index.php?controller=Cliente&action=editarPerfil&correo=<?php echo $_SESSION["correo"]; ?>"><?php echo $_SESSION["Cliente"]; ?> </a> / <a href='index.php?controller=Cliente&action=listarPedido'>Mis pedidos</a> /<a href='index.php?controller=Base&action=salir'>Salir</a> 
-                <!--<div class="dropdown" id="dropdown">
-                    <button onclick="handleDropdownClicked(event)">
-                        <span class="material-symbols-outlined"> settings </span>
-                        More Actions
-                        <span id="icon" class="material-symbols-outlined"> expand_more </span>
-                    </button>
-                    <button onclick="handleDropdownClicked(event)">
-                        <span class="material-symbols-outlined"><?php echo $_SESSION["Cliente"]; ?></span>
-                            <span id="icon" class="material-symbols-outlined"> expand_more </span>
-                    </button>
-                    <div class="menuPerfil">
-                        <button >
-                            <span class="material-symbols-outlined"> build </span>
-                            Build Tools
-                        </button>
-                        <button>
-                            <span class="material-symbols-outlined"> description </span>
-                            File Manager
-                        </button>
-                        <button>
-                            <span class="material-symbols-outlined"> logout </span>
-                            Logout
-                        </button>
-                    </div>
-                </div>-->
-
+                <nav id="menu">
+                    <ul>
+                     <li class="usuarioLi"><a href="#" class="usuarioLink">
+                        <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/bhfjfgqz.json"
+                            trigger="hover"
+                            colors="primary:white"
+                            state="hover"
+                            style="width:50px;height:50px">
+                        </lord-icon>
+                     </a>
+                        <ul>
+                            <li class="usuarioLi1" ><a class="usuarioLink" href="index.php?controller=Cliente&action=editarPerfil&correo=<?php echo $_SESSION["correo"]; ?>">Editar Perfil</a></li>
+                            <li class="usuarioLi1" ><a class="usuarioLink" href='index.php?controller=Cliente&action=listarPedido'>Mis pedidos</a></li>
+                            <li class="usuarioLi1" ><a class="usuarioLink" href='index.php?controller=Base&action=salir'>Cerrar Sesion</a></li>
+                        </ul>
+                     </li>
+                    </ul>
+                </nav>
             </div>
             <?php
         }else{
