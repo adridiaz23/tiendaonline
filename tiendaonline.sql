@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-01-2023 a las 09:40:34
+-- Tiempo de generación: 08-01-2023 a las 22:25:03
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -140,7 +140,8 @@ INSERT INTO `detallepedido` (`idDetallePedido`, `ISBN`, `unidades`, `idPedido`) 
 (28, 3, 1, 35),
 (29, 7, 1, 36),
 (30, 3, 1, 37),
-(31, 10, 1, 37);
+(31, 10, 1, 37),
+(32, 3, 1, 38);
 
 -- --------------------------------------------------------
 
@@ -192,7 +193,8 @@ INSERT INTO `pedido` (`idPedido`, `correoCliente`, `fechaPeticion`, `estado`, `i
 (34, 'victor@gmail.com', '2022-12-20', 0, 720.00),
 (35, 'victor@gmail.com', '2022-12-20', 0, 20.00),
 (36, 'victor@gmail.com', '2022-12-20', 0, 20.00),
-(37, 'paris@dortoka.com', '2022-12-20', 1, 58.00);
+(37, 'paris@dortoka.com', '2022-12-20', 1, 58.00),
+(38, 'victor@gmail.com', '2023-01-08', 0, 20.00);
 
 -- --------------------------------------------------------
 
@@ -220,13 +222,13 @@ CREATE TABLE `producto` (
 INSERT INTO `producto` (`ISBN`, `nombre`, `descripcion`, `imagen`, `precio`, `stock`, `categoria`, `autor`, `destacado`, `estado`) VALUES
 (1, 'Código limpio', 'Cada año, se invierten innumerables horas y se pierden numerosos recursos debido a código mal escrito...', 'views/css/assets/fotos/foto_1.jpg', 15.00, 5, 2, 'Robert C. Martin', 0, 0),
 (2, 'Eloquent javascript', 'Este libro se introduce dentro del lenguaje Javascript...', 'views/css/assets/fotos/foto_2.jpg', 10.00, 5, 1, 'Marijn Haverbeke', 0, 0),
-(3, 'The pragmatic programmer ', 'Muy buen libro, recomendado para aquellos programadores que quieren afianzar conceptos...', 'views/css/assets/fotos/foto_3.jpg', 20.00, 4, 3, 'Andrew Hunt & David Thomas', 0, 0),
+(3, 'The pragmatic programmer ', 'Muy buen libro, recomendado para aquellos programadores que quieren afianzar conceptos...', 'views/css/assets/fotos/foto_3.jpg', 20.00, 3, 3, 'Andrew Hunt & David Thomas', 0, 0),
 (4, 'Introduction to Algorithms ', ' Mejores prácticas de programación.', 'views/css/assets/fotos/foto_4.jpg', 16.00, 4, 4, 'Clifford stein', 0, 0),
 (5, 'Code Complete 2', ' Mejores prácticas de programación.', 'views/css/assets/fotos/foto_5.jpg', 35.00, 15, 2, 'Steve McConnell', 0, 0),
 (6, 'Introducción a CSS', 'Introducción a CSS ', 'views/css/assets/fotos/foto_6.jpg', 10.00, 6, 6, 'Javier Eguiluz', 0, 0),
 (7, 'Introducción a HTML', 'Introducción a HTML', 'views/css/assets/fotos/foto_7.jpg', 20.00, 3, 6, 'Javier Eguiluz', 0, 0),
 (8, 'JavaScript. La Guía Definitiva', 'JavaScript es el lenguaje interpretado más utilizado, principalmente en la construcción de páginas Web...', 'views/css/assets/fotos/foto_8.jpg', 80.00, 0, 1, 'David Flanagan', 0, 0),
-(9, 'C++ Annotations', 'En su Versión 10.7.2, este libro ofrece un extenso tutorial sobre el lenguaje de programación C ++...', 'views/css/assets/fotos/foto_9.jpg', 45.00, 0, 3, 'Frank B.Brokken', 0, 0),
+(9, 'C++ Annotations', 'En su Versión 10.7.2, este libro ofrece un extenso tutorial sobre el lenguaje de programación C ++...', 'views/css/assets/fotos/foto_9.jpg', 45.00, 1, 3, 'Frank B.Brokken', 0, 0),
 (10, 'PHP Pandas', 'Este libro es para principiantes y desarrolladores de nivel intermedio que deseen aprender cosas nuevas y mejorar sus habilidades...', 'views/css/assets/fotos/foto_10.jpg', 38.00, 14, 4, 'Dayler rees', 0, 0),
 (11, 'JavaScript, ¡Inspírate!', 'Este libro que tienes ahora mismo ante tus ojos, es el resultado de mi esfuerzo personal, con el objeto de crear un instrumento sencillo y simple que muestre al lector la base de un lenguaje tan peculiar y extendido como JavaScript. ', 'views/css/assets/fotos/foto_11.jpg', 25.00, 19, 1, 'Leanpub', 0, 0),
 (12, 'C Sharp Programming', 'Although C# is derived from the C programming language, it has features such as garbage collection that allow beginners to become proficient in C# more quickly than in C or C++. Similar to Java, it is object-oriented, comes with an extensive class library, and supports exception handling, multiple types of polymorphism.', 'views/css/assets/fotos/foto_12.jpg', 20.00, 30, 2, 'Wikibooks', 0, 0),
@@ -270,7 +272,8 @@ INSERT INTO `valoraciones` (`idOpinion`, `ISBN`, `comentario`, `valoracion`, `co
 (4, 9, 'Este libro esta muy bien para empezar en la programación.', 2, 'victor@gmail.com'),
 (5, 5, 'buen libro', 4, 'victor@gmail.com'),
 (6, 9, 'Este libro esta muy bien para empezar en la programación.', 2, 'victor@gmail.com'),
-(7, 3, 'iejbvtobeterpowepowekfr', 4, 'paris@dortoka.com');
+(7, 3, 'iejbvtobeterpowepowekfr', 4, 'paris@dortoka.com'),
+(8, 9, 'Este libro esta pata negra', 5, 'guille@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -339,19 +342,19 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `detallepedido`
 --
 ALTER TABLE `detallepedido`
-  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `valoraciones`
 --
 ALTER TABLE `valoraciones`
-  MODIFY `idOpinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idOpinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
