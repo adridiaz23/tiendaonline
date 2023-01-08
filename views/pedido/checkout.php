@@ -26,7 +26,7 @@
               <input type="number" class="inputbox" name="cvv" id="cvv" min="000" max="999" required />
             </div>
           </div>
-            <button type="submit" class="buttonCheckout">CheckOut</button>
+            <button type="submit" class="buttonCheckout">Pagar</button>
           </form>
         </div>
       </div>

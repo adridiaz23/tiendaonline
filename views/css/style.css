@@ -7,6 +7,8 @@ body {
   /*width: max-content;*/
   height: max-content;
 }
+
+
 footer {
   background-color: black;
   position: absolute;
@@ -838,7 +840,7 @@ span.blue {
 .productos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
@@ -2844,7 +2846,8 @@ Responsive Smartphone Pagina Producto
     
 }
 
-@media only screen and (min-width: 767px){
+@media only screen and (min-width: 1023px){
+
     #menu-toogle{
         display: none;
     }
@@ -2871,76 +2874,551 @@ Responsive Smartphone Pagina Producto
 !!!Responsive Tablet
 */
 
-    /*
-        CSS Pagina Producto
-    */
-    @media only screen and (min-width:768px)and(max-width:1023px){
-        .contenedorPaginaProducto {
-            margin-top: 65px;
-        }
+/*
+    CSS Pagina Producto
+*/
+@media only screen and (min-width:768px)and(max-width:1023px){
+    .contenedorPaginaProducto {
+        margin-top: 65px;
     }
-    @media only screen and (min-width:768px)and(max-width:1023px){
-        .tituloHomeCliente {
-            text-align: center;
-        }
-        .tituloHomeCliente > h1{
-            font-size: 20px;
-        }
-        .productos{
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(5, 1fr);
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            margin-bottom: 22%;
-        }
-        .producto1  { 
-            grid-area: 1 / 1 / 2 / 2;
-        }
-        .producto2  { 
-            grid-area: 2 / 1 / 3 / 2;
-            z-index: -2;
-        }
-        .producto3  { 
-            grid-area: 3 / 1 / 4 / 2;
-        }
-        .producto4  { 
-            grid-area: 4 / 1 / 5 / 2;
-        }
-        .producto5  { 
-            grid-area: 5 / 1 / 6 / 2;
-        }
+}
+@media only screen and (min-width:768px) and (max-width:1023px){
+    .tituloHomeCliente {
+        text-align: center;
+    }
+
+    .tituloHomeCliente > h1{
+        font-size: 20px;
+    }
+
+    .productos{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
     
-        .imagenHome {
-            margin-right: 0px; 
-            width: 160px;
-            
-        }
-        .contenedorProducto .cajaProducto {
-            width: 145px;
-            height: 177px;
-           
-        }
-        .contenedorProducto .cajaProducto .contenidoProducto h2 {
-            font-size: 10px;
-        }
-        .contenedorProducto .cajaProducto .contenidoProducto p {
-            font-size: 10px;
-        }
-        .contenedorProducto .cajaProducto .contenidoProducto a {
-            font-size: 6px;
-            padding: 4px;
-        }
-        .contenedorProducto .cajaProducto .contenidoProducto {
-            padding: 5px 17px;
-        }
-    
-        .contenedorProducto{
-          
-            justify-content: center;
-        }
+    .producto2  { 
+        grid-area: 2 / 1 / 3 / 2;
+        z-index: -2;
+    }
+
+    .producto3  { 
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .producto4  { 
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    .producto5  { 
+        grid-area: 5 / 1 / 6 / 2;
+    }
+
+    .imagenHome {
+        margin-right: 0px; 
+        width: 160px;
         
-    
     }
+
+    .contenedorProducto .cajaProducto {
+        width: 145px;
+        height: 177px;
+    }
+
+    .contenedorProducto .cajaProducto .contenidoProducto h2 {
+        font-size: 10px;
+    }
+
+    .contenedorProducto .cajaProducto .contenidoProducto p {
+        font-size: 10px;
+    }
+
+    .contenedorProducto .cajaProducto .contenidoProducto a {
+        font-size: 6px;
+        padding: 4px;
+    }
+
+    .contenedorProducto .cajaProducto .contenidoProducto {
+        padding: 5px 17px;
+    }
+
+    .contenedorProducto{
+        justify-content: center;
+    }
+
+    /*
+    ! FINAL CSS RESPONSIVE TABLET PRODUCTO
+    */
+    
+    /*
+    !CSS RESPONSIVE TABLET CARRITO
+    */
+    .containerCarrito{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .containerProductos {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .containerProductos > .productoCarrito:first-child{
+        display: none;
+    }
+
+    .productoCarrito{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #2099FF;
+    }
+
+    .div1Carrito{
+        grid-area: 1 / 1 / 6 / 3;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .div2Carrito{
+        grid-area: 1 / 3 / 2 / 5;
+    }
+
+    .div3Carrito{
+        grid-area: 2 / 4 / 3 / 5;
+    }
+
+    .div4Carrito{
+        grid-area: 3 / 3 / 4 / 4;
+    }
+
+    .div5Carrito{
+        grid-area: 4 / 4 / 5 / 5;
+    }
+
+    .div6Carrito{
+        grid-area: 3 / 4 / 4 / 5;
+    }
+
+    .div7Carrito{
+        grid-area: 2 / 3 / 3 / 4;
+    }
+
+    .div8Carrito{
+        grid-area: 4 / 3 / 5 / 4;
+    }
+
+    .tituloCarrito{
+        font-size: 40px;
+        letter-spacing: 1px;
+        color: black;
+        text-align: center;
+    }
+
+    img.imagenCarrito{
+        width: 65%;
+    }
+
+    .vacioCarrito {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        margin: 25px;
+    }
+
+    div.div2Carrito > p > a{
+        font-size: 30px;
+        font-weight: bold;
+        color: black;
+    }
+
+    div.productoCarrito > div > p{
+        font-size: 25px;
+        margin: 10px;
+    }
+
+    div.div4Carrito > div > form > input.button{
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    div.div4Carrito > div > form > input.cantidad{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .cantidadCarrito{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    div.div6Carrito > div{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    div.div6Carrito > div > form > input.button{
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .cta{
+        font-size: 50px;
+    }
+
+    .sumarioCarrito{
+        width: -webkit-fill-available;
+        margin-right: 150px;
+        margin-left: 150px;
+    }
+
+    div.sumarioCarrito1 > p{
+        font-size: 25px;
+        margin: 10px;
+    }
+
+    .sumarioCarrito2 > div > p, .sumarioCarrito3 > p{
+        font-size: 25px;
+        margin: 10px;
+    }
+
+
+    div.sumarioCarrito3{
+        border-bottom: none;
+    }
+
+    div.botonPagarCarrito > div > a > span:nth-child(2) > svg{
+        height: 50px;
+    }
+
+    .vacioCarrito{
+        padding-top: 15%;
+    }
+
+    .iconCarritoVacio{
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    div.vacioCarrito > p:nth-child(3){
+        font-size: 25px;
+        margin: 10px;
+        text-align: center;
+    }
+
+    .buttonCarrito{
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    /*
+    ! FINAL CSS RESPONSIVE TABLET CARRITO
+    */
+
+    /*
+    !CSS Responsive TABLET Header
+    */
+    .menu{
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffffff;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        justify-items: center;
+    }
+    .menu1{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .menu2{
+        grid-column: 1/4;
+        grid-row: 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .menu4{
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .menu5{
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .menu6{
+        display: none;
+    }
+    .menu7{
+        display: none;
+    }
+    .menu8{
+        display: none;
+    }
+    .menu9{
+        display: none;
+    }
+    .menu10{
+        display: none;
+    }
+    .menu11{
+        display: none;
+    }
+
+    a.categoriaLink{
+      text-decoration: none;
+      color: #1E1E23;
+      opacity:1;
+      font-family: 'work sans', sans serif;
+      font-size: 1.5em;
+      font-weight: 400;
+      transition: 200ms;
+    }
+
+    a.categoriaLink:hover {
+      opacity:0.5;
+    }
+
+    
+    lord-icon{
+        width: 60px !important;
+        height: 50px !important;
+    }
+
+    /*Damos estilos al menú*/
+    .nav {
+        position:absolute;
+        width:200px;
+        height:100vh;
+        top:0;
+        left:-220px; /*Ocultamos el menú en la parte izquierda para que no se vea a menos que pulsemos sobre la hamburguesa*/
+        padding-top:47px;
+        background-color: rgba(29, 33, 32, 1);
+        border-right:4px solid #2099FF;
+        transition:all .5s ease; /*Damos a la caja del menú una transición para que tenga un desplazamiento suave*/
+        z-index: 2;
+    }
+    /*Estilos de los li del menú*/
+    .nav__item {
+        display:block;
+        width:96%;
+        margin:0 auto;
+        line-height:2;
+        position:relative; /*Le damos una posición relativa para posteriormente añadirle el triangulo que indica que se está en la página actual del menú*/
+        border-bottom:.5px solid rgba(59, 62, 61, 1);
+        border-top:.5px solid rgba(59, 62, 61, 1);
+        background-color:transparent;
+        font-family: 'Lato', sans-serif;
+        text-align:center;
+        color:rgba(221, 231, 228, 1);
+    }
+
+    /*Colocamos el triangulo negro a la pestaña del menú dónde nos encontramos actualmente*/
+    .current:before {
+        content:"";
+        width:0;
+        height:0;
+        position:absolute; /*Le damos al before una posición absoluta relativa al li que lo contiene*/
+        border-top:17px solid transparent;
+        border-left:15px solid #1D2120;
+        border-bottom:17px solid transparent;
+        top:0px;
+        right:-15px; /*Lo posicionamos -15px a la derecha de su contenedor*/
+        z-index:4; /*le otorgamos un z-index alto para que se posicione arriba de otros elementeos*/
+    }
+
+    /*Colocamos el borde verde al triangulo por medio de otro trangulo verde*/
+    .current:after {
+        content:"";
+        width:0;
+        height:0;
+        position:absolute;/*Le damos al after una posición absoluta relativa al li que lo contiene*/
+        border-top:16.5px solid transparent;
+        border-left:17px solid #2099FF;
+        border-bottom:17px solid transparent;
+        top:.5px;
+        right:-21px;
+        z-index:1;  /*le otorgamos un z-index bajo para que se posicione debajo del trinagulo negro*/
+    }
+
+    /*Estos son los estilos de la hamburguesa del menú que abre y cierra el mismo*/
+    .menu-toogle {
+        position:absolute; /*Lo posicionamos absolutamente para poder darle una posición y poder moverlo según el menú esté abierto o cerrado*/
+        width: 35px;
+        line-height:1.1;
+        text-align:center;
+        top:6.5px; /*Le damos una posición top y left en donde queramos que se encuentre la hamburguesa del menú*/
+        left: 8px; 
+        border-radius:3px;
+        background-color: #142b25;
+        transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
+        z-index:10;
+    }
+
+    /*Añadimos la haburguesa y le damos unos estilos*/
+    .menu-toogle::before {
+        content:"☰";
+        font-size:32px;
+        color:white;
+    }
+
+    /*Estos son los estilos que le dan la funcionalidad al menú*/
+    /*El checkbox según esté activado o no hará que el menú aparezca o desaparezca*/
+    .checkbox {
+        display:none; /*Ocultamos el checkbox pues no nos interesa que se vea*/
+    }
+    .checkbox:checked ~ .nav {
+        left:0px; /*Le quitamos el left negativo para que el menú vuelva a su posición original*/
+        position:fixed; /* Fijamos el menú lateral para que se desplace cuando hagamos scroll*/
+    }
+    .checkbox:checked ~ .main-w {
+        margin-left:200px; /*Cuando el checkbox asigna un margen al contenedor principal para que se desplace junto con el menú*/
+    }
+    .checkbox:checked ~ .menu-toogle { 
+        left:150px;
+        position:fixed; /*Fijamos la hamburgues para que se desplace junto con el menú*/
+    }   
+  
+    /*
+    !Final Responsive TABLET Header
+    */
+
+     /*
+    !CSS RESPONSIVE TABLET CHECKOUT
+    */
+
+    .card{
+        width: 90%;
+    }
+
+    .product {
+        object-fit: cover;
+        width: 17em;
+        height: 17em;
+        border-radius: 100%;
+        border: 2px solid #7647CD;
+    }
+
+    .leftside{
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+    }
+
+    .rightside{
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+
+    .rightside > form > h1{
+        font-size: 40px;
+        letter-spacing: 1px;
+        color: black;
+        text-align: center;
+    }
+    
+    .rightside > form > h2{
+        font-size: 32px;
+        letter-spacing: 1px;
+        color: black;
+        text-align: center;
+    }
+
+    .leftside > img{
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .expcvv{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.6rem;
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    div.rightside > form > p{
+        font-size: 22px;
+    }
+
+    .inputbox{
+        font-size: 22px;
+    }
+
+    .buttonCheckout{
+        font-size: 30px;
+    }
+    
+    /*
+    ! FINAL CSS RESPONSIVE TABLET CHECKOUT
+    */
+
+    /*
+    !CSS RESPONSIVE SMARTPHONE CONFIRMAR PEDIDO
+    */
+
+    h3.tituloConfirmarPedido {
+        text-align: center;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .contenedorConfirmarPedido {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contenedorConfirmarPedido1 {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    div.contenedorConfirmarPedido2 {
+        width: -webkit-fill-available;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(148, 147, 147);
+    }
+
+    /*
+    ! FINAL CSS RESPONSIVE SMARTPHONE CONFIRMAR PEDIDO
+    */
+
+}
 
   
