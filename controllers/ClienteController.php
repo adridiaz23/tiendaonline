@@ -111,10 +111,31 @@
            }
         }
 
-        //Funcion para añadir opiniones
-        public function opiniones()
-        {
+        //Funcion para mostar los pedidos del cliente.
+        public function listarPedido(){
             if(isset($_SESSION['Cliente']) ){
+                if(isset($_POST['estrellas'])){
+                    require_once "models/pedido.php";
+                    $pedido = new Pedido();
+                    $listadoPedido = $pedido->listarPedido($_SESSION["correo"]);
+                    require_once "views/cliente/listaPedido.php";
+
+                }else{
+                    require_once "models/pedido.php";
+                    $pedido = new Pedido();
+                    $listadoPedido = $pedido->listarPedido($_SESSION["correo"]);
+                    require_once "views/cliente/listaPedido.php";
+                }
+            }else{
+                ?>
+                <script>window.location.replace("index.php");</script>
+                <?php
+            }
+        }
+
+        //Funcion para añadir opiniones
+             public function opiniones(){
+             if(isset($_SESSION['Cliente']) ){
                 if(isset($_POST['estrellas'])){
                     require_once "models/pedido.php";
                     $pedido = new Pedido();
@@ -131,7 +152,8 @@
                 ?>
                 <script>window.location.replace("index.php");</script>
                 <?php
-            }
+            } 
+            
         }
         public function validarOpinion(){
             // Mientras no se pasen los datos del formulario mostraremos el else

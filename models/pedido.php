@@ -94,13 +94,24 @@
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
+        //Funcion para listar los pedidos del cliente
+           public function listarPedido($nomUsuario){
+                $sql = "SELECT * FROM pedido WHERE correoCliente = '$nomUsuario'";
+                $rows = $this->db->query($sql);
+                return $rows->fetchAll(PDO::FETCH_CLASS);
+        } 
+
         
         //Funcion para mostrar los pedidos pagados del cliente.
         public function opiniones($nomUsuario){
-                $sql = "SELECT producto.imagen, detallepedido.ISBN, pedido.estado FROM (`detallepedido` INNER JOIN `pedido` ON detallepedido.idPedido = pedido.idPedido) INNER JOIN `producto`  ON detallepedido.ISBN = producto.ISBN WHERE pedido.correoCliente = '$nomUsuario'" ;
+                $sql = "SELECT producto.imagen, detallepedido.ISBN, pedido.estado, detallepedido.idPedido FROM (`detallepedido` INNER JOIN `pedido` ON detallepedido.idPedido = pedido.idPedido) INNER JOIN `producto`  ON detallepedido.ISBN = producto.ISBN WHERE pedido.correoCliente = '$nomUsuario'" ;
                 $rows = $this->db->query($sql);
                 return $rows->fetchAll(PDO::FETCH_CLASS);
         }
+
+  
+    
 
         //Funcion para saber el id del siguiente pedido
         public function ultimoPedido(){

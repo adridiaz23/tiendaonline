@@ -48,7 +48,7 @@
         if(isset($_SESSION["Cliente"])){
             ?>
             <div class="menu5"> 
-                <a href="index.php?controller=Cliente&action=editarPerfil&correo=<?php echo $_SESSION["correo"]; ?>"><?php echo $_SESSION["Cliente"]; ?> </a> / <a href='index.php?controller=Cliente&action=opiniones'>Mis pedidos</a> /<a href='index.php?controller=Base&action=salir'>Salir</a> 
+                <a href="index.php?controller=Cliente&action=editarPerfil&correo=<?php echo $_SESSION["correo"]; ?>"><?php echo $_SESSION["Cliente"]; ?> </a> / <a href='index.php?controller=Cliente&action=listarPedido'>Mis pedidos</a> /<a href='index.php?controller=Base&action=salir'>Salir</a> 
                 <!--<div class="dropdown" id="dropdown">
                     <button onclick="handleDropdownClicked(event)">
                         <span class="material-symbols-outlined"> settings </span>
