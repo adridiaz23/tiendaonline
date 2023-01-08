@@ -57,7 +57,7 @@
           echo "<h4>Valoracion: </h4>";
           echo "<div class='valoracion'>";
             for($i=1 ; $i<= 5 ; $i++ ){
-                if ($i<=$listadoProducto2[0]->media){
+                if ($i<=$listadoProducto3[0]->media){
                   echo "<font color=\"yellow\">★</font>";
                 }else{
                   echo "★";
@@ -72,11 +72,11 @@
 
           echo "<div class=comentariosClientes>";
           echo "<h2>Valoraciones </h2>";
-          if($listadoProducto2[0]->cuenta==0){
+          if($listadoProducto3[0]->cuenta==0){
             echo "<h4>Sin valoraciones: </h4>";
           }else{
-           for($i=0; $i<= $listadoProducto2[0]->cuenta ; $i++){
-              foreach ($listadoProducto as $clave => $valor){
+           for($i=0; $i<= $listadoProducto3[0]->cuenta ; $i++){
+              foreach ($listadoProducto2 as $clave => $valor){
                 echo "<div class=cajaComentariosClientes>";
                 echo "<h4>Correo: </h4>";
                 echo "<p>".$valor->correoCliente."</p>";
