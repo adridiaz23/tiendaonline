@@ -1769,16 +1769,26 @@ path.two {
 /*Final CSS CHECKOUT*/
 
 .contactMap{
-    width: 70%;
-    margin: 5%;
-    display: inline-block;
+    width: 100%;
 }
+
+.cajaInfoContacto {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5%;
+  }
 
 .contactInfo{
     width: 20%;
     margin: 2%;
-    display: inline-block;
+    display: flex;
     color:black;
+    justify-content: center;
+    text-align: center;
 }
 
 
