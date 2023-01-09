@@ -1,4 +1,4 @@
-<?php var_dump($listadoProducto); ?>
+
  <div class="contenedorPaginaProducto">
   <div class="imagenPaginaProducto">
     <?php
