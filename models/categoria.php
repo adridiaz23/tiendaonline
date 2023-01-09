@@ -16,7 +16,7 @@
         }
        
         public function setIdCategoria($IdCategoria){
-                $this->IdCategoria = $IdCategoria;
+                $this->idCategoria = $IdCategoria;
                 return $this;
         }
 
@@ -47,7 +47,7 @@
 
         public function productosDeCate(){
              // Consulta
-            $sql = "SELECT * FROM producto WHERE categoria = '".$this->IdCategoria."'";
+            $sql = "SELECT producto.*, categoria.nombre AS nombreCategoria, categoria.idCategoria FROM `producto` INNER JOIN `categoria` ON categoria.idCategoria = producto.categoria WHERE categoria = '".$this->idCategoria."'";
             $rows = $this->db->query($sql);
             return  $rows->fetchAll(PDO::FETCH_CLASS);
 

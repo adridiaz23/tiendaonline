@@ -416,9 +416,9 @@ option.optionProducto{
 }
 
 .tituloRegistroProducto{
-    padding-top: 15px;
+    padding-top: 30px;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20%;
 }
 
 textarea.textareaRegistroForm{
@@ -878,6 +878,73 @@ span.blue {
 
 
 /* Final del CSS Pagina del menu*/
+
+/*
+Pagina de categorias
+*/
+
+.productosCategorias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.productoCategoria2{
+background-color: #000;
+}
+.productoCategoria3{
+    background-color: #000;
+}
+.productoCategoria6{
+    background-color: #000;
+}
+.productoCategoria7{
+    background-color: #000;
+    }
+.productoCategoria10{
+        background-color: #000;
+        }
+
+.contenidoCategorias1{
+    color: #000;
+}
+
+.descripcionCorta1{
+    color: #000;
+}
+.contenidoCategorias4{
+    color: #000;
+}
+
+.descripcionCorta4{
+    color: #000;
+}
+.contenidoCategorias5{
+    color: #000;
+}
+
+.descripcionCorta5{
+    color: #000;
+}
+.contenidoCategorias8{
+    color: #000;
+}
+
+.descripcionCorta8{
+    color: #000;
+}
+.contenidoCategorias9{
+    color: #000;
+}
+
+.descripcionCorta9{
+    color: #000;
+}
+
+
+
+
 
 /*
 *
@@ -2656,7 +2723,7 @@ Responsive Smartphone Pagina Producto
         top:6.5px; /*Le damos una posición top y left en donde queramos que se encuentre la hamburguesa del menú*/
         left: 8px; 
         border-radius:3px;
-        background-color: #142b25;
+        
         transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
         z-index:10;
     }

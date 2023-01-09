@@ -12,8 +12,7 @@
                 trigger='morph'
                 colors='primary:#ffffff,secondary:#1663c7'
                 style='width:250px;height:50px'>
-            </lord-icon>
-        Tienda Online</a></div>
+            </lord-icon></a></div>
         <div class="menu2">
             <div class="wrapper"><form class='buscador'  action='index.php?controller=Producto&action=buscador' method='Post'>
                 <div class="input-data">

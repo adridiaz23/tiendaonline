@@ -1,8 +1,13 @@
-<div class="productos">
+<?php
+echo "<div class='tituloHomeCliente'>";
+    echo "<h1>". $listaCategoria[0]->nombreCategoria ."</h1>";
+  echo "</div>";
+  ?>
+<div class="productosCategorias">
   <?php
   $i = 1;
-  foreach($lista as $clave => $valor){
-    echo "<div class='producto$i '> "?>
+  foreach($listaCategoria as $clave => $valor){
+    echo "<div class='productoCategoria$i '> "?>
     <div class="contenedorProducto">
       <div class="imagenHome">
         <?php
@@ -16,14 +21,10 @@
           //Recotar el string 
           $descripcionCorta = substr($valor->descripcion, 0, 40)." ...";
           //Cambiar la clase dependiendo si es par o impar el div.
-          if($i%2==0){
-            echo "<h2 class= 'contenidoPares'>$valor->nombre</h2>";
-            echo "<p>$descripcionCorta</p>";
-          }else{
-            echo "<h2  class= 'contenidoImpares'>$valor->nombre</h2>";
-            echo "<p class= 'contenidoImpares'>$descripcionCorta</p>";
-            
-          }
+          
+            echo "<h2 class= 'contenidoCategorias$i'>$valor->nombre</h2>";
+            echo "<p class='descripcionCorta$i'>$descripcionCorta</p>";
+    
             echo "<a href='index.php?controller=Producto&action=paginaProducto&isbn=".$valor->ISBN."'>Más información</a>";
             echo "<a href='index.php?controller=detallePedido&action=añadirCarrito&isbn=".$valor->ISBN."&cantidad=1'>Añadir al carrito</a>";
           ?>
