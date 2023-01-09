@@ -2441,23 +2441,13 @@ Responsive Smartphone Home
         justify-content: center;
     }
     .contenedorProducto .cajaProducto:hover span::before {
-        top: -50px;
-        left: 50px;
-        width: 50px;
-        height: 50px;
-        opacity: 1;
+       display:none;
     }
     .contenedorProducto .cajaProducto:hover span::after {
-        bottom: -50px;
-        right: 50px;
-        width: 50px;
-        height: 50px;
-        opacity: 1;
+        display:none;
     }
     .contenedorProducto .cajaProducto:hover::before, .contenedorProducto .cajaProducto:hover::after {
-        transform: skewX(0deg);
-        margin-left: 27%;
-        width: calc(100% - 90px);
+        display:none;
     }
     .contenedorProducto .cajaProducto:hover .contenidoProducto {
         margin-left: 27%;
