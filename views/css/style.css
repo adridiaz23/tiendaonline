@@ -2300,14 +2300,14 @@ Fin CSS Opiniones
     visibility: visible;
   }
 
-.categoriaLinkActive{
+/*.categoriaLinkActive{
     font-size: 16px;
     letter-spacing: 1px;
     font: blod;
     text-decoration: none;
     color: #2099FF !important;
     font-weight: 700;
-}
+}*/
 /*
 !Final CSS Perfil Usuario
 */
@@ -3431,7 +3431,7 @@ Responsive Smartphone Pagina Producto
         top:6.5px; /*Le damos una posición top y left en donde queramos que se encuentre la hamburguesa del menú*/
         left: 8px; 
         border-radius:3px;
-        background-color: #142b25;
+       
         transition: all .5s ease; /*Añadimos una transición para que realice un desplazamineto suave*/
         z-index:10;
     }
