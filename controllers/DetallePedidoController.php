@@ -24,7 +24,7 @@
                     $producto->setIsbn($isbn);
                     if($producto->listadoProducto()){
                         $stock = $producto->obtenerStock();
-                        if($stock[0]->stock > 1){
+                        if($stock[0]->stock > 0){
                             $_SESSION['carrito'][$detallePedido->getISBN()] = $detallePedido->getUnidades();
                         }else{
                             ?>
