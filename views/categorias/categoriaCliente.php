@@ -3,6 +3,9 @@ echo "<div class='tituloHomeCliente'>";
     echo "<h1>". $listaCategoria[0]->nombreCategoria ."</h1>";
   echo "</div>";
   ?>
+  <div class="lineaTituloHomeCliente2"> 
+    <div class="lineaHome"></div>
+  </div>
 <div class="productosCategorias">
   <?php
   $i = 1;

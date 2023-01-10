@@ -17,8 +17,9 @@
         //Saber si el producto tiene stock o no.
         if ($listadoProducto[0]->stock > 5){
           echo "<p class='stockSi'>¡En stock! ¡Recíbelo mañana!</p>";
-        }elseif($listadoProducto[0]->stock > 0 && $listadoProducto[0]->stock <5){
+        }elseif($listadoProducto[0]->stock > 0 && $listadoProducto[0]->stock <=5){
           echo "<p class='stockBajo'> ¡¡Rápido, quedan pocos!! </p>";
+
         }
       
         else{
@@ -30,7 +31,7 @@
           echo "<a href='index.php?controller=detallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1'>Añadir al carrito</a>";
           echo "<a  class= 'corazonMargen' href='index.php?controller=DetallePedido&action=añadirCarrito&isbn=".$listadoProducto[0]->ISBN."&cantidad=1&comprar=si'>Comprar</a>";
         }
-          echo "<a  class= 'corazonMargen' href='index.php?controller=Producto&action=añadirFavorito&isbn=".$listadoProducto[0]->ISBN."'> "?>
+          echo "<a  class= 'corazonMargen2' href='index.php?controller=Producto&action=añadirFavorito&isbn=".$listadoProducto[0]->ISBN."'> "?>
             <script src='https://cdn.lordicon.com/qjzruarw.js'></script>
             <lord-icon
                 class='lord-iconCorazon'
