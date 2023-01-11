@@ -112,11 +112,15 @@
 
         function checkout(){
             require_once("models/pedido.php");
-            if(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) > 0){
+            if(isset($_SESSION['Cliente']) && isset($_SESSION['carrito']) && count($_SESSION['carrito']) > 0){
                 require_once "views/pedido/checkout.php";
-            }elseif(isset($_SESSION['Cliente']) && count($_SESSION['carrito']) == 0){
+            }elseif(isset($_SESSION['Cliente']) && isset($_SESSION['carrito']) && count($_SESSION['carrito']) == 0){
                 ?>
                 <script>window.location.replace("index.php?controller=DetallePedido&action=listarCarrito");</script>
+                <?php
+            }elseif(isset($_SESSION['Cliente']) && !(isset($_SESSION['carrito']))){
+                ?>
+                <script>window.location.replace("index.php?controller=cliente&action=home");</script>
                 <?php
             }else{
                 ?>

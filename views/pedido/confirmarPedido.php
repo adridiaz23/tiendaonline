@@ -46,6 +46,9 @@
                     <p class="textoDerConfirmarPedido"><?php echo $listaPedido[0]->importeTotal ?> €</p>
                 </div>
             </div>
+            <div class="wrapperBoton">
+              <a class="botonConfirmarPedido" href="index.php?controller=Cliente&action=home">Continuar</a>
+            </div>
         </div>
     </div>
 </html>

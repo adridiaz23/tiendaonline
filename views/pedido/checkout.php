@@ -15,15 +15,18 @@
             <p>Titular de la Targeta</p>
             <input type="text" class="inputbox" name="name" required />
             <p>Numero de Targeta</p> 
-            <input type="text" class="inputbox" name="card_number" id="card_number" value="ES" maxlength="24" required" /> 
+            <div class="divNumTargeta">
+              <p class="textoNumTargeta">ES</p>
+              <input type="text" class="inputbox" name="card_number" id="card_number" minlength="22" maxlength="22" pattern="[0-9]+" required /> 
+            </div>
           <div class="expcvv">
             <div>
               <p class="expcvv_text">Fecha de Expiracion</p>
-              <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+              <input type="date" class="inputbox" name="exp_date" min="<?php echo date('Y-m-d'); ?>" id="exp_date" required />
             </div>
             <div>
               <p class="expcvv_text2">CVV</p>
-              <input type="number" class="inputbox" name="cvv" id="cvv" min="000" max="999" required />
+              <input type="text" class="inputbox" name="cvv" id="cvv" minlength="3" maxlength="3" pattern="[0-9]+" required />
             </div>
           </div>
             <button type="submit" class="buttonCheckout">Pagar</button>
