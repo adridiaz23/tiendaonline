@@ -8,7 +8,7 @@
             <!-- Creamos el formulario donde su action será pasar los datos al model/loginAdmin y su función validar -->
             <form action="index.php?controller=Cliente&action=validarCliente" method="POST">       
                 <label for="correo">Correo Electronico:</label>
-                <input type="text" maxlength="30" placeholder="Correo Electronico" name="correo" id="correo" autofocus>
+                <input type="email" maxlength="30" placeholder="Correo Electronico" name="correo" id="correo" autofocus>
                 <label for="password">Contraseña:</label>
                 <input type="password" maxlength="50" placeholder="Password" name="password" id="password">
                 <button class="botonMostrar " type="button" onclick="mostrarContrasena()"> 
